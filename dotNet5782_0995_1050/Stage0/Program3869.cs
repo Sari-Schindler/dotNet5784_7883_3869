@@ -8,8 +8,6 @@
             Console.ReadKey();
         }
 
-        static partial void Welcome7883();
-
         private static void Welcome3869()
         {
             Console.Write("Enter your name: ");
@@ -17,4 +15,6 @@
             Console.WriteLine(name + " " + "welcome to my first console application\"");
         }
     }
+
+
 }
