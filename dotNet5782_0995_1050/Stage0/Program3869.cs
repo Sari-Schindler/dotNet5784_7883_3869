@@ -7,7 +7,6 @@
             Console.WriteLine("try to push");
             Welcome3869();
             Console.ReadKey();
-            tryFunc();
         }
 
         private static void Welcome3869()
