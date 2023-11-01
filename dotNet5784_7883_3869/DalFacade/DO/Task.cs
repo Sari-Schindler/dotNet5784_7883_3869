@@ -21,7 +21,7 @@ namespace DO;
 /// <param name="ComplexityLevel"></param>
 public record Task
     (
-    int? ID,
+    int ID,
     string Description,
     string Alias,
     bool Milestone,
