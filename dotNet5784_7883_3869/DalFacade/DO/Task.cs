@@ -23,18 +23,17 @@ public record Task
     (
     int ID,
     string Description,
-    string? Alias,
+    string? nickName,
     bool Milestone,
     DateTime CreatedAdt,
-    DateTime Start,
+    DateTime ?Start,
     DateTime ScheduledDate,
-    DateTime ForecastDate,
     DateTime DeadLine,
     DateTime Complete,
-    string Deliverable,
-    string? Remarks,
+    string ?Deliverable,
+    string? Comments,
     int Engineerld,
-    EngineerExperience ComplexityLevel
+    TaskLevel ComplexityLevel
     )
 {
 }

@@ -5,3 +5,11 @@ public enum EngineerExperience
     Junior,
     Senior
 }
+
+public enum TaskLevel
+{
+    easy,
+    medium,
+    hard,
+    export
+}
