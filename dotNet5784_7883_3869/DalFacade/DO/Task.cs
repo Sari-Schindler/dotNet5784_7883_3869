@@ -23,7 +23,7 @@ public record Task
     (
     int ID,
     string Description,
-    string Alias,
+    string? Alias,
     bool Milestone,
     DateTime CreatedAdt,
     DateTime Start,
@@ -32,7 +32,7 @@ public record Task
     DateTime DeadLine,
     DateTime Complete,
     string Deliverable,
-    string Remarks,
+    string? Remarks,
     int Engineerld,
     EngineerExperience ComplexityLevel
     )
