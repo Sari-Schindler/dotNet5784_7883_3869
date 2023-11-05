@@ -9,9 +9,9 @@ namespace DO;
 /// <param name="DependsOnTask"></param>
 public record Dependency
     (
-    int ID,
-    int DependentTask,
-    int DependsOnTask
+    int DependentTask,//המשימות תלויות אחת בשניה
+    int previousIDTask,//מס' מזהה של משימה קודמת
+    int ID=0
     )
 {
 }

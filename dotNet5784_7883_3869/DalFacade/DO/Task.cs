@@ -21,19 +21,19 @@ namespace DO;
 /// <param name="ComplexityLevel"></param>
 public record Task
     (
-    int ID,
     string Description,
-    string? nickName,
     bool Milestone,
     DateTime CreatedAdt,
-    DateTime ?Start,
+    DateTime Start,
     DateTime ScheduledDate,
     DateTime DeadLine,
     DateTime Complete,
-    string ?Deliverable,
-    string? Comments,
+    string Deliverable,
     int Engineerld,
-    TaskLevel ComplexityLevel
+    TaskLevel ComplexityLevel,
+    string? nickName=null,
+    string? Comments = null,
+    int ID=0
     )
 {
 }
