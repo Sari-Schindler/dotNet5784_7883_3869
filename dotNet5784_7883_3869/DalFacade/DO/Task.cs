@@ -22,18 +22,19 @@ namespace DO;
 public record Task
     (
     string Description,
-    bool Milestone,
-    DateTime CreatedAdt,
+    bool? Milestone,
     DateTime Start,
     DateTime ScheduledDate,
     DateTime DeadLine,
     DateTime Complete,
     string Deliverable,
     int Engineerld,
-    TaskLevel ComplexityLevel,
+    TaskLevel? ComplexityLevel,
     string? nickName=null,
     string? Comments = null,
     int ID=0
     )
+
 {
+    public DateTime CreatedAt => DateTime.Now; //get only
 }

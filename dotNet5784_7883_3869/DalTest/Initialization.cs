@@ -123,14 +123,13 @@ public static class Initialization
             string _description = _descriptionArray[i % 8];
             string _deliverable = _deliverableArray[s_rand.Next(0, 4)];
             bool _mileStone = false;
-            DateTime _CreatedAdt = DateTime.Now;
             DateTime _Start = _CreatedAdt.Add(TimeSpan.FromHours(i));
             DateTime _ScheduledDate = _CreatedAdt.Add(TimeSpan.FromDays(i % 20));
             DateTime _DeadLine = _ScheduledDate.Add(TimeSpan.FromDays(7)); ;
             DateTime _Complete = _ScheduledDate.Add(TimeSpan.FromHours(-i % 24));
             int _level = i % 4;
             TaskLevel _ComplexityLevel = (TaskLevel)_level;
-            Task _newTask = new Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())].ID, _ComplexityLevel);
+            Task _newTask = new Task(_description, _mileStone, null, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())].ID, _ComplexityLevel);
 
             s_dalTask!.Create(_newTask);
         }
