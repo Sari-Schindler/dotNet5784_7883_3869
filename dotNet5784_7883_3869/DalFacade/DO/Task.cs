@@ -23,6 +23,7 @@ public record Task
     (
     string Description,
     bool? Milestone,
+    DateTime createdAdt,
     DateTime Start,
     DateTime ScheduledDate,
     DateTime DeadLine,
@@ -36,5 +37,5 @@ public record Task
     )
 
 {
-    public DateTime CreatedAt => DateTime.Now; //get only
+   
 }
