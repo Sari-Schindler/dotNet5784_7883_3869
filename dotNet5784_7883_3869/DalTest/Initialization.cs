@@ -22,7 +22,7 @@ public static class Initialization
     //fill Engineer entities 
     private static void createEngineer()
     {
-        string[] EngineerNames = new string[]
+        string[] EngineerNames =
         {
             "Dani",
             "Eli",
@@ -110,7 +110,7 @@ public static class Initialization
                 "code A",
                 "code B",
                 "code C"
-            };
+        };
         string[] _commentsArray =
         {
                 "Important Task",
@@ -121,7 +121,7 @@ public static class Initialization
         {
             List<Engineer> AllEngineer = s_dalEngineer!.ReadAll();
             string _description = _descriptionArray[i % 8];
-            string _deliverable = _deliverableArray[s_rand.Next(0, 4)];
+            string _deliverable = _deliverableArray[s_rand.Next(0, 3)];
             bool _mileStone = false;
             DateTime _CreatedAdt= DateTime.Now; 
             DateTime _Start = _CreatedAdt.Add(TimeSpan.FromHours(i));
@@ -145,7 +145,7 @@ public static class Initialization
         for (int i = 0; i < 250; i++)
         {
             _DependentTask = AllTasks[i % 95].ID; //left few tasks undependency
-            _previousIDTask = AllTasks[(i % 95)-1].ID;
+            _previousIDTask = AllTasks[(i % 90)].ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
             s_dalDependency!.Create(_tempDependency); 
         }
@@ -154,14 +154,16 @@ public static class Initialization
 
 
 
-    public static void Do(ITask? dalTask,  IEngineer? dalEngineer , IDependency? dalDependency)
+    public static void Do(IDependency? dalDependency, IEngineer? dalEngineer , ITask? dalTask )
     {
-        s_dalTask = dalTask ?? throw new Exception("DAL can't be null!");
         s_dalEngineer = dalEngineer ?? throw new Exception("DAL can't be null!");
+        s_dalTask = dalTask ?? throw new Exception("DAL can't be null!");
         s_dalDependency = dalDependency ?? throw new Exception("DAL can't be null!");
 
-        createTask();
+        
+
         createEngineer();
+        createTask();
         createDependency();
     }
 }

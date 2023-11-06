@@ -43,6 +43,69 @@ namespace DalTest
             } while (choiceEntity != 0);
         }
 
+        
+
+        //engineer
+
+        public static void EngineerEntity()
+        {
+            int choiceEngineer = 0;
+            do
+            {
+                Console.WriteLine("please choose an option\n for add a Engineer press 1\n for show one Engineer press 2\n for show all the Engineers press 3\n for updating Engineer details press 4\n for delete Engineer press 5\n for exit press press 0\n ");
+                choiceEngineer = (Convert.ToInt32(Console.ReadLine()));
+                switch (choiceEngineer)
+                {
+                    case 1:
+                        s_dalEngineer!.Create(creatNewEngineer());
+                        break;
+                    case 2:
+                        Console.WriteLine("enter engineer's id wanted\n");
+                        Console.WriteLine(s_dalEngineer!.Read(Convert.ToInt32(Console.ReadLine())));
+                        break;
+                    case 3:
+                        foreach (var engineer in s_dalEngineer!.ReadAll())
+                        {
+                            Console.WriteLine(engineer);
+                        };
+                        break;
+                    case 4:
+                        s_dalEngineer!.Update(creatNewEngineer());
+                        break;
+                    case 5:
+                        Console.WriteLine("enter engineer's id wanted\n");
+                        s_dalEngineer!.Read(Convert.ToInt32(Console.ReadLine()));
+                        break;
+                    default:
+                        break;
+
+                }
+
+
+            } while (choiceEngineer != 0);
+        }
+
+        private static DO.Engineer creatNewEngineer()
+        {
+
+            int _ID;
+            EngineerExperience _Level;
+            double _Cost;
+            Console.WriteLine("please enter the Engineer details\n");
+            Console.WriteLine("enter the Engineers id\n");
+            int.TryParse(Console.ReadLine()!, out _ID);
+            Console.WriteLine("enter the Engineers name\n");
+            string _Name = Console.ReadLine();
+            Console.WriteLine("enter the Engineers email\n");
+            string _Email = Console.ReadLine();
+            Console.WriteLine("enter the Engineers level\n");
+            EngineerExperience.TryParse(Console.ReadLine(), out _Level);
+            Console.WriteLine("enter the Engineers Cost\n");
+            double.TryParse(Console.ReadLine()!, out _Cost);
+            return new Engineer(_ID, _Name, _Email, _Level, _Cost);
+        }
+
+
         //task entity
         public static void TaskEntity()
         {
@@ -112,70 +175,9 @@ namespace DalTest
             return (new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel));
         }
 
+        //dependency
 
-        //engineer
-
-        public static void EngineerEntity()
-        {
-            int choiceEngineer = 0;
-            do
-            {
-                Console.WriteLine("please choose an option\n for add a Engineer press 1\n for show one Engineer press 2\n for show all the Engineers press 3\n for updating Engineer details press 4\n for delete Engineer press 5\n for exit press press 0\n ");
-                choiceEngineer = (Convert.ToInt32(Console.ReadLine()));
-                switch (choiceEngineer)
-                {
-                    case 1:
-                        s_dalEngineer!.Create(creatNewEngineer());
-                        break;
-                    case 2:
-                        Console.WriteLine("enter engineer's id wanted\n");
-                        Console.WriteLine(s_dalEngineer!.Read(Convert.ToInt32(Console.ReadLine())));
-                        break;
-                    case 3:
-                        foreach (var engineer in s_dalEngineer!.ReadAll())
-                        {
-                            Console.WriteLine(engineer);
-                        };
-                        break;
-                    case 4:
-                        s_dalEngineer!.Update(creatNewEngineer());
-                        break;
-                    case 5:
-                        Console.WriteLine("enter engineer's id wanted\n");
-                        s_dalEngineer!.Read(Convert.ToInt32(Console.ReadLine()));
-                        break;
-                    default:
-                        break;
-
-                }
-
-
-            } while (choiceEngineer != 0);
-        }
-
-            private static DO.Engineer creatNewEngineer()
-            {
-
-                int _ID;
-                EngineerExperience _Level;
-                double _Cost;
-                Console.WriteLine("please enter the Engineer details\n");
-                Console.WriteLine("enter the Engineers id\n");
-                int.TryParse(Console.ReadLine()!, out _ID);
-                Console.WriteLine("enter the Engineers name\n");
-                string _Name = Console.ReadLine();
-                Console.WriteLine("enter the Engineers email\n");
-                string _Email = Console.ReadLine();
-                Console.WriteLine("enter the Engineers level\n");
-                EngineerExperience.TryParse(Console.ReadLine(), out _Level);
-                Console.WriteLine("enter the Engineers Cost\n");
-                double.TryParse(Console.ReadLine()!, out _Cost);
-                return new Engineer(_ID, _Name, _Email, _Level, _Cost);
-            }
-
-            //dependency
-
-            public static void DependencyEntity()
+        public static void DependencyEntity()
             {
                 int chioceDependency = 0;
                 do
@@ -211,7 +213,7 @@ namespace DalTest
 
                     }
                 } while (chioceDependency != 0);
-            }
+        }
 
 
             private static DO.Dependency createNewDependency(int dependencyId = 0000)
@@ -229,7 +231,7 @@ namespace DalTest
             {
                 try
                 {
-                    Initialization.Do(s_dalTask, s_dalEngineer, s_dalDependency);
+                    Initialization.Do(s_dalDependency, s_dalEngineer, s_dalTask);
                     allEntities();
                 }
                 catch (Exception error)
