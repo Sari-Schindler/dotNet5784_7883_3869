@@ -35,7 +35,7 @@ public class TaskImplementation : ITask
 
     public void Update(Task item)
     {
-        Task ?tempTask = (DataSource.Tasks.Find(element => element!.ID == item.ID));
+        Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == item.ID));
         if (tempTask is null)
             throw new Exception("An object of type Task with such an ID does not exist");
         else

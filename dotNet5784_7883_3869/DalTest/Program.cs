@@ -74,7 +74,7 @@ namespace DalTest
                         break;
                     case 5:
                         Console.WriteLine("enter engineer's id wanted\n");
-                        s_dalEngineer!.Read(Convert.ToInt32(Console.ReadLine()));
+                        s_dalEngineer!.Delete(Convert.ToInt32(Console.ReadLine()));
                         break;
                     default:
                         break;
@@ -109,7 +109,7 @@ namespace DalTest
         //task entity
         public static void TaskEntity()
         {
-            int Id;
+            
             int choiceTask = 0;
             do
             {
@@ -130,7 +130,8 @@ namespace DalTest
                         break;
                     case 4:
                         Console.WriteLine("Enter wanted task's ID");
-                        s_dalTask!.Update(createNewTask(Convert.ToInt32(Console.ReadLine())));
+                        int id= Convert.ToInt32(Console.ReadLine());
+                        s_dalTask!.Update(createNewTask(id));
                         break;
                     case 5:
                         Console.WriteLine("Enter wanted task's ID");
@@ -155,7 +156,7 @@ namespace DalTest
             TaskLevel _ComplexityLevel;
             Console.WriteLine("please enter the task's details\n");
             Console.WriteLine("Enter the task's description\n");
-            string _Description = Console.ReadLine();
+            string ?_Description = Console.ReadLine();
             Console.WriteLine("Enter the task's createdAdt\n");
             DateTime.TryParse(Console.ReadLine(), out _createdAdt);
             Console.WriteLine("Enter the start time\n");
@@ -167,12 +168,12 @@ namespace DalTest
             Console.WriteLine("Enter the complete time\n");
             DateTime.TryParse(Console.ReadLine(), out _Complete);
             Console.WriteLine("Enter the deliverable");
-            string _Deliverable = Console.ReadLine();
+            string ?_Deliverable = Console.ReadLine();
             Console.WriteLine("enter the engineer's Id\n");
-            _Engineerld = Convert.ToInt32(Console.ReadLine());
+            int.TryParse(Console.ReadLine(), out _Engineerld);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-            return (new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel));
+            return (new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,id));
         }
 
         //dependency
