@@ -122,7 +122,7 @@ namespace DalTest
                         break;
                     case 2:
                         Console.WriteLine("Enter wanted task's ID");
-                        s_dalTask!.Read(Convert.ToInt32(Console.ReadLine()));
+                        Console.WriteLine(s_dalTask!.Read(Convert.ToInt32(Console.ReadLine())));
                         break;
                     case 3:
                         foreach (var item in s_dalTask!.ReadAll())
