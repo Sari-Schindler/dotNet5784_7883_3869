@@ -88,7 +88,6 @@ namespace DalTest
                         id= Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(s_dalEngineer!.Read(id));
                         updateEngineer(id);
-                        //s_dalEngineer!.Update(creatNewEngineer(id));
                        
                         break;
                     case 5:
@@ -140,7 +139,6 @@ namespace DalTest
         {
             try
             {
-                // לא עובד בדיקת אימייל
                 Console.WriteLine("Enter ID of an Engineer");
                 int _id;
                 int.TryParse(Console.ReadLine()!, out _id);
@@ -209,7 +207,6 @@ namespace DalTest
                         int id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(s_dalTask!.Read(id));
                         updateTask(id);
-                        //s_dalTask!.Update(createNewTask(id));
                         break;
                     case 5:
                         Console.WriteLine("Enter wanted task's ID");
@@ -259,7 +256,6 @@ namespace DalTest
             int.TryParse(Console.ReadLine(), out _Engineerld);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-           // if(_Engineerld == 0)    
             return (new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,id));
         }
 
@@ -348,7 +344,6 @@ namespace DalTest
                             break;
                         case 4:
                             Console.WriteLine("Enter Dependency's id\n");
-                            //s_dalDependency!.Update(createNewDependency(Convert.ToInt32(Console.ReadLine())));
                             int _id = Convert.ToInt32(Console.ReadLine());
                             updateDependency(_id);
 
