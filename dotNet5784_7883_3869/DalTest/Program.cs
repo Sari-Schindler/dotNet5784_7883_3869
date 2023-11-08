@@ -314,7 +314,6 @@ namespace DalTest
                 Console.WriteLine(newException.Message);
             }
         }
-
         /// <summary>
         /// menue for chhose dependency's method
         /// </summary>
