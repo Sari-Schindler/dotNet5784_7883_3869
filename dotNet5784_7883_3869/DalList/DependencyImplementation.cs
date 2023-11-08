@@ -7,6 +7,11 @@ using System.Collections.Generic;
 
 public class DependencyImplementation : IDependency
 {
+    /// <summary>
+    /// create a new dependency entity
+    /// </summary>
+    /// <param name="item">wanted dependency to add</param>
+    /// <returns>wanted dependency</returns>
     public int Create(Dependency item)
     {
         int IDReplace = DataSource.Config.NextDependencyId;
@@ -15,6 +20,11 @@ public class DependencyImplementation : IDependency
         return IDReplace;
     }
 
+    /// <summary>
+    /// delete dependency entity
+    /// </summary>
+    /// <param name="id">wanted dependency to delete</param>
+    /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Delete(int id)
     {
         Dependency? tempDependency = (DataSource.Dependencys.Find(element => element!.ID == id));
@@ -23,16 +33,32 @@ public class DependencyImplementation : IDependency
         DataSource.Dependencys.Remove(tempDependency);
     }
 
+    /// <summary>
+    /// display one dependency
+    /// </summary>
+    /// <param name="id">the wanted dependency</param>
+    /// <returns>wanted dependency</returns>
     public Dependency? Read(int id)
     {
         return (DataSource.Dependencys.Find(element => element!.ID == id));
     }
 
+
+    /// <summary>
+    /// return all the dependency's entities
+    /// </summary>
+    /// <returns></returns>
     public List<Dependency> ReadAll()
     {
         return new List<Dependency>(DataSource.Dependencys);
     }
 
+
+    /// <summary>
+    /// update specific dependency entity
+    /// </summary>
+    /// <param name="item">wanted dependency's ID</param>
+    /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Update(Dependency item)
     {
         Dependency ?tempDependency = (DataSource.Dependencys.Find(element => element!.ID == item.ID));

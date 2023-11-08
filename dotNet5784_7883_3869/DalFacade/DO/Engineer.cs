@@ -4,11 +4,11 @@ namespace DO;
 /// <summary>
 /// 
 /// </summary>
-/// <param name="ID"></param>
-/// <param name="Name"></param>
-/// <param name="Email"></param>
-/// <param name="Level"></param>
-/// <param name="Cost"></param>
+/// <param name="ID">describes the engineer's ID number</param>
+/// <param name="Name">engineer's name</param>
+/// <param name="Email">engineer's email</param>
+/// <param name="Level">engineer's level of job</param>
+/// <param name="Cost">engineer's salary per hour</param>
 public record Engineer
     (
     int ID,

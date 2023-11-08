@@ -19,7 +19,9 @@ public static class Initialization
     private static readonly Random s_rand = new();
 
 
-    //fill Engineer entities 
+    /// <summary>
+    /// create new enginner
+    /// </summary>    
     private static void createEngineer()
     {
         string[] EngineerNames =
@@ -90,7 +92,10 @@ public static class Initialization
 
     }
 
-    //fill the Task entity
+
+    /// <summary>
+    /// create new task
+    /// </summary>
     private static void createTask()
     {
         string[] _descriptionArray =
@@ -136,7 +141,10 @@ public static class Initialization
         }
     }
 
-    //fill the Dependency entity
+
+    /// <summary>
+    /// create new dependency
+    /// </summary>
     private static void createDependency()
     {
         List<Task> AllTasks = s_dalTask!.ReadAll();
@@ -153,7 +161,13 @@ public static class Initialization
 
 
 
-
+    /// <summary>
+    /// reset all entities
+    /// </summary>
+    /// <param name="dalDependency">erset the dependency's entity</param>
+    /// <param name="dalEngineer">erset the engineer's entity</param>
+    /// <param name="dalTask">erset the task's entity</param>
+    /// <exception cref="Exception"></exception>
     public static void Do(IDependency? dalDependency, IEngineer? dalEngineer , ITask? dalTask )
     {
         s_dalEngineer = dalEngineer ?? throw new Exception("DAL can't be null!");

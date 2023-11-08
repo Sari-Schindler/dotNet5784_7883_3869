@@ -7,6 +7,11 @@ using System.Collections.Generic;
 
 public class TaskImplementation : ITask
 {
+    /// <summary>
+    /// create new task
+    /// </summary>
+    /// <param name="item">wanted task to add</param>
+    /// <returns></returns>
     public int Create(Task item)
     {
         int newID = DataSource.Config.NextTaskId;
@@ -15,6 +20,12 @@ public class TaskImplementation : ITask
         return newID;
     }
 
+
+    /// <summary>
+    /// delete task entity
+    /// </summary>
+    /// <param name="id">wanted task to delete</param>
+    /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Delete(int id)
     {
         Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == id));
@@ -23,16 +34,33 @@ public class TaskImplementation : ITask
          DataSource.Tasks.Remove(tempTask);
     }
 
+    /// <summary>
+    /// display one task
+    /// </summary>
+    /// <param name="id">the wanted task</param>
+    /// <returns>wanted task</returns>
     public Task? Read(int id)
     {
         return (DataSource.Tasks.Find(element => element!.ID == id));
     }
 
+
+
+    /// <summary>
+    /// return all the task's entities
+    /// </summary>
+    /// <returns></returns>
     public List<Task> ReadAll()
     {
         return new List<Task>(DataSource.Tasks);
     }
 
+
+    /// <summary>
+    /// update specific task entity
+    /// </summary>
+    /// <param name="item">wanted task's</param>
+    /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Update(Task item)
     {
         Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == item.ID));
@@ -44,4 +72,6 @@ public class TaskImplementation : ITask
             DataSource.Tasks.Add(item);
         }
     }
+
+
 }
