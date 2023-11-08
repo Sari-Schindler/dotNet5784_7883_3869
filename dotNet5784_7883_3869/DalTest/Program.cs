@@ -154,7 +154,7 @@ namespace DalTest
                 {
                     _Name = _engineer.Name;
                 }
-                if (temp.Email== "@gmail.com")
+                if (temp.Email== "")
                 {
                     _Email = _engineer.Email;
                 }
