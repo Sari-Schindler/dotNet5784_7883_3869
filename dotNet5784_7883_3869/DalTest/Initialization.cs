@@ -12,9 +12,12 @@ using System.Xml.Linq;
 
 public static class Initialization
 {
-    private static IDependency? s_dalDependency; //stage 1
-    private static IEngineer? s_dalEngineer; //stage 1
-    private static ITask? s_dalTask; //stage 1
+   
+
+    //private static IDependency? s_dalDependency; //stage 1
+    //private static IEngineer? s_dalEngineer; //stage 1
+    //private static ITask? s_dalTask; //stage 1
+    private static IDal? s_dal; //stage 2
 
     private static readonly Random s_rand = new();
 
@@ -75,19 +78,21 @@ public static class Initialization
             int MIN_ID = 200000000, MAX_ID = 400000000;
             do
                 _id = s_rand.Next(MIN_ID, MAX_ID);
-            while (s_dalEngineer!.Read(_id) != null);
+            while (s_dal!.Engineer.Read(_id) != null);
             do
             {
                 _id = s_rand.Next(MIN_ID, MAX_ID);
             }
-            while (s_dalEngineer!.Read(_id) != null);
+            while (s_dal!.Engineer.Read(_id) != null);
             _email = $"{_name}@gmail.com";
             int level = (_name.Length) % 3;
             EngineerExperience _level = (EngineerExperience)level;
 
             double _cost = s_rand.Next(100, 350);
             Engineer newEngineer = new(_id, _name, _email, _level, _cost);
-            s_dalEngineer!.Create(newEngineer);
+
+            s_dal!.Engineer.Create(newEngineer);
+            //s_dalEngineer!.Create(newEngineer);//stage 1
         }
 
     }
@@ -124,7 +129,7 @@ public static class Initialization
             };
         for (int i = 0; i < 100; i++)
         {
-            List<Engineer> AllEngineer = s_dalEngineer!.ReadAll();
+            List<Engineer> AllEngineer = s_dal!.Engineer.ReadAll();
             string _description = _descriptionArray[i % 8];
             string _deliverable = _deliverableArray[s_rand.Next(0, 3)];
             bool _mileStone = false;
@@ -137,7 +142,8 @@ public static class Initialization
             TaskLevel _ComplexityLevel = (TaskLevel)_level;
             Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())].ID, _ComplexityLevel);
 
-            s_dalTask!.Create(_newTask);
+            s_dal!.Task.Create(_newTask);
+            //s_dalTask!.Create(_newTask);//stage1
         }
     }
 
@@ -147,7 +153,7 @@ public static class Initialization
     /// </summary>
     private static void createDependency()
     {
-        List<Task> AllTasks = s_dalTask!.ReadAll();
+        List<Task> AllTasks = s_dal!.Task!.ReadAll();
         int _DependentTask;
         int _previousIDTask;
         for (int i = 0; i < 250; i++)
@@ -155,7 +161,8 @@ public static class Initialization
             _DependentTask = AllTasks[i % 95].ID; //left few tasks undependency
             _previousIDTask = AllTasks[(i % 90)].ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
-            s_dalDependency!.Create(_tempDependency); 
+            s_dal!.Dependency.Create(_tempDependency);
+            //s_dalDependency!.Create(_tempDependency); //stage1
         }
     }
 
@@ -168,13 +175,14 @@ public static class Initialization
     /// <param name="dalEngineer">erset the engineer's entity</param>
     /// <param name="dalTask">erset the task's entity</param>
     /// <exception cref="Exception"></exception>
-    public static void Do(IDependency? dalDependency, IEngineer? dalEngineer , ITask? dalTask )
+    //public static void Do(IDependency? dalDependency, IEngineer? dalEngineer , ITask? dalTask )//stage1
+    public static void Do(IDal dal) //stage 2
     {
-        s_dalEngineer = dalEngineer ?? throw new Exception("DAL can't be null!");
-        s_dalTask = dalTask ?? throw new Exception("DAL can't be null!");
-        s_dalDependency = dalDependency ?? throw new Exception("DAL can't be null!");
+        //s_dalEngineer = dalEngineer ?? throw new Exception("DAL can't be null!");//stage1
+        //s_dalTask = dalTask ?? throw new Exception("DAL can't be null!");//stage1
+        //s_dalDependency = dalDependency ?? throw new Exception("DAL can't be null!");//stage1
 
-        
+        s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
 
         createEngineer();
         createTask();

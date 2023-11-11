@@ -5,7 +5,7 @@ using DalApi;
 using DO;
 using System.Collections.Generic;
 
-public class TaskImplementation : ITask
+internal class TaskImplementation : ITask
 {
     /// <summary>
     /// create new task
@@ -28,7 +28,7 @@ public class TaskImplementation : ITask
     /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Delete(int id)
     {
-        Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == id));
+        //Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == id));
         if (tempTask is null)
             throw new Exception("An object of type Task with such an ID does not exist");
          DataSource.Tasks.Remove(tempTask);
