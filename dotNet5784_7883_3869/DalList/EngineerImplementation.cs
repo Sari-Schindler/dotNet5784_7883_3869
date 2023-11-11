@@ -7,6 +7,10 @@ using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
+    Engineer ICrud<Engineer>.Read(Func<Engineer, bool> filter)
+    {
+        return DataSource.Engineers.FirstOrDefault(element => element!.Equals == filter, null)!;
+    }
 
     /// <summary>
     /// create a new engineer entity
