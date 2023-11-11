@@ -7,6 +7,7 @@ using System.Collections.Generic;
 
 internal class TaskImplementation : ITask
 {
+  
     /// <summary>
     /// create new task
     /// </summary>

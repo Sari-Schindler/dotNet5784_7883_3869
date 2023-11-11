@@ -7,7 +7,7 @@ using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
-
+  
     /// <summary>
     /// create a new engineer entity
     /// </summary>
