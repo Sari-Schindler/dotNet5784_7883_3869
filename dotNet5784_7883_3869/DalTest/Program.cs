@@ -116,9 +116,9 @@ namespace DalTest
             double _Cost;
             Console.WriteLine("please enter the Engineer details\n");
             Console.WriteLine("enter the Engineers name\n");
-            string _Name = Console.ReadLine();
+            string ?_Name = Console.ReadLine();
             Console.WriteLine("enter the Engineers email\n");
-            string _Email = Console.ReadLine();
+            string ?_Email = Console.ReadLine();
             Console.WriteLine("enter the Engineers level\n");
             EngineerExperience.TryParse(Console.ReadLine(), out _Level);
             Console.WriteLine("enter the Engineers Cost\n");
@@ -145,23 +145,23 @@ namespace DalTest
                 DO.Engineer? _engineer = s_dal!.Engineer.Read(_Id);
                 DO.Engineer temp = creatNewEngineer(_Id);
                 string _Name=temp.Name;
-                string _Email = Console.ReadLine();
+                string ?_Email = Console.ReadLine();
                 EngineerExperience _Level=temp.Level;
                 double _Cost=temp.Cost;
                 if (temp.Name is null) 
                 {
-                    _Name = _engineer.Name;
+                    _Name = _engineer!.Name;
                 }
                 if (temp.Email== "")
                 {
-                    _Email = _engineer.Email;
+                    _Email = _engineer!.Email;
                 }
                 EngineerExperience? _copmlexityLevel = tryParseNullableEngineerExperience(_engineer!.Level);
                 if(temp.Cost is 0)
                 {
                     _Cost = _engineer.Cost; 
                 }
-                s_dal!.Engineer.Update(new DO.Engineer(_id, _Name, _Email, _Level, _Cost));
+                s_dal!.Engineer.Update(new DO.Engineer(_id, _Name, _Email!, _Level, _Cost));
 
             }
             catch (Exception newException)
@@ -256,7 +256,7 @@ namespace DalTest
             int.TryParse(Console.ReadLine(), out _Engineerld);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-            return (new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,id));
+            return (new DO.Task(_Description!, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable!, _Engineerld, _ComplexityLevel,null,null,id));
         }
 
 
@@ -289,24 +289,24 @@ namespace DalTest
                 TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
                 if (tempTask.Description is null)
                 {
-                    _Description = _task.Description;
+                    _Description = _task!.Description;
                 }
                 if (_createdAdt == null)
                 {
-                    _createdAdt = _task.createdAdt;
+                    _createdAdt = _task!.createdAdt;
                 }
                 if (_Start == null)
-                    _Start = _task.Start;
+                    _Start = _task!.Start;
                 if (_ScheduledDate == null)
-                    _ScheduledDate = _task.ScheduledDate;
+                    _ScheduledDate = _task!.ScheduledDate;
                 if (_DeadLine == null)
-                    _DeadLine = _task.DeadLine;
+                    _DeadLine = _task!.DeadLine;
                 if (_Complete == null)
-                    _Complete = _task.Complete;
+                    _Complete = _task!.Complete;
                 if (_Deliverable == null)
-                    _Deliverable = _task.Deliverable;
+                    _Deliverable = _task!.Deliverable;
                 if (_Engineerld == 0)
-                    _Engineerld = _task.Engineerld;
+                    _Engineerld = _task!.Engineerld;
                 s_dal.Task.Update(new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel));
             }
             catch (Exception newException)
@@ -338,7 +338,7 @@ namespace DalTest
                         case 3:
                             foreach (var item in s_dal!.Dependency.ReadAll())
                             {
-                                Console.WriteLine($"id: {item.ID}  id's task: {item.DependentTask}   id's pervious task: {item.previousIDTask}");
+                                Console.WriteLine($"id: {item!.ID}  id's task: {item.DependentTask}   id's pervious task: {item.previousIDTask}");
                             };
                             break;
                         case 4:
@@ -391,11 +391,11 @@ namespace DalTest
                 int _previousIDTask = tempDependency.previousIDTask;
                 if (_DependentTask == 0)
                 {
-                    _DependentTask = _dependency.DependentTask;
+                    _DependentTask = _dependency!.DependentTask;
                 }
                 if (_previousIDTask == 0)
                 {
-                    _previousIDTask = _dependency.previousIDTask;
+                    _previousIDTask = _dependency!.previousIDTask;
                 }
                 s_dal.Dependency.Update(new DO.Dependency(_DependentTask, _previousIDTask, id));
             }

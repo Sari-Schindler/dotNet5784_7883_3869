@@ -7,6 +7,13 @@ using System.Collections.Generic;
 
 internal class DependencyImplementation : IDependency
 {
+
+    Dependency? ICrud<Dependency>.Read(Func<Dependency, bool> filter)
+    {
+        return DataSource.Dependencys.FirstOrDefault(element => element! == filter, null);
+    }
+
+
     /// <summary>
     /// create a new dependency entity
     /// </summary>
@@ -27,7 +34,7 @@ internal class DependencyImplementation : IDependency
     /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Delete(int id)
     {
-        Dependency? tempDependency = (DataSource.Dependencys.Find(element => element!.ID == id));
+        var tempDependency = DataSource.Dependencys.FirstOrDefault(element => element!.ID == id,null);
         if (tempDependency is null)
             throw new Exception("An object of type Dependency with such an ID does not exist");
         DataSource.Dependencys.Remove(tempDependency);
@@ -40,7 +47,7 @@ internal class DependencyImplementation : IDependency
     /// <returns>wanted dependency</returns>
     public Dependency? Read(int id)
     {
-        return (DataSource.Dependencys.Find(element => element!.ID == id));
+        return (DataSource.Dependencys.FirstOrDefault(element => element!.ID == id, null));
     }
 
 
@@ -48,11 +55,17 @@ internal class DependencyImplementation : IDependency
     /// return all the dependency's entities
     /// </summary>
     /// <returns></returns>
-    public List<Dependency> ReadAll()
+    public IEnumerable<Dependency> ReadAll(Func<Dependency, bool>? filter = null) //stage 2
     {
-        return new List<Dependency>(DataSource.Dependencys);
+        if (filter != null)
+        {
+            return from item in DataSource.Dependencys
+                   where filter(item)
+                   select item;
+        }
+        return from item in DataSource.Dependencys
+               select item;
     }
-
 
     /// <summary>
     /// update specific dependency entity
@@ -61,7 +74,7 @@ internal class DependencyImplementation : IDependency
     /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Update(Dependency item)
     {
-        Dependency ?tempDependency = (DataSource.Dependencys.Find(element => element!.ID == item.ID));
+        var tempDependency = DataSource.Dependencys.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempDependency is null)
             throw new Exception("An object of type Dependency with such an ID does not exist");
         else
@@ -70,4 +83,5 @@ internal class DependencyImplementation : IDependency
             DataSource.Dependencys.Add(item);
         }
     }
+
 }

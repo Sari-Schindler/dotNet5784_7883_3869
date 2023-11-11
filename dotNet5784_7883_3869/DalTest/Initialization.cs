@@ -129,7 +129,7 @@ public static class Initialization
             };
         for (int i = 0; i < 100; i++)
         {
-            List<Engineer> AllEngineer = s_dal!.Engineer.ReadAll();
+            var AllEngineer = s_dal!.Engineer.ReadAll().ToList();
             string _description = _descriptionArray[i % 8];
             string _deliverable = _deliverableArray[s_rand.Next(0, 3)];
             bool _mileStone = false;
@@ -140,7 +140,7 @@ public static class Initialization
             DateTime _Complete = _ScheduledDate.Add(TimeSpan.FromHours(-i % 24));
             int _level = i % 4;
             TaskLevel _ComplexityLevel = (TaskLevel)_level;
-            Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())].ID, _ComplexityLevel);
+            Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel);
 
             s_dal!.Task.Create(_newTask);
             //s_dalTask!.Create(_newTask);//stage1
@@ -153,13 +153,13 @@ public static class Initialization
     /// </summary>
     private static void createDependency()
     {
-        List<Task> AllTasks = s_dal!.Task!.ReadAll();
+        var AllTasks = s_dal!.Task!.ReadAll().ToList();
         int _DependentTask;
         int _previousIDTask;
         for (int i = 0; i < 250; i++)
         {
-            _DependentTask = AllTasks[i % 95].ID; //left few tasks undependency
-            _previousIDTask = AllTasks[(i % 90)].ID;
+            _DependentTask = AllTasks[i % 95]!.ID; //left few tasks undependency
+            _previousIDTask = AllTasks[(i % 90)]!.ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
             s_dal!.Dependency.Create(_tempDependency);
             //s_dalDependency!.Create(_tempDependency); //stage1

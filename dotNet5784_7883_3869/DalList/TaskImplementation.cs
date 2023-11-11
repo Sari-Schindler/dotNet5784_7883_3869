@@ -28,7 +28,7 @@ internal class TaskImplementation : ITask
     /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Delete(int id)
     {
-        //Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == id));
+        var tempTask = DataSource.Tasks.FirstOrDefault(element => element!.ID == id,null);
         if (tempTask is null)
             throw new Exception("An object of type Task with such an ID does not exist");
          DataSource.Tasks.Remove(tempTask);
@@ -41,7 +41,7 @@ internal class TaskImplementation : ITask
     /// <returns>wanted task</returns>
     public Task? Read(int id)
     {
-        return (DataSource.Tasks.Find(element => element!.ID == id));
+        return (DataSource.Tasks.FirstOrDefault(element => element!.ID == id, null));
     }
 
 
@@ -50,9 +50,12 @@ internal class TaskImplementation : ITask
     /// return all the task's entities
     /// </summary>
     /// <returns></returns>
-    public List<Task> ReadAll()
+    public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null) //stage 2
     {
-        return new List<Task>(DataSource.Tasks);
+        if (filter == null)
+            return DataSource.Tasks.Select(item => item);
+        else
+            return DataSource.Tasks.Where(filter);
     }
 
 
@@ -63,7 +66,7 @@ internal class TaskImplementation : ITask
     /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Update(Task item)
     {
-        Task? tempTask = (DataSource.Tasks.Find(element => element!.ID == item.ID));
+        var tempTask = DataSource.Tasks.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempTask is null)
             throw new Exception("An object of type Task with such an ID does not exist");
         else

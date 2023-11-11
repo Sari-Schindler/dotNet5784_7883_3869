@@ -16,7 +16,8 @@ internal class EngineerImplementation : IEngineer
     /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public int Create(Engineer item)
     {
-        if (DataSource.Engineers.Find(element => element!.ID == item.ID) is not null)
+
+        if (DataSource.Engineers.FirstOrDefault(element => element!.ID == item.ID,null) is not null)
             throw new Exception("An object of type Engineer with such an ID already exists");
         DataSource.Engineers.Add(item with { });
         return item.ID;
@@ -30,7 +31,7 @@ internal class EngineerImplementation : IEngineer
     /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public void Delete(int id)
     {
-        Engineer? tempEngineer = (DataSource.Engineers.Find(element => element!.ID == id));
+        var tempEngineer = DataSource.Engineers.FirstOrDefault(element => element!.ID == id, null);
         if (tempEngineer is null)
             throw new Exception("An object of type Engineer with such an ID does not exist");
         DataSource.Engineers.Remove(tempEngineer);
@@ -52,11 +53,14 @@ internal class EngineerImplementation : IEngineer
     /// return all the engineer's entities
     /// </summary>
     /// <returns></returns>
-    public List<Engineer> ReadAll()
-    {
-        return new List<Engineer>(DataSource.Engineers);
-    }
 
+    public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null) //stage 2
+    {
+        if (filter == null)
+            return DataSource.Engineers.Select(item => item);
+        else
+            return DataSource.Engineers.Where(filter);
+    }
 
     /// <summary>
     /// update specific engineer entity
@@ -65,7 +69,7 @@ internal class EngineerImplementation : IEngineer
     /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public void Update(Engineer item)
     {
-        Engineer ?tempEngineer = (DataSource.Engineers.Find(element => element!.ID == item.ID));
+        var tempEngineer = DataSource.Engineers.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempEngineer is null)
             throw new Exception("An object of type Engineer with such an ID does not exist");
         else
