@@ -36,7 +36,7 @@ internal class DependencyImplementation : IDependency
     {
         var tempDependency = DataSource.Dependencys.FirstOrDefault(element => element!.ID == id,null);
         if (tempDependency is null)
-            throw new Exception("An object of type Dependency with such an ID does not exist");
+            throw new DalAlreadyExistsException($"dependency with ID={id} already not exists\n");
         DataSource.Dependencys.Remove(tempDependency);
     }
 
@@ -76,8 +76,7 @@ internal class DependencyImplementation : IDependency
     {
         var tempDependency = DataSource.Dependencys.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempDependency is null)
-            throw new Exception("An object of type Dependency with such an ID does not exist");
-        else
+            throw new DalAlreadyExistsException($"engineer with ID={item.ID} already not exists\n");
         {
             DataSource.Dependencys.Remove(tempDependency);
             DataSource.Dependencys.Add(item);

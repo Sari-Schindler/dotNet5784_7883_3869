@@ -35,8 +35,8 @@ internal class TaskImplementation : ITask
     {
         var tempTask = DataSource.Tasks.FirstOrDefault(element => element!.ID == id,null);
         if (tempTask is null)
-            throw new Exception("An object of type Task with such an ID does not exist");
-         DataSource.Tasks.Remove(tempTask);
+            throw new DalAlreadyExistsException($"engineer with ID={id} already not exists\n");
+        DataSource.Tasks.Remove(tempTask);
     }
 
     /// <summary>
@@ -73,7 +73,7 @@ internal class TaskImplementation : ITask
     {
         var tempTask = DataSource.Tasks.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempTask is null)
-            throw new Exception("An object of type Task with such an ID does not exist");
+            throw new DalAlreadyExistsException($"engineer with ID={item.ID} already not exists\n");
         else
         {
             DataSource.Tasks.Remove(tempTask);
