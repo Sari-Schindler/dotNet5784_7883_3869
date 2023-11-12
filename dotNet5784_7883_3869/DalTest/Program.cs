@@ -139,9 +139,7 @@ namespace DalTest
         {
             try
             {
-                Console.WriteLine("Enter ID of an Engineer");
-                int _id;
-                int.TryParse(Console.ReadLine()!, out _id);
+                
                 DO.Engineer? _engineer = s_dal!.Engineer.Read(_Id);
                 DO.Engineer temp = creatNewEngineer(_Id);
                 string _Name=temp.Name;
@@ -161,7 +159,7 @@ namespace DalTest
                 {
                     _Cost = _engineer.Cost; 
                 }
-                s_dal!.Engineer.Update(new DO.Engineer(_id, _Name, _Email!, _Level, _Cost));
+                s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Email!, _Level, _Cost));
 
             }
             catch (Exception newException)
@@ -268,8 +266,6 @@ namespace DalTest
         {
             try
             {
-                Console.WriteLine("Enter ID of a task");
-                int.TryParse(Console.ReadLine()!, out _id);
                 DO.Task? _task = s_dal!.Task.Read(_id);
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
@@ -288,20 +284,16 @@ namespace DalTest
                 TaskLevel _ComplexityLevel;
                 TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
                 if (tempTask.Description is null)
-                {
                     _Description = _task!.Description;
-                }
-                if (_createdAdt == null)
-                {
+                if (_createdAdt == (01 / 01 / 0001))
                     _createdAdt = _task!.createdAdt;
-                }
-                if (_Start == null)
+                if (_Start == 01 / 01 / 0001)
                     _Start = _task!.Start;
-                if (_ScheduledDate == null)
+                if (_ScheduledDate == 01 / 01 / 0001)
                     _ScheduledDate = _task!.ScheduledDate;
-                if (_DeadLine == null)
+                if (_DeadLine == 01 / 01 / 0001)
                     _DeadLine = _task!.DeadLine;
-                if (_Complete == null)
+                if (_Complete == 01 / 01 / 0001)
                     _Complete = _task!.Complete;
                 if (_Deliverable == null)
                     _Deliverable = _task!.Deliverable;
@@ -326,35 +318,36 @@ namespace DalTest
                     Console.WriteLine("please choose an option\n for add a Dependency press 1\n for show one Dependency press 2\n for show all the Dependency press 3\n for updating Dependency details press 4\n for delete Dependency press 5\n for exit press press 0\n ");
                     chioceDependency = (Convert.ToInt32(Console.ReadLine()));
 
-                    switch (chioceDependency)
-                    {
-                        case 1:
+                switch (chioceDependency)
+                {
+                    case 1:
                         s_dal!.Dependency.Create(createNewDependency());
-                            break;
-                        case 2:
-                            Console.WriteLine("Enter Dependency id\n");
-                            Console.WriteLine(s_dal!.Dependency.Read(Convert.ToInt32(Console.ReadLine())));
-                            break;
-                        case 3:
-                            foreach (var item in s_dal!.Dependency.ReadAll())
-                            {
-                                Console.WriteLine($"id: {item!.ID}  id's task: {item.DependentTask}   id's pervious task: {item.previousIDTask}");
-                            };
-                            break;
-                        case 4:
-                            Console.WriteLine("Enter Dependency's id\n");
-                            int _id = Convert.ToInt32(Console.ReadLine());
-                            updateDependency(_id);
+                        break;
+                    case 2:
+                        Console.WriteLine("Enter Dependency id\n");
+                        Console.WriteLine(s_dal!.Dependency.Read(Convert.ToInt32(Console.ReadLine())));
+                        break;
+                    case 3:
+                        foreach (var item in s_dal!.Dependency.ReadAll())
+                        {
+                            Console.WriteLine($"id: {item!.ID}  id's task: {item.DependentTask}   id's pervious task: {item.previousIDTask}");
+                        };
+                        break;
+                    case 4:
+                        Console.WriteLine("Enter Dependency's id\n");
+                        int _id = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine(s_dal!.Dependency.Read(_id));
+                        updateDependency(_id);
 
-                            break;
-                        case 5:
-                            Console.WriteLine("Enter Dependency id\n");
-                            s_dal!.Dependency.Delete(Convert.ToInt32(Console.ReadLine()));
-                            break;
-                        default:
-                            break;
+                        break;
+                    case 5:
+                        Console.WriteLine("Enter Dependency id\n");
+                        s_dal!.Dependency.Delete(Convert.ToInt32(Console.ReadLine()));
+                        break;
+                    default:
+                        break;
 
-                    }
+                }
                 } while (chioceDependency != 0);
         }
 
@@ -383,8 +376,7 @@ namespace DalTest
         {
             try
             {
-                Console.WriteLine("Enter ID of dependency");
-                int.TryParse(Console.ReadLine()!, out id);
+                
                 DO.Dependency? _dependency = s_dal!.Dependency.Read(id);
                 DO.Dependency tempDependency = createNewDependency(id);
                 int _DependentTask = tempDependency.DependentTask;
