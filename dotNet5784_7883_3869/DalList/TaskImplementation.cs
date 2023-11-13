@@ -73,7 +73,7 @@ internal class TaskImplementation : ITask
     {
         var tempTask = DataSource.Tasks.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempTask is null)
-            throw new DalAlreadyExistsException($"engineer with ID={item.ID} already not exists\n");
+            throw new DalAlreadyExistsException($"task with ID={item.ID} already not exists\n");
         else
         {
             DataSource.Tasks.Remove(tempTask);

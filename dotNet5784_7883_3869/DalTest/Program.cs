@@ -123,10 +123,7 @@ namespace DalTest
             EngineerExperience.TryParse(Console.ReadLine(), out _Level);
             Console.WriteLine("enter the Engineers Cost\n");
             double.TryParse(Console.ReadLine()!, out _Cost);
-            if (_Cost ==0) _Cost = 0;
-            if (_Name == null) _Name = "";
-            if (_Email == null) _Email = "";
-            return new Engineer(_ID, _Name, _Email, _Level, _Cost);
+            return new Engineer(_ID, _Name!, _Email!, _Level, _Cost);
  
 
         }
@@ -143,14 +140,14 @@ namespace DalTest
                 DO.Engineer? _engineer = s_dal!.Engineer.Read(_Id);
                 DO.Engineer temp = creatNewEngineer(_Id);
                 string _Name=temp.Name;
-                string ?_Email = Console.ReadLine();
+                string ?_Email = temp.Email;
                 EngineerExperience _Level=temp.Level;
                 double _Cost=temp.Cost;
                 if (temp.Name is null) 
                 {
                     _Name = _engineer!.Name;
                 }
-                if (temp.Email== "")
+                if (temp.Email=="")
                 {
                     _Email = _engineer!.Email;
                 }
@@ -299,7 +296,7 @@ namespace DalTest
                     _Deliverable = _task!.Deliverable;
                 if (_Engineerld == 0)
                     _Engineerld = _task!.Engineerld;
-                s_dal.Task.Update(new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel));
+                s_dal.Task.Update(new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,_id));
             }
             catch (Exception newException)
             {
