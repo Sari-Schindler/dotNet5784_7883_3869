@@ -285,15 +285,15 @@ namespace DalTest
                 TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
                 if (tempTask.Description is null)
                     _Description = _task!.Description;
-                if (_createdAdt == (01 / 01 / 0001))
+                if (_createdAdt== DateTime.MinValue)
                     _createdAdt = _task!.createdAdt;
-                if (_Start == 01 / 01 / 0001)
+                if (_Start== DateTime.MinValue)
                     _Start = _task!.Start;
-                if (_ScheduledDate == 01 / 01 / 0001)
+                if (_ScheduledDate== DateTime.MinValue)
                     _ScheduledDate = _task!.ScheduledDate;
-                if (_DeadLine == 01 / 01 / 0001)
+                if (_DeadLine== DateTime.MinValue)
                     _DeadLine = _task!.DeadLine;
-                if (_Complete == 01 / 01 / 0001)
+                if (_Complete== DateTime.MinValue)
                     _Complete = _task!.Complete;
                 if (_Deliverable == null)
                     _Deliverable = _task!.Deliverable;

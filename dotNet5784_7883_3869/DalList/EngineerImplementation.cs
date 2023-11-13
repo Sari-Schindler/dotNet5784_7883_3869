@@ -7,9 +7,10 @@ using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
-    Engineer ICrud<Engineer>.Read(Func<Engineer, bool> filter)
+
+    public Engineer? Read(Func<Engineer, bool> filter)
     {
-        return DataSource.Engineers.FirstOrDefault(element => element!.Equals == filter, null)!;
+        return DataSource.Engineers.FirstOrDefault(filter);
     }
 
     /// <summary>

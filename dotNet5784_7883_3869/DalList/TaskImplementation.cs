@@ -7,9 +7,9 @@ using System.Collections.Generic;
 
 internal class TaskImplementation : ITask
 {
-    Task ICrud<Task>.Read(Func<Task, bool> filter)
+    public Task? Read(Func<Task, bool> filter)
     {
-        return DataSource.Tasks.FirstOrDefault(element => element!.Equals == filter, null)!;
+        return DataSource.Tasks.FirstOrDefault(filter);
     }
 
     /// <summary>

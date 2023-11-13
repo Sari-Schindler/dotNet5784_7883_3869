@@ -8,9 +8,9 @@ using System.Collections.Generic;
 internal class DependencyImplementation : IDependency
 {
 
-    Dependency ICrud<Dependency>.Read(Func<Dependency, bool> filter)
+    public Dependency? Read(Func<Dependency, bool> filter)
     {
-        return DataSource.Dependencys.FirstOrDefault(element => element!.Equals == filter, null)!;
+        return DataSource.Dependencys.FirstOrDefault(filter);
     }
 
 
