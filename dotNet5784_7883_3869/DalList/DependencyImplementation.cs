@@ -40,7 +40,7 @@ internal class DependencyImplementation : IDependency
     {
         var tempDependency = DataSource.Dependencys.FirstOrDefault(element => element!.ID == id,null);
         if (tempDependency is null)
-            throw new DalAlreadyExistsException($"dependency with ID={id} already not exists\n");
+            throw new DalDoesNotExistException($"dependency with ID={id} already not exists\n");
         DataSource.Dependencys.Remove(tempDependency);
     }
 

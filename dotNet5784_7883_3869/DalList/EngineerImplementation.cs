@@ -27,10 +27,11 @@ internal class EngineerImplementation : IEngineer
     {
 
         if (DataSource.Engineers.FirstOrDefault(element => element!.ID == item.ID,null) is not null)
-            throw new DalDoesNotExistException($"engineer with ID={item.ID} already exists\n");
+            throw new DalAlreadyExistsException($"engineer with ID={item.ID} already exists\n");
         DataSource.Engineers.Add(item with { });
         return item.ID;
     }
+    
 
 
     /// <summary>
@@ -42,7 +43,7 @@ internal class EngineerImplementation : IEngineer
     {
         var tempEngineer = DataSource.Engineers.FirstOrDefault(element => element!.ID == id, null);
         if (tempEngineer is null)
-            throw new DalAlreadyExistsException($"engineer with ID={id} already not exists\n");
+            throw new DalDoesNotExistException($"engineer with ID={id} already not exists\n");
         DataSource.Engineers.Remove(tempEngineer);
     }
 
@@ -80,7 +81,7 @@ internal class EngineerImplementation : IEngineer
     {
         var tempEngineer = DataSource.Engineers.FirstOrDefault(element => element!.ID == item.ID, null);
         if (tempEngineer is null)
-            throw new DalAlreadyExistsException($"engineer with ID={item.ID} already not exists\n");
+            throw new DalDoesNotExistException($"engineer with ID={item.ID} already not exists\n");
         else
         {
             DataSource.Engineers.Remove(tempEngineer);  
