@@ -7,6 +7,11 @@ using System.Collections.Generic;
 
 internal class TaskImplementation : ITask
 {
+    /// <summary>
+    /// returns a task by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
     public Task? Read(Func<Task, bool> filter)
     {
         return DataSource.Tasks.FirstOrDefault(filter);

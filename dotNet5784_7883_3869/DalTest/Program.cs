@@ -151,10 +151,13 @@ namespace DalTest
                 {
                     _Email = _engineer!.Email;
                 }
-                EngineerExperience? _copmlexityLevel = tryParseNullableEngineerExperience(_engineer!.Level);
+                if(_Level.ToString()=="EIT")
+                {
+                    _Level = _engineer!.Level;
+                }
                 if(temp.Cost is 0)
                 {
-                    _Cost = _engineer.Cost; 
+                    _Cost = _engineer!.Cost; 
                 }
                 s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Email!, _Level, _Cost));
 
@@ -166,11 +169,7 @@ namespace DalTest
         }
 
 
-        private static EngineerExperience? tryParseNullableEngineerExperience(EngineerExperience? previous)
-        {
-            EngineerExperience value;
-            return EngineerExperience.TryParse(Console.ReadLine(), out value) ? value : previous;
-        }
+   
 
 
         /// <summary>
@@ -266,22 +265,19 @@ namespace DalTest
                 DO.Task? _task = s_dal!.Task.Read(_id);
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
-                DateTime _createdAdt;
-                DateTime.TryParse(Console.ReadLine(), out _createdAdt);
+                bool ?_Milestone = tempTask.Milestone;
+                DateTime _createdAdt= tempTask.createdAdt;
                 DateTime _Start = tempTask.Start;
-                DateTime.TryParse(Console.ReadLine(), out _Start);
                 DateTime _ScheduledDate = tempTask.ScheduledDate;
-                DateTime.TryParse(Console.ReadLine(), out _ScheduledDate);
                 DateTime _DeadLine = tempTask.DeadLine;
-                DateTime.TryParse(Console.ReadLine(), out _DeadLine);
                 DateTime _Complete = tempTask.Complete;
-                DateTime.TryParse(Console.ReadLine(), out _Complete);
                 string _Deliverable = tempTask.Deliverable;
                 int _Engineerld = tempTask.Engineerld;
-                TaskLevel _ComplexityLevel;
-                TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
+                TaskLevel ?_ComplexityLevel=tempTask.ComplexityLevel;
                 if (tempTask.Description is null)
                     _Description = _task!.Description;
+                if (tempTask.Milestone==false)
+                    _Milestone = _task!.Milestone;
                 if (_createdAdt== DateTime.MinValue)
                     _createdAdt = _task!.createdAdt;
                 if (_Start== DateTime.MinValue)
@@ -296,7 +292,9 @@ namespace DalTest
                     _Deliverable = _task!.Deliverable;
                 if (_Engineerld == 0)
                     _Engineerld = _task!.Engineerld;
-                s_dal.Task.Update(new DO.Task(_Description, false, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,_id));
+                if (_ComplexityLevel.ToString() == "easy")
+                    _ComplexityLevel = tempTask.ComplexityLevel;
+                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,_id));
             }
             catch (Exception newException)
             {

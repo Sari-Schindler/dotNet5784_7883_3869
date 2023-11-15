@@ -13,10 +13,6 @@ using System.Xml.Linq;
 public static class Initialization
 {
    
-
-    //private static IDependency? s_dalDependency; //stage 1
-    //private static IEngineer? s_dalEngineer; //stage 1
-    //private static ITask? s_dalTask; //stage 1
     private static IDal? s_dal; //stage 2
 
     private static readonly Random s_rand = new();
@@ -92,7 +88,6 @@ public static class Initialization
             Engineer newEngineer = new(_id, _name, _email, _level, _cost);
 
             s_dal!.Engineer.Create(newEngineer);
-            //s_dalEngineer!.Create(newEngineer);//stage 1
         }
 
     }
@@ -143,7 +138,6 @@ public static class Initialization
             Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel);
 
             s_dal!.Task.Create(_newTask);
-            //s_dalTask!.Create(_newTask);//stage1
         }
     }
 
@@ -162,7 +156,6 @@ public static class Initialization
             _previousIDTask = AllTasks[(i % 90)]!.ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
             s_dal!.Dependency.Create(_tempDependency);
-            //s_dalDependency!.Create(_tempDependency); //stage1
         }
     }
 
@@ -178,9 +171,6 @@ public static class Initialization
     //public static void Do(IDependency? dalDependency, IEngineer? dalEngineer , ITask? dalTask )//stage1
     public static void Do(IDal dal) //stage 2
     {
-        //s_dalEngineer = dalEngineer ?? throw new Exception("DAL can't be null!");//stage1
-        //s_dalTask = dalTask ?? throw new Exception("DAL can't be null!");//stage1
-        //s_dalDependency = dalDependency ?? throw new Exception("DAL can't be null!");//stage1
 
         s_dal = dal ?? throw new NullReferenceException("DAL object can not be null!"); //stage 2
 

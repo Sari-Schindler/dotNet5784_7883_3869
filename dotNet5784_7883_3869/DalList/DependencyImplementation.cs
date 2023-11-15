@@ -7,7 +7,11 @@ using System.Collections.Generic;
 
 internal class DependencyImplementation : IDependency
 {
-
+    /// <summary>
+    /// returns a Dependency by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
     public Dependency? Read(Func<Dependency, bool> filter)
     {
         return DataSource.Dependencys.FirstOrDefault(filter);
