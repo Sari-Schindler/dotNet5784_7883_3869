@@ -51,9 +51,9 @@ namespace DalTest
             } while (choiceEntity != 0);
         }
 
-        
 
-     
+
+
         /// <summary>
         /// menue for choose engineer's method
         /// </summary>
@@ -85,10 +85,10 @@ namespace DalTest
 
                     case 4:
                         Console.WriteLine("enter engineer's id wanted\n");
-                        id= Convert.ToInt32(Console.ReadLine());
+                        id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(s_dal!.Engineer.Read(id));
                         updateEngineer(id);
-                       
+
                         break;
                     case 5:
                         Console.WriteLine("enter engineer's id wanted\n");
@@ -116,15 +116,15 @@ namespace DalTest
             double _Cost;
             Console.WriteLine("please enter the Engineer details\n");
             Console.WriteLine("enter the Engineers name\n");
-            string ?_Name = Console.ReadLine();
+            string? _Name = Console.ReadLine();
             Console.WriteLine("enter the Engineers email\n");
-            string ?_Email = Console.ReadLine();
+            string? _Email = Console.ReadLine();
             Console.WriteLine("enter the Engineers level\n");
             EngineerExperience.TryParse(Console.ReadLine(), out _Level);
             Console.WriteLine("enter the Engineers Cost\n");
             double.TryParse(Console.ReadLine()!, out _Cost);
             return new Engineer(_ID, _Name!, _Email!, _Level, _Cost);
- 
+
 
         }
 
@@ -136,28 +136,28 @@ namespace DalTest
         {
             try
             {
-                
+
                 DO.Engineer? _engineer = s_dal!.Engineer.Read(_Id);
                 DO.Engineer temp = creatNewEngineer(_Id);
-                string _Name=temp.Name;
-                string ?_Email = temp.Email;
-                EngineerExperience _Level=temp.Level;
-                double _Cost=temp.Cost;
-                if (temp.Name is null) 
+                string _Name = temp.Name;
+                string? _Email = temp.Email;
+                EngineerExperience _Level = temp.Level;
+                double _Cost = temp.Cost;
+                if (temp.Name is null)
                 {
                     _Name = _engineer!.Name;
                 }
-                if (temp.Email=="")
+                if (temp.Email == "")
                 {
                     _Email = _engineer!.Email;
                 }
-                if(_Level.ToString()=="EIT")
+                if (_Level.ToString() == "EIT")
                 {
                     _Level = _engineer!.Level;
                 }
-                if(temp.Cost is 0)
+                if (temp.Cost is 0)
                 {
-                    _Cost = _engineer!.Cost; 
+                    _Cost = _engineer!.Cost;
                 }
                 s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Email!, _Level, _Cost));
 
@@ -169,7 +169,7 @@ namespace DalTest
         }
 
 
-   
+
 
 
         /// <summary>
@@ -177,7 +177,7 @@ namespace DalTest
         /// </summary>
         public static void TaskEntity()
         {
-            
+
             int choiceTask = 0;
             do
             {
@@ -231,7 +231,7 @@ namespace DalTest
             TaskLevel _ComplexityLevel;
             Console.WriteLine("please enter the task's details\n");
             Console.WriteLine("Enter the task's description\n");
-            string ?_Description = Console.ReadLine();
+            string? _Description = Console.ReadLine();
             Console.WriteLine("enter the milestone\n");
             bool.TryParse(Console.ReadLine(), out _Milestone);
             Console.WriteLine("Enter the task's createdAdt\n");
@@ -245,12 +245,12 @@ namespace DalTest
             Console.WriteLine("Enter the complete time\n");
             DateTime.TryParse(Console.ReadLine(), out _Complete);
             Console.WriteLine("Enter the deliverable");
-            string ?_Deliverable = Console.ReadLine();
+            string? _Deliverable = Console.ReadLine();
             Console.WriteLine("enter the engineer's Id\n");
             int.TryParse(Console.ReadLine(), out _Engineerld);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-            return (new DO.Task(_Description!, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable!, _Engineerld, _ComplexityLevel,null,null,id));
+            return (new DO.Task(_Description!, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable!, _Engineerld, _ComplexityLevel, null, null, id));
         }
 
 
@@ -265,28 +265,28 @@ namespace DalTest
                 DO.Task? _task = s_dal!.Task.Read(_id);
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
-                bool ?_Milestone = tempTask.Milestone;
-                DateTime _createdAdt= tempTask.createdAdt;
+                bool? _Milestone = tempTask.Milestone;
+                DateTime _createdAdt = tempTask.createdAdt;
                 DateTime _Start = tempTask.Start;
                 DateTime _ScheduledDate = tempTask.ScheduledDate;
                 DateTime _DeadLine = tempTask.DeadLine;
                 DateTime _Complete = tempTask.Complete;
                 string _Deliverable = tempTask.Deliverable;
                 int _Engineerld = tempTask.Engineerld;
-                TaskLevel ?_ComplexityLevel=tempTask.ComplexityLevel;
+                TaskLevel? _ComplexityLevel = tempTask.ComplexityLevel;
                 if (tempTask.Description is null)
                     _Description = _task!.Description;
-                if (tempTask.Milestone==false)
+                if (tempTask.Milestone == false)
                     _Milestone = _task!.Milestone;
-                if (_createdAdt== DateTime.MinValue)
+                if (_createdAdt == DateTime.MinValue)
                     _createdAdt = _task!.createdAdt;
-                if (_Start== DateTime.MinValue)
+                if (_Start == DateTime.MinValue)
                     _Start = _task!.Start;
-                if (_ScheduledDate== DateTime.MinValue)
+                if (_ScheduledDate == DateTime.MinValue)
                     _ScheduledDate = _task!.ScheduledDate;
-                if (_DeadLine== DateTime.MinValue)
+                if (_DeadLine == DateTime.MinValue)
                     _DeadLine = _task!.DeadLine;
-                if (_Complete== DateTime.MinValue)
+                if (_Complete == DateTime.MinValue)
                     _Complete = _task!.Complete;
                 if (_Deliverable == null)
                     _Deliverable = _task!.Deliverable;
@@ -294,7 +294,7 @@ namespace DalTest
                     _Engineerld = _task!.Engineerld;
                 if (_ComplexityLevel.ToString() == "easy")
                     _ComplexityLevel = tempTask.ComplexityLevel;
-                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,_id));
+                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel, null, null, _id));
             }
             catch (DalDoesNotExistException newException)
             {
@@ -306,12 +306,12 @@ namespace DalTest
         /// </summary>
 
         public static void DependencyEntity()
+        {
+            int chioceDependency = 0;
+            do
             {
-                int chioceDependency = 0;
-                do
-                {
-                    Console.WriteLine("please choose an option\n for add a Dependency press 1\n for show one Dependency press 2\n for show all the Dependency press 3\n for updating Dependency details press 4\n for delete Dependency press 5\n for exit press press 0\n ");
-                    chioceDependency = (Convert.ToInt32(Console.ReadLine()));
+                Console.WriteLine("please choose an option\n for add a Dependency press 1\n for show one Dependency press 2\n for show all the Dependency press 3\n for updating Dependency details press 4\n for delete Dependency press 5\n for exit press press 0\n ");
+                chioceDependency = (Convert.ToInt32(Console.ReadLine()));
 
                 switch (chioceDependency)
                 {
@@ -343,7 +343,7 @@ namespace DalTest
                         break;
 
                 }
-                } while (chioceDependency != 0);
+            } while (chioceDependency != 0);
         }
 
         /// <summary>
@@ -351,16 +351,16 @@ namespace DalTest
         /// </summary>
         /// <param name="dependencyId">create new dependency with the wanted ID(if theres)</param>
         /// <returns>new dependency</returns>
-            private static DO.Dependency createNewDependency(int dependencyId = 0)
-            {
-                int taskId;
-                int prevTaskId;
-                Console.WriteLine("Enter task id:");
-                taskId = Convert.ToInt32(Console.ReadLine());
-                Console.WriteLine("Enter pervious task id:");
-                prevTaskId = Convert.ToInt32(Console.ReadLine());
-                return new DO.Dependency(taskId, prevTaskId, dependencyId);
-            }
+        private static DO.Dependency createNewDependency(int dependencyId = 0)
+        {
+            int taskId;
+            int prevTaskId;
+            Console.WriteLine("Enter task id:");
+            taskId = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter pervious task id:");
+            prevTaskId = Convert.ToInt32(Console.ReadLine());
+            return new DO.Dependency(taskId, prevTaskId, dependencyId);
+        }
 
 
         /// <summary>
@@ -371,7 +371,7 @@ namespace DalTest
         {
             try
             {
-                
+
                 DO.Dependency? _dependency = s_dal!.Dependency.Read(id);
                 DO.Dependency tempDependency = createNewDependency(id);
                 int _DependentTask = tempDependency.DependentTask;
@@ -397,39 +397,39 @@ namespace DalTest
         /// </summary>
         /// <param name="args"></param>
         static void Main(string[] args)
+        {
+            try
             {
-                try
-                {
-                   // Initialization.Do(s_dalDependency, s_dalEngineer, s_dalTask);//stage 1
-                    Initialization.Do(s_dal); //stage 2
-                    allEntities();
-                }
-                catch (DalAlreadyExistsException error)
-                {
-                    Console.WriteLine(error.ToString());
-                }
-                catch (DalDoesNotExistException error)
-                {
-                    Console.WriteLine(error.ToString());
-                }
-                catch (DalDeletionImpossible error)
-                {
-                    Console.WriteLine(error.ToString());
-                }
-                catch (NullReferenceException error)
-                {
-                    Console.WriteLine(error.ToString());
-                }
-                catch (Exception error)
-                {
-                    Console.WriteLine(error.ToString());
-                }
-
+                // Initialization.Do(s_dalDependency, s_dalEngineer, s_dalTask);//stage 1
+                Initialization.Do(s_dal); //stage 2
+                allEntities();
             }
+            catch (DalAlreadyExistsException error)
+            {
+                Console.WriteLine(error.ToString());
+            }
+            catch (DalDoesNotExistException error)
+            {
+                Console.WriteLine(error.ToString());
+            }
+            catch (DalDeletionImpossible error)
+            {
+                Console.WriteLine(error.ToString());
+            }
+            catch (NullReferenceException error)
+            {
+                Console.WriteLine(error.ToString());
+            }
+            finally
+            {
+                Console.WriteLine("error");
+            }
+
         }
-
-
     }
+
+
+}
 
 
 
