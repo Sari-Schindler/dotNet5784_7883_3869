@@ -162,7 +162,7 @@ namespace DalTest
                 s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Email!, _Level, _Cost));
 
             }
-            catch (Exception newException)
+            catch (DalDoesNotExistException newException)
             {
                 Console.WriteLine(newException.Message);
             }
@@ -296,7 +296,7 @@ namespace DalTest
                     _ComplexityLevel = tempTask.ComplexityLevel;
                 s_dal.Task.Update(new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel,null,null,_id));
             }
-            catch (Exception newException)
+            catch (DalDoesNotExistException newException)
             {
                 Console.WriteLine(newException.Message);
             }
@@ -386,7 +386,7 @@ namespace DalTest
                 }
                 s_dal.Dependency.Update(new DO.Dependency(_DependentTask, _previousIDTask, id));
             }
-            catch (Exception newException)
+            catch (DalDoesNotExistException newException)
             {
                 Console.WriteLine(newException.Message);
             }
@@ -404,10 +404,27 @@ namespace DalTest
                     Initialization.Do(s_dal); //stage 2
                     allEntities();
                 }
+                catch (DalAlreadyExistsException error)
+                {
+                    Console.WriteLine(error.ToString());
+                }
+                catch (DalDoesNotExistException error)
+                {
+                    Console.WriteLine(error.ToString());
+                }
+                catch (DalDeletionImpossible error)
+                {
+                    Console.WriteLine(error.ToString());
+                }
+                catch (NullReferenceException error)
+                {
+                    Console.WriteLine(error.ToString());
+                }
                 catch (Exception error)
                 {
                     Console.WriteLine(error.ToString());
                 }
+
             }
         }
 
