@@ -420,11 +420,7 @@ namespace DalTest
             {
                 Console.WriteLine(error.ToString());
             }
-            finally
-            {
-                Console.WriteLine("error");
-            }
-
+           
         }
     }
 
