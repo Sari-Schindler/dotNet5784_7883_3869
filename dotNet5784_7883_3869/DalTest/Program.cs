@@ -1,6 +1,6 @@
-﻿using Dal;
-using DalApi;
+﻿using DalApi;
 using DO;
+using Dal;
 using System.Diagnostics;
 using System.Numerics;
 using System.Reflection.Emit;
@@ -16,10 +16,10 @@ namespace DalTest
         //private static IEngineer? s_dalEngineer = new EngineerImplementation(); //stage 1
         //private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
         //static readonly IDal s_dal = new DalList(); //stage 2
-        static readonly IDal s_dal = new DalXml(); //stage 3
+        static readonly IDal s_dal = new Dal.DalXml(); //stage 3
 
         /// <summary>
-        /// main menue for choose entity
+        /// main menu for choose entity
         /// </summary>
         public static void allEntities()
         {
@@ -402,7 +402,7 @@ namespace DalTest
             try
             {
                 // Initialization.Do(s_dalDependency, s_dalEngineer, s_dalTask);//stage 1
-                Initialization.Do(s_dal); //stage 2
+                //Initialization.Do(s_dal); //stage 2
                 allEntities();
             }
             catch (DalAlreadyExistsException error)

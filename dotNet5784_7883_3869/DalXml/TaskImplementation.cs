@@ -8,8 +8,7 @@ using System.Xml.Serialization;
 
 internal class TaskImplementation : ITask
 {
-
-    const string FILENAME = @"..\..\..\tasks.xml";
+    const string FILENAME = @"..\xml\tasks.xml";
     public int Create(Task item)
     {
         XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Task>));

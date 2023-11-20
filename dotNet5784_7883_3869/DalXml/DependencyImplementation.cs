@@ -9,7 +9,7 @@ using System.Xml.Serialization;
 
 internal class DependencyImplementation : IDependency
 {
-    const string FILENAME = @"..\..\..\dependencys.xml";
+    const string FILENAME = @"..\xml\dependencys.xml";
     XElement dependencyRoot = XMLTools.LoadListFromXMLElement("dependencys");
 
     public int Create(Dependency item)
@@ -26,7 +26,7 @@ internal class DependencyImplementation : IDependency
 
     public void Delete(int id)
     {
-        XElement? tempDependency = dependencyRoot.Elements("ArrayOfDependency").First(x => XMLTools.ToIntNullable(x, "ID") == id);
+        XElement? tempDependency = dependencyRoot.Elements("ArrayOfDependency").First(x => XMLTools.ToIntNullable(x, "ID") == id)
             ?? throw new DalDoesNotExistException($"Dependency with ID={id} doesn't exist"); ;
         tempDependency!.Remove();
         XMLTools.SaveListToXMLElement(dependencyRoot, "dependencys");
