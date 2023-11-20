@@ -58,7 +58,7 @@ internal class DependencyImplementation : IDependency
 
     public void Update(Dependency item)
     {
-        XElement? tempDependency = dependencyRoot.Elements("ArrayOfDependency").First(x => XMLTools.ToIntNullable(x, "Id") == id);
+        XElement? tempDependency = dependencyRoot.Elements("ArrayOfDependency").First(x => XMLTools.ToIntNullable(x, "Id") == item.ID);
         if (tempDependency is null)
             throw new DalDoesNotExistException($"Dependency with ID={item.ID} doesn't exist"); ;
         {
