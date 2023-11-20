@@ -31,11 +31,12 @@ public record Task
     string Deliverable,
     int Engineerld,
     TaskLevel? ComplexityLevel,
-    string? nickName=null,
+    string? nickName = null,
     string? Comments = null,
-    int ID=0
+    int ID = 0
     )
-
+    
 {
-   
+    public Task() : this("", false,DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.Now, DateTime.MinValue,"", 0,null,null) { }
+
 }

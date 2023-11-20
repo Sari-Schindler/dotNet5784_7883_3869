@@ -11,7 +11,9 @@ public record Dependency
     (
     int DependentTask,
     int previousIDTask,
-    int ID=0
+    int ID = 0
     )
 {
+    public Dependency() : this(0, 0, 0) { }
+
 }

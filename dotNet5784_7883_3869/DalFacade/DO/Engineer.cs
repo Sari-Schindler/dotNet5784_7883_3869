@@ -18,5 +18,6 @@ public record Engineer
     double Cost
     )
 {
+    public Engineer() : this(0, "", "", 0,0) { }
 
 }

@@ -112,4 +112,11 @@ static class XMLTools
     }
     #endregion
 
+    //extention
+    public static DO.Dependency? parseDependency(this XElement element)
+    {
+        if (element is null) return null;
+        var serializer = new XmlSerializer(typeof(DO.Dependency));
+        return (DO.Dependency)serializer.Deserialize(element.CreateReader())!;
+    }
 }
