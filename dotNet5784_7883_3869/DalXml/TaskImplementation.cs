@@ -11,11 +11,13 @@ internal class TaskImplementation : ITask
     const string FILENAME = @"..\xml\tasks.xml";
     public int Create(Task item)
     {
+       
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
-        Task newEngineer = item with {};
-        tasks?.Add(newEngineer);
+        int newID = Config.NextTaskId;
+        Task newTask = item with { ID = newID };
+        tasks?.Add(newTask);
         XMLTools.SaveListToXMLSerializer(tasks!, "tasks");
-        return newEngineer.ID;
+        return item.ID;
     }
 
     public void Delete(int id)
