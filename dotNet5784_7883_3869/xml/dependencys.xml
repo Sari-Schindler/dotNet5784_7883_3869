@@ -6,13 +6,8 @@
     <id>9</id>
   </Dependency>
   <Dependency>
-    <DependentTask>10</DependentTask>
-    <previousIDTask>20</previousIDTask>
-    <ID>10</ID>
-  </Dependency>
-  <Dependency>
-    <DependentTask>5</DependentTask>
-    <previousIDTask>6</previousIDTask>
-    <ID>11</ID>
+    <DependentTask>88</DependentTask>
+    <previousIDTask>888</previousIDTask>
+    <ID>17</ID>
   </Dependency>
 </ArrayOfDependency>

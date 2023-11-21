@@ -334,7 +334,6 @@ namespace DalTest
                         int _id = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine(s_dal!.Dependency.Read(_id));
                         updateDependency(_id);
-
                         break;
                     case 5:
                         Console.WriteLine("Enter Dependency id\n");
@@ -357,9 +356,9 @@ namespace DalTest
             int taskId;
             int prevTaskId;
             Console.WriteLine("Enter task id:");
-            taskId = Convert.ToInt32(Console.ReadLine());
+            int.TryParse(Console.ReadLine()!, out taskId);
             Console.WriteLine("Enter pervious task id:");
-            prevTaskId = Convert.ToInt32(Console.ReadLine());
+            int.TryParse(Console.ReadLine()!, out prevTaskId);
             return new DO.Dependency(taskId, prevTaskId, dependencyId);
         }
 
