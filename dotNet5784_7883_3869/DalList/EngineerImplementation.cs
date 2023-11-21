@@ -7,16 +7,7 @@ using System.Collections.Generic;
 
 internal class EngineerImplementation : IEngineer
 {
-    /// <summary>
-    /// returns a Engineer by some kind attribute.
-    /// </summary>
-    /// <param name="filter">The attributethat the search works by</param>
-    /// <returns></returns>
-    public Engineer? Read(Func<Engineer, bool> filter)
-    {
-        return DataSource.Engineers.FirstOrDefault(filter);
-    }
-
+   
     /// <summary>
     /// create a new engineer entity
     /// </summary>
@@ -56,6 +47,16 @@ internal class EngineerImplementation : IEngineer
     public Engineer? Read(int id)
     {
         return (DataSource.Engineers.Find(element => element!.ID == id));
+    }
+
+    /// <summary>
+    /// returns a Engineer by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
+    public Engineer? Read(Func<Engineer, bool> filter)
+    {
+        return DataSource.Engineers.FirstOrDefault(filter);
     }
 
 

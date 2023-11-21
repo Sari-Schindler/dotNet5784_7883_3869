@@ -14,6 +14,14 @@ using System.Threading.Tasks;
 internal class EngineerImplementation : IEngineer
 {
     const string FILENAME = @"..\xml\engineers.xml";
+
+
+    /// <summary>
+    /// create a new engineer entity
+    /// </summary>
+    /// <param name="item">wanted engineer to add</param>
+    /// <returns>new entity</returns>
+    /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public int Create(Engineer item)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
@@ -26,6 +34,11 @@ internal class EngineerImplementation : IEngineer
         return new_engineer.ID;
     }
 
+    /// <summary>
+    /// delete engineer entity
+    /// </summary>
+    /// <param name="id">wanted engineer to delete</param>
+    /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public void Delete(int id)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
@@ -36,18 +49,32 @@ internal class EngineerImplementation : IEngineer
         XMLTools.SaveListToXMLSerializer(engineers!, "engineers");
     }
 
+
+    /// <summary>
+    /// returns a Engineer by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
     public Engineer? Read(Func<Engineer, bool> filter)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         return engineers!.FirstOrDefault(filter);
     }
 
+    /// <summary>
+    /// display one engineer
+    /// </summary>
+    /// <param name="id">the wanted engineer</param>
+    /// <returns></returns>
     public Engineer? Read(int id)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
         return (engineers!.Find(element => element!.ID == id));
     }
 
+    /// <summary>
+    /// return all the engineer's entities
+    /// </summary>
+    /// <returns></returns>
     public IEnumerable<Engineer?> ReadAll(Func<Engineer, bool>? filter = null)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
@@ -57,6 +84,11 @@ internal class EngineerImplementation : IEngineer
             return engineers!.Where(filter);
     }
 
+    /// <summary>
+    /// update specific engineer entity
+    /// </summary>
+    /// <param name="item">wanted engineer's</param>
+    /// <exception cref="Exception">there's no such engineer with the wanted ID</exception>
     public void Update(Engineer item)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");

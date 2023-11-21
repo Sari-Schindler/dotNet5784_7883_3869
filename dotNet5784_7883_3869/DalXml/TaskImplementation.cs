@@ -9,6 +9,12 @@ using System.Xml.Serialization;
 internal class TaskImplementation : ITask
 {
     const string FILENAME = @"..\xml\tasks.xml";
+
+    /// <summary>
+    /// returns a task by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
     public int Create(Task item)
     {
        
@@ -20,6 +26,12 @@ internal class TaskImplementation : ITask
         return item.ID;
     }
 
+
+    /// <summary>
+    /// delete task entity
+    /// </summary>
+    /// <param name="id">wanted task to delete</param>
+    /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Delete(int id)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
@@ -30,18 +42,34 @@ internal class TaskImplementation : ITask
         XMLTools.SaveListToXMLSerializer(tasks!, "tasks");
     }
 
+    /// <summary>
+    /// returns a task by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
     public Task? Read(Func<Task, bool> filter)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
         return tasks!.FirstOrDefault(filter);
     }
 
+
+    /// <summary>
+    /// display one task
+    /// </summary>
+    /// <param name="id">the wanted task</param>
+    /// <returns>wanted task</returns>
     public Task? Read(int id)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
         return (tasks!.Find(element => element!.ID == id));
     }
 
+
+    /// <summary>
+    /// return all the task's entities
+    /// </summary>
+    /// <returns></returns>
     public IEnumerable<Task?> ReadAll(Func<Task, bool>? filter = null)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
@@ -51,6 +79,11 @@ internal class TaskImplementation : ITask
             return tasks!.Where(filter);
     }
 
+    /// <summary>
+    /// update specific task entity
+    /// </summary>
+    /// <param name="item">wanted task's</param>
+    /// <exception cref="Exception">there's no such task with the wanted ID</exception>
     public void Update(Task item)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");

@@ -7,16 +7,7 @@ using System.Collections.Generic;
 
 internal class TaskImplementation : ITask
 {
-    /// <summary>
-    /// returns a task by some kind attribute.
-    /// </summary>
-    /// <param name="filter">The attributethat the search works by</param>
-    /// <returns></returns>
-    public Task? Read(Func<Task, bool> filter)
-    {
-        return DataSource.Tasks.FirstOrDefault(filter);
-    }
-
+   
     /// <summary>
     /// create new task
     /// </summary>
@@ -43,6 +34,17 @@ internal class TaskImplementation : ITask
             throw new DalDoesNotExistException($"engineer with ID={id} already not exists\n");
         DataSource.Tasks.Remove(tempTask);
     }
+
+    /// <summary>
+    /// returns a task by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
+    public Task? Read(Func<Task, bool> filter)
+    {
+        return DataSource.Tasks.FirstOrDefault(filter);
+    }
+
 
     /// <summary>
     /// display one task

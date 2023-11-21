@@ -7,16 +7,7 @@ using System.Collections.Generic;
 
 internal class DependencyImplementation : IDependency
 {
-    /// <summary>
-    /// returns a Dependency by some kind attribute.
-    /// </summary>
-    /// <param name="filter">The attributethat the search works by</param>
-    /// <returns></returns>
-    public Dependency? Read(Func<Dependency, bool> filter)
-    {
-        return DataSource.Dependencys.FirstOrDefault(filter);
-    }
-
+    
 
     /// <summary>
     /// create a new dependency entity
@@ -54,6 +45,15 @@ internal class DependencyImplementation : IDependency
         return (DataSource.Dependencys.FirstOrDefault(element => element!.ID == id, null));
     }
 
+    /// <summary>
+    /// returns a Dependency by some kind attribute.
+    /// </summary>
+    /// <param name="filter">The attributethat the search works by</param>
+    /// <returns></returns>
+    public Dependency? Read(Func<Dependency, bool> filter)
+    {
+        return DataSource.Dependencys.FirstOrDefault(filter);
+    }
 
     /// <summary>
     /// return all the dependency's entities
