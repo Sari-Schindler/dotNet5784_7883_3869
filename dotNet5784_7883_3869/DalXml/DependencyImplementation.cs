@@ -69,7 +69,7 @@ internal class DependencyImplementation : IDependency
     public Dependency? Read(Func<Dependency, bool> filter)
     {
 
-        XElement? dependency = dependencyXml.Descendants("Dependence").FirstOrDefault(element => filter(element.parseDependency()!));
+        XElement? dependency = dependencyXml.Descendants("Dependency").FirstOrDefault(element => filter(element.parseDependency()!));
         if (dependency == null)
             return null;
         return XMLTools.parseDependency(dependency);
