@@ -1,13 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDependency>
   <Dependency>
-    <next_task>1</next_task>
-    <prev_task>2</prev_task>
-    <id>9</id>
-  </Dependency>
-  <Dependency>
-    <DependentTask>88</DependentTask>
-    <previousIDTask>888</previousIDTask>
-    <ID>17</ID>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>18</ID>
   </Dependency>
 </ArrayOfDependency>
