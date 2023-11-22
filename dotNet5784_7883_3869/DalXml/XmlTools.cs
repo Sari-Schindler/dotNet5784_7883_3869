@@ -115,8 +115,10 @@ static class XMLTools
     //extention
     public static DO.Dependency? parseDependency(this XElement element)
     {
-        if (element is null) return null;
-        var serializer = new XmlSerializer(typeof(DO.Dependency));
-        return (DO.Dependency)serializer.Deserialize(element.CreateReader())!;
+        if (element == null)
+            return null;
+       Dependency dependency = new Dependency((int)(element.Element("DependentTask")!),(int)(element.Element("previousIDTask")!),(int)(element.Element("ID")!));
+        return dependency;
     }
+    
 }

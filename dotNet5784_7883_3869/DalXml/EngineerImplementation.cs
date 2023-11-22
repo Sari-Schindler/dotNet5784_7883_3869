@@ -57,7 +57,7 @@ internal class EngineerImplementation : IEngineer
     public Engineer? Read(Func<Engineer, bool> filter)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
-        return engineers!.FirstOrDefault(filter);
+        return engineers?.FirstOrDefault(filter);
     }
 
     /// <summary>
@@ -68,7 +68,7 @@ internal class EngineerImplementation : IEngineer
     public Engineer? Read(int id)
     {
         List<Engineer>? engineers = XMLTools.LoadListFromXMLSerializer<Engineer>("engineers");
-        return (engineers!.Find(element => element!.ID == id));
+        return (engineers?.Find(element => element!.ID == id));
     }
 
     /// <summary>

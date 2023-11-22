@@ -62,7 +62,7 @@ internal class TaskImplementation : ITask
     public Task? Read(int id)
     {
         List<Task>? tasks = XMLTools.LoadListFromXMLSerializer<Task>("tasks");
-        return (tasks!.Find(element => element!.ID == id));
+        return (tasks?.Find(element => element!.ID == id));
     }
 
 

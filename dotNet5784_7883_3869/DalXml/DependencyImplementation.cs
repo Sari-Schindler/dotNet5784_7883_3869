@@ -43,7 +43,7 @@ internal class DependencyImplementation : IDependency
     /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Delete(int id)
     {
-        XElement? tempDependency = dependencyXml!.Elements("Dependency").Where(p => p.Element("ID")?.Value == id.ToString()).FirstOrDefault()
+        XElement? tempDependency = dependencyXml?.Elements("Dependency").Where(p => p.Element("ID")?.Value == id.ToString()).FirstOrDefault()
             ?? throw new DalDoesNotExistException($"Dependency with ID={id} doesn't exist"); ;
         tempDependency!.Remove();
         XMLTools.SaveListToXMLElement(dependencyXml, "dependencys");
@@ -57,7 +57,7 @@ internal class DependencyImplementation : IDependency
     /// <returns>wanted dependency</returns>
     public Dependency? Read(int id)
     {
-        XElement? tempDependency = dependencyXml!.Elements("Dependency").Where(p => p.Element("ID")?.Value == id.ToString()).FirstOrDefault();
+        XElement? tempDependency = dependencyXml?.Elements("Dependency").Where(p => p.Element("ID")?.Value == id.ToString()).FirstOrDefault();
         return XMLTools.parseDependency(tempDependency!);
     }
 
@@ -99,7 +99,7 @@ internal class DependencyImplementation : IDependency
     /// <exception cref="Exception">there's no such dependency with the wanted ID</exception>
     public void Update(Dependency item)
     {
-        XElement? tempDependency = dependencyXml!.Elements("Dependency").Where(p => p.Element("ID")?.Value == item.ID.ToString()).FirstOrDefault();
+        XElement? tempDependency = dependencyXml?.Elements("Dependency").Where(p => p.Element("ID")?.Value == item.ID.ToString()).FirstOrDefault();
         if (tempDependency is null)
             throw new DalDoesNotExistException($"Dependency with ID={item.ID} doesn't exist"); 
         tempDependency!.Remove();
@@ -108,8 +108,8 @@ internal class DependencyImplementation : IDependency
          new XElement("previousIDTask", item.previousIDTask),
          new XElement("ID", item.ID)
      );
-        dependencyXml.Add(dependence);
-        dependencyXml.Save(FILENAME);
+        dependencyXml?.Add(dependence);
+        dependencyXml?.Save(FILENAME);
 
     }
 }
