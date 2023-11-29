@@ -139,6 +139,8 @@ namespace DalTest
             {
 
                 DO.Engineer? _engineer = s_dal!.Engineer.Read(_Id);
+                if (_engineer is null)
+                    throw new DalDoesNotExistException($"engineer with ID={_Id} does not exists\n");
                 DO.Engineer temp = creatNewEngineer(_Id);
                 string _Name = temp.Name;
                 string? _Email = temp.Email;
@@ -264,6 +266,8 @@ namespace DalTest
             try
             {
                 DO.Task? _task = s_dal!.Task.Read(_id);
+                if (_task is null)
+                    throw new DalDoesNotExistException($"engineer with ID={_id} does not exists\n");
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
                 bool? _Milestone = tempTask.Milestone;
@@ -373,6 +377,8 @@ namespace DalTest
             {
 
                 DO.Dependency? _dependency = s_dal!.Dependency.Read(id);
+                if (_dependency is null)
+                    throw new DalDoesNotExistException($"engineer with ID={id} does not exists\n");
                 DO.Dependency tempDependency = createNewDependency(id);
                 int _DependentTask = tempDependency.DependentTask;
                 int _previousIDTask = tempDependency.previousIDTask;

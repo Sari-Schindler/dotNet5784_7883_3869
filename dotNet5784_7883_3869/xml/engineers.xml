@@ -2,7 +2,7 @@
 <ArrayOfEngineer xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Engineer>
     <ID>123456123</ID>
-    <Name>chnin</Name>
+    <Name>chni</Name>
     <Email>f@g</Email>
     <Level>EIT</Level>
     <Cost>1023</Cost>
