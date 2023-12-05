@@ -82,6 +82,7 @@ static class XMLTools
         {
             using FileStream file = new(filePath, FileMode.Create, FileAccess.Write, FileShare.None);
             new XmlSerializer(typeof(List<T>)).Serialize(file, list);
+            file.Close();
             //new XmlSerializer(typeof(List<T?>)).Serialize(file, list);
 
         }
@@ -100,7 +101,10 @@ static class XMLTools
             if (!File.Exists(filePath)) return new();
             using FileStream file = new(filePath, FileMode.Open);
             XmlSerializer x = new(typeof(List<T>));
-            return x.Deserialize(file) as List<T> ?? new();
+            
+            var xx= x.Deserialize(file) as List<T> ?? new();
+           file.Close();
+            return xx;
             //XmlSerializer x = new(typeof(List<T?>));
             //return x.Deserialize(file) as List<T?> ?? new();
 

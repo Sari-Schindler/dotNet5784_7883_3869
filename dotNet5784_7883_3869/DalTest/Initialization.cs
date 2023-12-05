@@ -34,38 +34,38 @@ public static class Initialization
             "Lea",
             "Rachel",
             "Alice",
-            "Bob",
-            "Charlie",
-            "David",
-            "Emma",
-            "Frank",
-            "Grace",
-            "Hannah",
-            "Isaac",
-            "Julia",
-            "Kevin",
-            "Linda",
-            "Michael",
-            "Nora",
-            "Oliver",
-            "Penny",
-            "Quincy",
-            "Rachel",
-            "Samuel",
-            "Tina",
-            "Ulysses",
-            "Victoria",
-            "William",
-            "Xander",
-            "Yvonne",
-            "Zachary",
-            "Sophia",
-            "Ethan",
-            "Ava",
-            "Liam",
-            "Mia",
-            "Noah",
-            "Olivia"
+            //"Bob",
+            //"Charlie",
+            //"David",
+            //"Emma",
+            //"Frank",
+            //"Grace",
+            //"Hannah",
+            //"Isaac",
+            //"Julia",
+            //"Kevin",
+            //"Linda",
+            //"Michael",
+            //"Nora",
+            //"Oliver",
+            //"Penny",
+            //"Quincy",
+            //"Rachel",
+            //"Samuel",
+            //"Tina",
+            //"Ulysses",
+            //"Victoria",
+            //"William",
+            //"Xander",
+            //"Yvonne",
+            //"Zachary",
+            //"Sophia",
+            //"Ethan",
+            //"Ava",
+            //"Liam",
+            //"Mia",
+            //"Noah",
+            //"Olivia"
         };
         foreach (var _name in EngineerNames)
         {
@@ -122,7 +122,7 @@ public static class Initialization
                 "fun task",
                 "very important task"
             };
-        for (int i = 0; i < 100; i++)
+        for (int i = 0; i < 10; i++)
         {
             var AllEngineer = s_dal!.Engineer.ReadAll().ToList();
             string _description = _descriptionArray[i % 8];
@@ -150,10 +150,10 @@ public static class Initialization
         var AllTasks = s_dal!.Task!.ReadAll().ToList();
         int _DependentTask;
         int _previousIDTask;
-        for (int i = 0; i < 250; i++)
+        for (int i = 0; i < 10; i++)
         {
-            _DependentTask = AllTasks[i % 95]!.ID; //left few tasks undependency
-            _previousIDTask = AllTasks[(i % 90)]!.ID;
+            _DependentTask = AllTasks[i % 5]!.ID; //left few tasks undependency
+            _previousIDTask = AllTasks[(i % 3)]!.ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
             s_dal!.Dependency.Create(_tempDependency);
         }

@@ -16,7 +16,8 @@ namespace DalTest
         //private static IEngineer? s_dalEngineer = new EngineerImplementation(); //stage 1
         //private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
         //static readonly IDal s_dal = new DalList(); //stage 2
-        static readonly IDal s_dal = new Dal.DalXml(); //stage 3
+       // static readonly IDal s_dal = new Dal.DalXml(); //stage 3
+        static readonly IDal s_dal = Factory.Get; //stage 4
 
         /// <summary>
         /// main menu for choose entity
@@ -407,7 +408,8 @@ namespace DalTest
             try
             {
                 // Initialization.Do(s_dalDependency, s_dalEngineer, s_dalTask);//stage 1
-                //Initialization.Do(s_dal); //stage 2
+                    
+                Initialization.Do(s_dal); //stage 2
                 allEntities();
             }
             catch (DalAlreadyExistsException error)

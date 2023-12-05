@@ -1,23 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfDependency>
   <Dependency>
-    <DependentTask>111</DependentTask>
-    <previousIDTask>222</previousIDTask>
-    <ID>20</ID>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>1</ID>
   </Dependency>
   <Dependency>
-    <DependentTask>55</DependentTask>
-    <previousIDTask>666</previousIDTask>
-    <ID>21</ID>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>2</ID>
   </Dependency>
   <Dependency>
-    <DependentTask>52</DependentTask>
-    <previousIDTask>56</previousIDTask>
-    <ID>22</ID>
+    <DependentTask>3</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>3</ID>
   </Dependency>
   <Dependency>
-    <DependentTask>5555</DependentTask>
-    <previousIDTask>6</previousIDTask>
-    <ID>18</ID>
+    <DependentTask>4</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>4</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>5</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>5</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>6</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>7</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>3</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>8</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>4</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>9</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>5</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>10</ID>
   </Dependency>
 </ArrayOfDependency>

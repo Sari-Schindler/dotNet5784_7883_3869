@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 
     namespace Dal;
     using DalApi;
-sealed public class DalList : IDal
+sealed internal class DalList : IDal
 {
+    public static IDal Instance { get; } = new DalList();
+
+    private DalList()
+    {
+       // Initialization.Do(s_dal); //stage 2
+    }
+
     public ITask Task =>  new TaskImplementation();
 
     public IEngineer Engineer =>  new EngineerImplementation();
