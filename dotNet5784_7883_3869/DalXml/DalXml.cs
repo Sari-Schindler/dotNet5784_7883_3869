@@ -10,7 +10,7 @@ namespace Dal;
 
 sealed internal class DalXml : IDal
 {
-    public static IDal Instance { get; } = new DalXml();
+    public static IDal Instance { get; } = new Lazy<DalXml>(()=>new DalXml(), true).Value;
     private DalXml() { }
 
     public ITask Task => new TaskImplementation();

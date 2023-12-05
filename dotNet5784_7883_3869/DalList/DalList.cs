@@ -7,14 +7,13 @@ using System.Threading.Tasks;
 
     namespace Dal;
     using DalApi;
+using System.Data.SqlTypes;
+
 sealed internal class DalList : IDal
 {
-    public static IDal Instance { get; } = new DalList();
+    public static IDal Instance { get; } = new Lazy<DalList>(() => new DalList(),true).Value;
 
-    private DalList()
-    {
-       // Initialization.Do(s_dal); //stage 2
-    }
+    private DalList(){}
 
     public ITask Task =>  new TaskImplementation();
 

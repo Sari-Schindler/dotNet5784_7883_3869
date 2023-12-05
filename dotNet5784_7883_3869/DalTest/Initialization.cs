@@ -152,8 +152,8 @@ public static class Initialization
         int _previousIDTask;
         for (int i = 0; i < 10; i++)
         {
-            _DependentTask = AllTasks[i % 5]!.ID; //left few tasks undependency
-            _previousIDTask = AllTasks[(i % 3)]!.ID;
+            _DependentTask = AllTasks[i % 8]!.ID; //left few tasks undependency
+            _previousIDTask = AllTasks[(i % 6)]!.ID;
             Dependency _tempDependency = new Dependency(_DependentTask, _previousIDTask);
             s_dal!.Dependency.Create(_tempDependency);
         }
