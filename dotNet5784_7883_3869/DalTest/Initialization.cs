@@ -85,7 +85,7 @@ public static class Initialization
             EngineerExperience _level = (EngineerExperience)level;
 
             double _cost = s_rand.Next(100, 350);
-            Engineer newEngineer = new(_id, _name, _email, _level, _cost);
+            Engineer newEngineer = new(_id, _name, _level, _cost,_email);
 
             s_dal!.Engineer.Create(newEngineer);
         }

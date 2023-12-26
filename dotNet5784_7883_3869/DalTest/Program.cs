@@ -125,7 +125,7 @@ namespace DalTest
             EngineerExperience.TryParse(Console.ReadLine(), out _Level);
             Console.WriteLine("enter the Engineers Cost\n");
             double.TryParse(Console.ReadLine()!, out _Cost);
-            return new Engineer(_ID, _Name!, _Email!, _Level, _Cost);
+            return new Engineer(_ID, _Name!, _Level, _Cost, _Email);
 
 
         }
@@ -163,7 +163,7 @@ namespace DalTest
                 {
                     _Cost = _engineer!.Cost;
                 }
-                s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Email!, _Level, _Cost));
+                s_dal!.Engineer.Update(new DO.Engineer(_Id, _Name, _Level, _Cost, _Email));
 
             }
             catch (DalDoesNotExistException newException)
@@ -225,12 +225,12 @@ namespace DalTest
         public static DO.Task createNewTask(int id = 0)
         {
 
-            DateTime _createdAdt;
-            DateTime _Start;
-            DateTime _ScheduledDate;
+            DateTime _CreatedDateTask;
+            DateTime _StartTime;
+            DateTime _TimeEstimatedLeft;
             DateTime _DeadLine;
-            DateTime _Complete;
-            int _Engineerld;
+            DateTime _CompleteDate;
+            int _EngineerId;
             bool _Milestone;
             TaskLevel _ComplexityLevel;
             Console.WriteLine("please enter the task's details\n");
@@ -239,22 +239,22 @@ namespace DalTest
             Console.WriteLine("enter the milestone\n");
             bool.TryParse(Console.ReadLine(), out _Milestone);
             Console.WriteLine("Enter the task's createdAdt\n");
-            DateTime.TryParse(Console.ReadLine(), out _createdAdt);
-            Console.WriteLine("Enter the start time\n");
-            DateTime.TryParse(Console.ReadLine(), out _Start);
+            DateTime.TryParse(Console.ReadLine(), out _CreatedDateTask);
+            Console.WriteLine("Enter the StartTime time\n");
+            DateTime.TryParse(Console.ReadLine(), out _StartTime);
             Console.WriteLine("Enter the scheduled date\n");
-            DateTime.TryParse(Console.ReadLine(), out _ScheduledDate);
+            DateTime.TryParse(Console.ReadLine(), out _TimeEstimatedLeft);
             Console.WriteLine("Enter the deadline\n");
             DateTime.TryParse(Console.ReadLine(), out _DeadLine);
-            Console.WriteLine("Enter the complete time\n");
-            DateTime.TryParse(Console.ReadLine(), out _Complete);
+            Console.WriteLine("Enter the CompleteDate time\n");
+            DateTime.TryParse(Console.ReadLine(), out _CompleteDate);
             Console.WriteLine("Enter the deliverable");
-            string? _Deliverable = Console.ReadLine();
+            string? _productDescription = Console.ReadLine();
             Console.WriteLine("enter the engineer's Id\n");
-            int.TryParse(Console.ReadLine(), out _Engineerld);
+            int.TryParse(Console.ReadLine(), out _EngineerId);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-            return (new DO.Task(_Description!, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable!, _Engineerld, _ComplexityLevel, null, null, id));
+            return (new DO.Task(_Description!, _Milestone, _CreatedDateTask, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription!, _EngineerId, _ComplexityLevel, null, null, id));
         }
 
 
@@ -272,35 +272,35 @@ namespace DalTest
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
                 bool? _Milestone = tempTask.Milestone;
-                DateTime _createdAdt = tempTask.createdAdt;
-                DateTime _Start = tempTask.Start;
-                DateTime _ScheduledDate = tempTask.ScheduledDate;
+                DateTime _CreatedDateTask = tempTask.CreatedDateTask;
+                DateTime _StartTime = tempTask.StartTime;
+                DateTime _TimeEstimatedLeft = tempTask.TimeEstimatedLeft;
                 DateTime _DeadLine = tempTask.DeadLine;
-                DateTime _Complete = tempTask.Complete;
-                string _Deliverable = tempTask.Deliverable;
-                int _Engineerld = tempTask.Engineerld;
+                DateTime _CompleteDate = tempTask.CompleteDate;
+                string _productDescription = tempTask.productDescription;
+                int ?_EngineerId = tempTask.EngineerId;
                 TaskLevel? _ComplexityLevel = tempTask.ComplexityLevel;
                 if (tempTask.Description is null)
                     _Description = _task!.Description;
                 if (tempTask.Milestone == false)
                     _Milestone = _task!.Milestone;
-                if (_createdAdt == DateTime.MinValue)
-                    _createdAdt = _task!.createdAdt;
-                if (_Start == DateTime.MinValue)
-                    _Start = _task!.Start;
-                if (_ScheduledDate == DateTime.MinValue)
-                    _ScheduledDate = _task!.ScheduledDate;
+                if (_CreatedDateTask == DateTime.MinValue)
+                    _CreatedDateTask = _task!.CreatedDateTask;
+                if (_StartTime == DateTime.MinValue)
+                    _StartTime = _task!.StartTime;
+                if (_TimeEstimatedLeft == DateTime.MinValue)
+                    _TimeEstimatedLeft = _task!.TimeEstimatedLeft;
                 if (_DeadLine == DateTime.MinValue)
                     _DeadLine = _task!.DeadLine;
-                if (_Complete == DateTime.MinValue)
-                    _Complete = _task!.Complete;
-                if (_Deliverable == null)
-                    _Deliverable = _task!.Deliverable;
-                if (_Engineerld == 0)
-                    _Engineerld = _task!.Engineerld;
+                if (_CompleteDate == DateTime.MinValue)
+                    _CompleteDate = _task!.CompleteDate;
+                if (_productDescription == null)
+                    _productDescription = _task!.productDescription;
+                if (_EngineerId == 0)
+                    _EngineerId = _task!.EngineerId;
                 if (_ComplexityLevel.ToString() == "easy")
                     _ComplexityLevel = tempTask.ComplexityLevel;
-                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _createdAdt, _Start, _ScheduledDate, _DeadLine, _Complete, _Deliverable, _Engineerld, _ComplexityLevel, null, null, _id));
+                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _CreatedDateTask, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription, _EngineerId, _ComplexityLevel, null, null, _id));
             }
             catch (DalDoesNotExistException newException)
             {

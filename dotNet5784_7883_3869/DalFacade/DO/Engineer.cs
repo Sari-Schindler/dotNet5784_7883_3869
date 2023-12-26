@@ -13,11 +13,11 @@ public record Engineer
     (
     int ID,
     string Name,
-    string Email,
     EngineerExperience Level,
-    double Cost
+    double Cost,
+     string? Email
     )
 {
-    public Engineer() : this(0, "", "", 0,0) { }
+    public Engineer() : this(0, "", 0,0,"") { }
 
 }
