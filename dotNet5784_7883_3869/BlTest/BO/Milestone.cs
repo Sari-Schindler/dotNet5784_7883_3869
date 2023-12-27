@@ -18,11 +18,9 @@ public class Milestone
     public DateTime? finishTimeEstimated {  get; set; }
     public required DateTime DeadLine { get; set; }
     public required DateTime EndedDate {  get; set; }
-    public int? ProgressPercentage { get; set; }    
+    public double? ProgressPercentage { get; set; }    
     public string? Comments {  get; set; }
-    //רשימת תלויות (מסוג משימה-ברשימה)
-
-
-
+    public List<TaskInList>? DependencysList { get; set; }
+    public override string ToString() => this.ToStringProperty();
 
 }

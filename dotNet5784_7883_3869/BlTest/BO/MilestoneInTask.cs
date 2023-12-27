@@ -13,5 +13,7 @@ public class MilestoneInTask
     public string? NickName { get; set; }
     public required DateTime CreatedDate {  get; set; } 
     public Status MilestoneInTaskStatus { get; set; }
-    public int? ProgressPercentage { get; set; }
+    public double? ProgressPercentage { get; set; }
+    public override string ToString() => this.ToStringProperty();
+
 }

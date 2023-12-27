@@ -10,13 +10,12 @@ namespace BlTest.BO;
 public class Task
 {
     public required string Description { get; set; }
-    //public bool? Milestone { get; set; } //אבן דרך קשורה (מזהה וכינוי)
+    public required MilestoneInTask Milestone { get; set; }
     public required DateTime CreatedDateTask { get; set; }
     public required DateTime EstimatedStartTime { get; set; }
     public required DateTime StartTime { get; set; }
     public required Status TaskStatus { get; set; }
-
-    //רשימת תלויות (מסוג משימה-ברשימה)
+    public List<TaskInList>? DependencysList { get; set; }
     public required DateTime TimeEstimatedLeft { get; set; }
     public required DateTime DeadLine {  get; set; }
     public required DateTime CompleteDate { get; set; }
@@ -25,6 +24,7 @@ public class Task
     public string? nickName {  get; set; }  
     public string? Comments { get; set; }
     public int ID { get; init; }
-    //לבדוק אם קיימת מזהה ושם מהנדס שהקוצה למשימה
+    public EngineerInTask? CurrentEngineer{ get; set; }
+    public override string ToString() => this.ToStringProperty();
 
 }
