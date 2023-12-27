@@ -350,4 +350,54 @@
     <previousIDTask>4</previousIDTask>
     <ID>71</ID>
   </Dependency>
+  <Dependency>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>72</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>73</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>3</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>74</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>4</DependentTask>
+    <previousIDTask>4</previousIDTask>
+    <ID>75</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>6</DependentTask>
+    <previousIDTask>6</previousIDTask>
+    <ID>76</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>7</DependentTask>
+    <previousIDTask>7</previousIDTask>
+    <ID>77</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>8</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>78</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>9</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>79</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>80</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>4</previousIDTask>
+    <ID>81</ID>
+  </Dependency>
 </ArrayOfDependency>

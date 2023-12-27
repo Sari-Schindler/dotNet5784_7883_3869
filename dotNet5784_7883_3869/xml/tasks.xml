@@ -923,4 +923,173 @@
     <ComplexityLevel>medium</ComplexityLevel>
     <ID>72</ID>
   </Task>
+  <Task>
+    <Description>write code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.5892309+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T17:09:45.5892309+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-27T17:09:45.5892309+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-03T17:09:45.5892309+02:00</DeadLine>
+    <CompleteDate>2023-12-27T17:09:45.5892309+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>267151768</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <ID>73</ID>
+  </Task>
+  <Task>
+    <Description>go over code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.6743481+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T18:09:45.6743481+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-28T17:09:45.6743481+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-04T17:09:45.6743481+02:00</DeadLine>
+    <CompleteDate>2023-12-28T16:09:45.6743481+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>388986334</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <ID>74</ID>
+  </Task>
+  <Task>
+    <Description>debbug code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.6895682+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T19:09:45.6895682+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-29T17:09:45.6895682+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-05T17:09:45.6895682+02:00</DeadLine>
+    <CompleteDate>2023-12-29T15:09:45.6895682+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>303830100</EngineerId>
+    <ComplexityLevel>hard</ComplexityLevel>
+    <ID>75</ID>
+  </Task>
+  <Task>
+    <Description>write code B</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.7037849+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T20:09:45.7037849+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-30T17:09:45.7037849+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-06T17:09:45.7037849+02:00</DeadLine>
+    <CompleteDate>2023-12-30T14:09:45.7037849+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>256881860</EngineerId>
+    <ComplexityLevel>export</ComplexityLevel>
+    <ID>76</ID>
+  </Task>
+  <Task>
+    <Description>go over code B</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.719476+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T21:09:45.719476+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-31T17:09:45.719476+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-07T17:09:45.719476+02:00</DeadLine>
+    <CompleteDate>2023-12-31T13:09:45.719476+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>204983227</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <ID>77</ID>
+  </Task>
+  <Task>
+    <Description>debbug code B</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.7365935+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T22:09:45.7365935+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-01T17:09:45.7365935+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-08T17:09:45.7365935+02:00</DeadLine>
+    <CompleteDate>2024-01-01T12:09:45.7365935+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>389962282</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <ID>78</ID>
+  </Task>
+  <Task>
+    <Description>write code C</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.7542044+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T23:09:45.7542044+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-02T17:09:45.7542044+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-09T17:09:45.7542044+02:00</DeadLine>
+    <CompleteDate>2024-01-02T11:09:45.7542044+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>202564801</EngineerId>
+    <ComplexityLevel>hard</ComplexityLevel>
+    <ID>79</ID>
+  </Task>
+  <Task>
+    <Description>go over code C</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.7718927+02:00</CreatedDateTask>
+    <StartTime>2023-12-28T00:09:45.7718927+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-03T17:09:45.7718927+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-10T17:09:45.7718927+02:00</DeadLine>
+    <CompleteDate>2024-01-03T10:09:45.7718927+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>269389711</EngineerId>
+    <ComplexityLevel>export</ComplexityLevel>
+    <ID>80</ID>
+  </Task>
+  <Task>
+    <Description>write code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.7926733+02:00</CreatedDateTask>
+    <StartTime>2023-12-28T01:09:45.7926733+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-04T17:09:45.7926733+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-11T17:09:45.7926733+02:00</DeadLine>
+    <CompleteDate>2024-01-04T09:09:45.7926733+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>326073455</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <ID>81</ID>
+  </Task>
+  <Task>
+    <Description>go over code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:09:45.8204323+02:00</CreatedDateTask>
+    <StartTime>2023-12-28T02:09:45.8204323+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-05T17:09:45.8204323+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-12T17:09:45.8204323+02:00</DeadLine>
+    <CompleteDate>2024-01-05T08:09:45.8204323+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>242345599</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <ID>82</ID>
+  </Task>
+  <Task>
+    <Description>write code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:10:48.2055426+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T17:10:48.2055426+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-27T17:10:48.2055426+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-03T17:10:48.2055426+02:00</DeadLine>
+    <CompleteDate>2023-12-27T17:10:48.2055426+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>267151768</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <ID>83</ID>
+  </Task>
+  <Task>
+    <Description>go over code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:10:48.3320357+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T18:10:48.3320357+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-28T17:10:48.3320357+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-04T17:10:48.3320357+02:00</DeadLine>
+    <CompleteDate>2023-12-28T16:10:48.3320357+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>388986334</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <ID>84</ID>
+  </Task>
+  <Task>
+    <Description>debbug code A</Description>
+    <Milestone>false</Milestone>
+    <CreatedDateTask>2023-12-27T17:10:48.4898452+02:00</CreatedDateTask>
+    <StartTime>2023-12-27T19:10:48.4898452+02:00</StartTime>
+    <TimeEstimatedLeft>2023-12-29T17:10:48.4898452+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-05T17:10:48.4898452+02:00</DeadLine>
+    <CompleteDate>2023-12-29T15:10:48.4898452+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>303830100</EngineerId>
+    <ComplexityLevel>hard</ComplexityLevel>
+    <ID>85</ID>
+  </Task>
 </ArrayOfTask>

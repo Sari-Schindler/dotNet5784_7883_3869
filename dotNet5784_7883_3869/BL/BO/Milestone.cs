@@ -5,8 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BlTest.BO;
-
+namespace BO;
 public class Milestone
 {
     public required int ID { get; set; }
