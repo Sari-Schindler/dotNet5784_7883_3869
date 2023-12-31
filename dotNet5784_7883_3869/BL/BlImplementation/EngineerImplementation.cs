@@ -1,7 +1,6 @@
-﻿using BlApi;
-using System.Reflection.Emit;
+﻿using System.Reflection.Emit;
 using System.Text.RegularExpressions;
-
+using BlApi;
 namespace BlImplementation;
 
 
@@ -13,7 +12,7 @@ internal class EngineerImplementation : IEngineer
     {
         string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])""|" + @"([-a-z0-9!#$%&'+/=?^_`{|}~]|(?<!\.)\.))(?<!\.)" + @"@[a-z0-9][\w\.-][a-z0-9]\.[a-z][a-z\.]*[a-z]$";
         var regex = new Regex(pattern, RegexOptions.IgnoreCase);
-        if(!regex.IsMatch(engineer?.Email))
+        if(!regex.IsMatch(engineer.Email!))
         {
             throw new NotImplementedException();
         }
@@ -29,7 +28,7 @@ internal class EngineerImplementation : IEngineer
         try
         {
             CheckValidation(newEngineer);
-            var engineerID = _dal.Engineer.Create(new DO.Engineer(newEngineer.ID, newEngineer.Name, newEngineer.Level, newEngineer.Cost, newEngineer.Email));
+            var engineerID = _dal.Engineer.Create(new DO.Engineer(newEngineer.ID, newEngineer.Name, (DO.EngineerExperience)newEngineer.Level, newEngineer.Cost, newEngineer.Email));
             return engineerID;
         }
         catch (NotImplementedException ex)
