@@ -122,11 +122,17 @@ public static class Initialization
                 "fun task",
                 "very important task"
             };
+        string[] nickNames = {
+            "a",
+            "b",
+            "c"
+        };
         for (int i = 0; i < 10; i++)
         {
             var AllEngineer = s_dal!.Engineer.ReadAll().ToList();
             string _description = _descriptionArray[i % 8];
             string _deliverable = _deliverableArray[s_rand.Next(0, 3)];
+            string _nickName = nickNames[i % 3];
             bool _mileStone = false;
             DateTime _CreatedAdt= DateTime.Now; 
             DateTime _Start = _CreatedAdt.Add(TimeSpan.FromHours(i));
@@ -135,7 +141,7 @@ public static class Initialization
             DateTime _Complete = _ScheduledDate.Add(TimeSpan.FromHours(-i % 24));
             int _level = i % 4;
             TaskLevel _ComplexityLevel = (TaskLevel)_level;
-            Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel);
+            Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel,_nickName);
 
             s_dal!.Task.Create(_newTask);
         }

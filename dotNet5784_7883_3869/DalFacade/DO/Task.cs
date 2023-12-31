@@ -31,12 +31,12 @@ public record Task
     string productDescription,
     int? EngineerId,
     TaskLevel? ComplexityLevel,
-    string? nickName = null,
+    string nickName,
     string? Comments = null,
     int ID = 0
     )
     
 {
-    public Task() : this("", false,DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.Now, DateTime.MinValue,"", 0,null,null) { }
+    public Task() : this("", false,DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.Now, DateTime.MinValue,"", 0,null,"") { }
 
 }

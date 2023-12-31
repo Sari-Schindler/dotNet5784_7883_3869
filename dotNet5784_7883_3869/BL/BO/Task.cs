@@ -21,7 +21,7 @@ public class Task
     public required DateTime CompleteDate { get; set; }
     public required string productDescription { get; set; }
     public TaskLevel? ComplexityLevel {  get; set; }
-    public string? nickName {  get; set; }  
+    public required string nickName {  get; set; }  
     public string? Comments { get; set; }
     public int ID { get; init; }
     public EngineerInTask? CurrentEngineer{ get; set; }
