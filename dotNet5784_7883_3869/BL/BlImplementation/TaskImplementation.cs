@@ -1,5 +1,6 @@
 ﻿
 using BlApi;
+using System.Runtime.Intrinsics.Arm;
 namespace BlImplementation;
 
 internal class TaskImplementation : ITask
@@ -19,7 +20,8 @@ internal class TaskImplementation : ITask
             CheckValidation(newTask);
             _dal.Task.Create(new DO.Task(newTask.Description,false, newTask.CreatedDateTask,
                 newTask.StartTime, newTask.TimeEstimatedLeft, newTask.DeadLine, newTask.CompleteDate,
-                newTask.productDescription,0,(DO.TaskLevel?)newTask?.ComplexityLevel,newTask!.nickName,null, newTask.ID));
+                newTask.productDescription, newTask.CurrentEngineer?.ID, (DO.TaskLevel?)newTask?.ComplexityLevel,newTask!.nickName,newTask?.Comments, newTask!.ID));
+            //הוספת משימות קודמות מתוך רשימת המשימות הקיימת
         }
         catch
         {
@@ -27,13 +29,25 @@ internal class TaskImplementation : ITask
         }
     }
 
-    public IEnumerable<BO.Task> ReadAll(Func<Task, bool>? filter = null)
+           
+    
+    public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null)
     {
-        IEnumerable<BO.Task> allTasks = from task in _dal.Task.ReadAll()
-                                                    select convertToBo(task);
-        return filter == null ? allTasks : allTasks.Where(filter);
+        try
+        {
+            //לראות למה במהנדס למה עשינו IF ופה לא והאם צריך
+            IEnumerable<BO.Task> allTasks = from task in _dal.Task.ReadAll()
+                                            select convertToBo(task);
+            return filter == null ? allTasks : allTasks.Where(filter);
+        }
+        catch (NotImplementedException ex)
+        {
+            throw new NotImplementedException();
+        }
     }
 
+            
+      
     private BO.Task convertToBo(DO.Task task)
     {
         return new BO.Task
@@ -52,31 +66,57 @@ internal class TaskImplementation : ITask
             DeadLine=task.DeadLine,
             CompleteDate =task.CompleteDate,
             productDescription=task.productDescription,
-            ComplexityLevel=task.ComplexityLevel,
+            ComplexityLevel= (BO.TaskLevel?)task.ComplexityLevel,
             nickName=task.nickName,
             Comments=task.Comments,
             ID=task.ID,
             CurrentEngineer=task.CurrentEngineer
         };
     }
-    public void Delete(BO.Task task)
+
+    public void Delete(int taskId)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var isExistTask = _dal.Task?.Read(taskId);
+            IEnumerable<DO.Dependency> allDependencys = _dal.Dependency.ReadAll()!;
+            IEnumerable<int> isExistInDependency = from dependency in allDependencys
+                                                   where dependency.DependentTask == taskId
+                                                   select isExistTask!.ID;
+            if (isExistInDependency.Any())
+                throw new NotImplementedException();
+            _dal.Engineer!.Delete(taskId);
+        }
+        catch (NotImplementedException ex)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 
     public BO.Task Read(int ID)
     {
-        throw new NotImplementedException();
+        try
+        {
+            var doTask = _dal.Task.Read(ID);
+            BO.Task boTask = convertToBo(doTask!);
+            return boTask;          
+        }
+        catch (NotImplementedException ex)
+        {
+            throw new NotImplementedException();
+        }
     }
-
+  
     public void Update(BO.Task task)
     {
         try
         {
+            var isExistTask = _dal.Task?.Read(task.ID);
             CheckValidation(task);
-            _dal.Task.Update(new DO.Task(task.Description, false, task.CreatedDateTask,
+            _dal.Task!.Update(new DO.Task(task.Description, false, task.CreatedDateTask,
                 task.StartTime, task.TimeEstimatedLeft, task.DeadLine, task.CompleteDate,
-                task.productDescription, 0, (DO.TaskLevel?)task?.ComplexityLevel, task!.nickName, null, task.ID));
+                task.productDescription, task.CurrentEngineer?.ID, (DO.TaskLevel?)task?.ComplexityLevel, task!.nickName, task.Comments, task.ID));
         }
         catch (NotImplementedException ex)
         {
@@ -84,3 +124,4 @@ internal class TaskImplementation : ITask
         }
     }
 }
+

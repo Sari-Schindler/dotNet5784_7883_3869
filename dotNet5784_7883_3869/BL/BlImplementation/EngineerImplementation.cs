@@ -69,8 +69,6 @@ internal class EngineerImplementation : IEngineer
         try
         {
             var isExistEngineer = _dal.Engineer?.Read(engineerID);
-            if (isExistEngineer is null)
-                throw new NotImplementedException(); // throw error if engineer not exist
             IEnumerable<DO.Task> allTasks = _dal.Task.ReadAll()!;
             IEnumerable<int> isExistInTask = from task in allTasks
                                              where task.EngineerId == engineerID
@@ -104,8 +102,9 @@ internal class EngineerImplementation : IEngineer
     {
         try
         {
+            var isExistEngineer = _dal.Engineer?.Read(engineer.ID);
             CheckValidation(engineer);
-            _dal.Engineer.Update(new DO.Engineer(engineer.ID, engineer.Name,(DO.EngineerExperience)engineer.Level, engineer.Cost, engineer.Email));
+            _dal.Engineer!.Update(new DO.Engineer(engineer.ID, engineer.Name,(DO.EngineerExperience)engineer.Level, engineer.Cost, engineer.Email));
         }
         catch(NotImplementedException ex)
         {
