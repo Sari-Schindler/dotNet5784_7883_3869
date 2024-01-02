@@ -3,7 +3,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-12T14:39:23.3550075+02:00</DeadLine>
@@ -17,7 +19,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-13T14:39:23.3743277+02:00</DeadLine>
@@ -31,7 +35,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-14T14:39:23.3808918+02:00</DeadLine>
@@ -45,7 +51,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-15T14:39:23.3818067+02:00</DeadLine>
@@ -59,7 +67,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-17T14:39:23.3835475+02:00</DeadLine>
@@ -73,7 +83,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-18T14:39:23.3845389+02:00</DeadLine>
@@ -87,7 +99,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-19T14:39:23.3854441+02:00</DeadLine>
@@ -101,7 +115,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-20T14:39:23.3863951+02:00</DeadLine>
@@ -115,7 +131,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-21T14:39:23.3872358+02:00</DeadLine>
@@ -129,7 +147,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-12T15:15:41.9421753+02:00</DeadLine>
@@ -143,7 +163,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-13T15:15:41.965978+02:00</DeadLine>
@@ -157,7 +179,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-14T15:15:41.9680506+02:00</DeadLine>
@@ -171,7 +195,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-15T15:15:41.9693083+02:00</DeadLine>
@@ -185,7 +211,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-16T15:15:41.9703614+02:00</DeadLine>
@@ -199,7 +227,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-17T15:15:41.9716599+02:00</DeadLine>
@@ -213,7 +243,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-18T15:15:41.9731347+02:00</DeadLine>
@@ -227,7 +259,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-19T15:15:41.9745579+02:00</DeadLine>
@@ -241,7 +275,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-20T15:15:41.9762427+02:00</DeadLine>
@@ -255,7 +291,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-21T15:15:41.9784023+02:00</DeadLine>
@@ -269,7 +307,9 @@
   <Task>
     <Description>gdgs</Description>
     <Milestone>true</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>0001-01-01T00:00:00</DeadLine>
@@ -283,7 +323,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-12T15:28:41.512677+02:00</DeadLine>
@@ -297,7 +339,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-13T15:28:41.5376975+02:00</DeadLine>
@@ -311,7 +355,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-14T15:28:41.5395842+02:00</DeadLine>
@@ -325,7 +371,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-15T15:28:41.5409515+02:00</DeadLine>
@@ -339,7 +387,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-16T15:28:41.5422357+02:00</DeadLine>
@@ -353,7 +403,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-17T15:28:41.5435108+02:00</DeadLine>
@@ -367,7 +419,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-18T15:28:41.5449214+02:00</DeadLine>
@@ -381,7 +435,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-19T15:28:41.5461734+02:00</DeadLine>
@@ -395,7 +451,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-20T15:28:41.547615+02:00</DeadLine>
@@ -409,7 +467,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-21T15:28:41.549028+02:00</DeadLine>
@@ -423,7 +483,9 @@
   <Task>
     <Description>hghgh</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-16T14:39:23.3827124+02:00</DeadLine>
@@ -437,7 +499,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-12T15:29:15.6004044+02:00</DeadLine>
@@ -451,7 +515,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-13T15:29:15.625757+02:00</DeadLine>
@@ -465,7 +531,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-14T15:29:15.628113+02:00</DeadLine>
@@ -479,7 +547,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-15T15:29:15.6298433+02:00</DeadLine>
@@ -493,7 +563,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-16T15:29:15.631482+02:00</DeadLine>
@@ -507,7 +579,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-17T15:29:15.6330194+02:00</DeadLine>
@@ -521,7 +595,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-18T15:29:15.6345834+02:00</DeadLine>
@@ -535,7 +611,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-19T15:29:15.6361167+02:00</DeadLine>
@@ -549,7 +627,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-20T15:29:15.6376016+02:00</DeadLine>
@@ -563,7 +643,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2023-12-21T15:29:15.6392437+02:00</DeadLine>
@@ -577,7 +659,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-02T23:00:26.2379992+02:00</DeadLine>
@@ -591,7 +675,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-03T23:00:26.3259785+02:00</DeadLine>
@@ -605,7 +691,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-04T23:00:26.3431169+02:00</DeadLine>
@@ -619,7 +707,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-05T23:00:26.3637208+02:00</DeadLine>
@@ -633,7 +723,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-06T23:00:26.3826459+02:00</DeadLine>
@@ -647,7 +739,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-07T23:00:26.3978632+02:00</DeadLine>
@@ -661,7 +755,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-08T23:00:26.4237732+02:00</DeadLine>
@@ -675,7 +771,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-09T23:00:26.4409329+02:00</DeadLine>
@@ -689,7 +787,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-10T23:00:26.4666401+02:00</DeadLine>
@@ -703,7 +803,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>0001-01-01T00:00:00</TimeEstimatedLeft>
     <DeadLine>2024-01-11T23:00:26.4983427+02:00</DeadLine>
@@ -717,7 +819,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-26T23:25:58.2630355+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-02T23:25:58.2630355+02:00</DeadLine>
@@ -731,7 +835,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-27T23:25:58.3121013+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-03T23:25:58.3121013+02:00</DeadLine>
@@ -745,7 +851,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-28T23:25:58.3278493+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-04T23:25:58.3278493+02:00</DeadLine>
@@ -759,7 +867,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-29T23:25:58.3444036+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-05T23:25:58.3444036+02:00</DeadLine>
@@ -773,7 +883,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-30T23:25:58.3582332+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-06T23:25:58.3582332+02:00</DeadLine>
@@ -787,7 +899,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2023-12-31T23:25:58.3769492+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-07T23:25:58.3769492+02:00</DeadLine>
@@ -801,7 +915,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2024-01-01T23:25:58.3927521+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-08T23:25:58.3927521+02:00</DeadLine>
@@ -815,7 +931,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2024-01-02T23:25:58.4137952+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-09T23:25:58.4137952+02:00</DeadLine>
@@ -829,7 +947,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2024-01-03T23:25:58.4346049+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-10T23:25:58.4346049+02:00</DeadLine>
@@ -843,7 +963,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>0001-01-01T00:00:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>0001-01-01T00:00:00</StartTime>
     <TimeEstimatedLeft>2024-01-04T23:25:58.4544533+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-11T23:25:58.4544533+02:00</DeadLine>
@@ -857,7 +979,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.5238426+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-26T23:48:26.5238426+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-26T23:48:26.5238426+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-02T23:48:26.5238426+02:00</DeadLine>
@@ -871,7 +995,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.5866939+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T00:48:26.5866939+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-27T23:48:26.5866939+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-03T23:48:26.5866939+02:00</DeadLine>
@@ -885,7 +1011,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.6085588+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T01:48:26.6085588+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-28T23:48:26.6085588+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-04T23:48:26.6085588+02:00</DeadLine>
@@ -899,7 +1027,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.6303083+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T02:48:26.6303083+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-29T23:48:26.6303083+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-05T23:48:26.6303083+02:00</DeadLine>
@@ -913,7 +1043,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.6463289+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T03:48:26.6463289+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-30T23:48:26.6463289+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-06T23:48:26.6463289+02:00</DeadLine>
@@ -927,7 +1059,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.6667986+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T04:48:26.6667986+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-31T23:48:26.6667986+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-07T23:48:26.6667986+02:00</DeadLine>
@@ -941,7 +1075,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.6890132+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T05:48:26.6890132+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-01T23:48:26.6890132+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-08T23:48:26.6890132+02:00</DeadLine>
@@ -955,7 +1091,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.7078012+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T06:48:26.7078012+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-02T23:48:26.7078012+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-09T23:48:26.7078012+02:00</DeadLine>
@@ -969,7 +1107,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.7256455+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T07:48:26.7256455+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-03T23:48:26.7256455+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-10T23:48:26.7256455+02:00</DeadLine>
@@ -983,7 +1123,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-26T23:48:26.7442268+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T08:48:26.7442268+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-04T23:48:26.7442268+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-11T23:48:26.7442268+02:00</DeadLine>
@@ -997,7 +1139,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.5892309+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T17:09:45.5892309+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-27T17:09:45.5892309+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-03T17:09:45.5892309+02:00</DeadLine>
@@ -1011,7 +1155,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.6743481+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T18:09:45.6743481+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-28T17:09:45.6743481+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-04T17:09:45.6743481+02:00</DeadLine>
@@ -1025,7 +1171,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.6895682+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T19:09:45.6895682+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-29T17:09:45.6895682+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-05T17:09:45.6895682+02:00</DeadLine>
@@ -1039,7 +1187,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.7037849+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T20:09:45.7037849+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-30T17:09:45.7037849+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-06T17:09:45.7037849+02:00</DeadLine>
@@ -1053,7 +1203,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.719476+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T21:09:45.719476+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-31T17:09:45.719476+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-07T17:09:45.719476+02:00</DeadLine>
@@ -1067,7 +1219,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.7365935+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T22:09:45.7365935+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-01T17:09:45.7365935+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-08T17:09:45.7365935+02:00</DeadLine>
@@ -1081,7 +1235,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.7542044+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T23:09:45.7542044+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-02T17:09:45.7542044+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-09T17:09:45.7542044+02:00</DeadLine>
@@ -1095,7 +1251,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.7718927+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-28T00:09:45.7718927+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-03T17:09:45.7718927+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-10T17:09:45.7718927+02:00</DeadLine>
@@ -1109,7 +1267,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.7926733+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-28T01:09:45.7926733+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-04T17:09:45.7926733+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-11T17:09:45.7926733+02:00</DeadLine>
@@ -1123,7 +1283,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:09:45.8204323+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-28T02:09:45.8204323+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-05T17:09:45.8204323+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-12T17:09:45.8204323+02:00</DeadLine>
@@ -1137,7 +1299,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:10:48.2055426+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T17:10:48.2055426+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-27T17:10:48.2055426+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-03T17:10:48.2055426+02:00</DeadLine>
@@ -1151,7 +1315,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:10:48.3320357+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T18:10:48.3320357+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-28T17:10:48.3320357+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-04T17:10:48.3320357+02:00</DeadLine>
@@ -1165,7 +1331,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2023-12-27T17:10:48.4898452+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2023-12-27T19:10:48.4898452+02:00</StartTime>
     <TimeEstimatedLeft>2023-12-29T17:10:48.4898452+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-05T17:10:48.4898452+02:00</DeadLine>
@@ -1179,7 +1347,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.6180592+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T01:26:11.6180592+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-01T01:26:11.6180592+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-08T01:26:11.6180592+02:00</DeadLine>
@@ -1193,7 +1363,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.6992315+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T02:26:11.6992315+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-02T01:26:11.6992315+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-09T01:26:11.6992315+02:00</DeadLine>
@@ -1207,7 +1379,9 @@
   <Task>
     <Description>debbug code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.7165465+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T03:26:11.7165465+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-03T01:26:11.7165465+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-10T01:26:11.7165465+02:00</DeadLine>
@@ -1221,7 +1395,9 @@
   <Task>
     <Description>write code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.7329217+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T04:26:11.7329217+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-04T01:26:11.7329217+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-11T01:26:11.7329217+02:00</DeadLine>
@@ -1235,7 +1411,9 @@
   <Task>
     <Description>go over code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.7515039+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T05:26:11.7515039+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-05T01:26:11.7515039+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-12T01:26:11.7515039+02:00</DeadLine>
@@ -1249,7 +1427,9 @@
   <Task>
     <Description>debbug code B</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.7685138+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T06:26:11.7685138+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-06T01:26:11.7685138+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-13T01:26:11.7685138+02:00</DeadLine>
@@ -1263,7 +1443,9 @@
   <Task>
     <Description>write code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.7844675+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T07:26:11.7844675+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-07T01:26:11.7844675+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-14T01:26:11.7844675+02:00</DeadLine>
@@ -1277,7 +1459,9 @@
   <Task>
     <Description>go over code C</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.8021262+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T08:26:11.8021262+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-08T01:26:11.8021262+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-15T01:26:11.8021262+02:00</DeadLine>
@@ -1291,7 +1475,9 @@
   <Task>
     <Description>write code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.8190572+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T09:26:11.8190572+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-09T01:26:11.8190572+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-16T01:26:11.8190572+02:00</DeadLine>
@@ -1305,7 +1491,9 @@
   <Task>
     <Description>go over code A</Description>
     <Milestone>false</Milestone>
+    <requiredTime>-P10675199DT2H48M5.4775808S</requiredTime>
     <CreatedDateTask>2024-01-01T01:26:11.8365244+02:00</CreatedDateTask>
+    <estimatedTimeStart>0001-01-01T00:00:00</estimatedTimeStart>
     <StartTime>2024-01-01T10:26:11.8365244+02:00</StartTime>
     <TimeEstimatedLeft>2024-01-10T01:26:11.8365244+02:00</TimeEstimatedLeft>
     <DeadLine>2024-01-17T01:26:11.8365244+02:00</DeadLine>
@@ -1315,5 +1503,165 @@
     <ComplexityLevel>medium</ComplexityLevel>
     <nickName>a</nickName>
     <ID>95</ID>
+  </Task>
+  <Task>
+    <Description>write code A</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>PT0S</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.5893727+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-02T23:42:07.5893727+02:00</estimatedTimeStart>
+    <StartTime>2024-01-02T23:42:07.5893727+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-02T23:42:07.5893727+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-09T23:42:07.5893727+02:00</DeadLine>
+    <CompleteDate>2024-01-02T23:42:07.5893727+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>267151768</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <nickName>a</nickName>
+    <ID>96</ID>
+  </Task>
+  <Task>
+    <Description>go over code A</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P1D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.6920762+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T00:42:07.6920762+02:00</estimatedTimeStart>
+    <StartTime>2024-01-03T23:42:07.6920762+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-03T23:42:07.6920762+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-10T23:42:07.6920762+02:00</DeadLine>
+    <CompleteDate>2024-01-03T22:42:07.6920762+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>388986334</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <nickName>b</nickName>
+    <ID>97</ID>
+  </Task>
+  <Task>
+    <Description>debbug code A</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P2D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7099669+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T01:42:07.7099669+02:00</estimatedTimeStart>
+    <StartTime>2024-01-04T23:42:07.7099669+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-04T23:42:07.7099669+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-11T23:42:07.7099669+02:00</DeadLine>
+    <CompleteDate>2024-01-04T21:42:07.7099669+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>303830100</EngineerId>
+    <ComplexityLevel>hard</ComplexityLevel>
+    <nickName>c</nickName>
+    <ID>98</ID>
+  </Task>
+  <Task>
+    <Description>write code B</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P3D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7269571+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T02:42:07.7269571+02:00</estimatedTimeStart>
+    <StartTime>2024-01-05T23:42:07.7269571+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-05T23:42:07.7269571+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-12T23:42:07.7269571+02:00</DeadLine>
+    <CompleteDate>2024-01-05T20:42:07.7269571+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>256881860</EngineerId>
+    <ComplexityLevel>export</ComplexityLevel>
+    <nickName>a</nickName>
+    <ID>99</ID>
+  </Task>
+  <Task>
+    <Description>go over code B</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P4D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7493491+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T03:42:07.7493491+02:00</estimatedTimeStart>
+    <StartTime>2024-01-06T23:42:07.7493491+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-06T23:42:07.7493491+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-13T23:42:07.7493491+02:00</DeadLine>
+    <CompleteDate>2024-01-06T19:42:07.7493491+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>204983227</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <nickName>b</nickName>
+    <ID>100</ID>
+  </Task>
+  <Task>
+    <Description>debbug code B</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P5D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7642648+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T04:42:07.7642648+02:00</estimatedTimeStart>
+    <StartTime>2024-01-07T23:42:07.7642648+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-07T23:42:07.7642648+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-14T23:42:07.7642648+02:00</DeadLine>
+    <CompleteDate>2024-01-07T18:42:07.7642648+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>389962282</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <nickName>c</nickName>
+    <ID>101</ID>
+  </Task>
+  <Task>
+    <Description>write code C</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P6D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7803829+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T05:42:07.7803829+02:00</estimatedTimeStart>
+    <StartTime>2024-01-08T23:42:07.7803829+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-08T23:42:07.7803829+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-15T23:42:07.7803829+02:00</DeadLine>
+    <CompleteDate>2024-01-08T17:42:07.7803829+02:00</CompleteDate>
+    <productDescription>code B</productDescription>
+    <EngineerId>202564801</EngineerId>
+    <ComplexityLevel>hard</ComplexityLevel>
+    <nickName>a</nickName>
+    <ID>102</ID>
+  </Task>
+  <Task>
+    <Description>go over code C</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P7D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.7965322+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T06:42:07.7965322+02:00</estimatedTimeStart>
+    <StartTime>2024-01-09T23:42:07.7965322+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-09T23:42:07.7965322+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-16T23:42:07.7965322+02:00</DeadLine>
+    <CompleteDate>2024-01-09T16:42:07.7965322+02:00</CompleteDate>
+    <productDescription>code C</productDescription>
+    <EngineerId>269389711</EngineerId>
+    <ComplexityLevel>export</ComplexityLevel>
+    <nickName>b</nickName>
+    <ID>103</ID>
+  </Task>
+  <Task>
+    <Description>write code A</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P8D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.8273879+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T07:42:07.8273879+02:00</estimatedTimeStart>
+    <StartTime>2024-01-10T23:42:07.8273879+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-10T23:42:07.8273879+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-17T23:42:07.8273879+02:00</DeadLine>
+    <CompleteDate>2024-01-10T15:42:07.8273879+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>326073455</EngineerId>
+    <ComplexityLevel>easy</ComplexityLevel>
+    <nickName>c</nickName>
+    <ID>104</ID>
+  </Task>
+  <Task>
+    <Description>go over code A</Description>
+    <Milestone>false</Milestone>
+    <requiredTime>P9D</requiredTime>
+    <CreatedDateTask>2024-01-02T23:42:07.8446494+02:00</CreatedDateTask>
+    <estimatedTimeStart>2024-01-03T08:42:07.8446494+02:00</estimatedTimeStart>
+    <StartTime>2024-01-11T23:42:07.8446494+02:00</StartTime>
+    <TimeEstimatedLeft>2024-01-11T23:42:07.8446494+02:00</TimeEstimatedLeft>
+    <DeadLine>2024-01-18T23:42:07.8446494+02:00</DeadLine>
+    <CompleteDate>2024-01-11T14:42:07.8446494+02:00</CompleteDate>
+    <productDescription>code A</productDescription>
+    <EngineerId>242345599</EngineerId>
+    <ComplexityLevel>medium</ComplexityLevel>
+    <nickName>a</nickName>
+    <ID>105</ID>
   </Task>
 </ArrayOfTask>

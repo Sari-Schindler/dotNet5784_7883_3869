@@ -230,6 +230,9 @@ namespace DalTest
             DateTime _TimeEstimatedLeft;
             DateTime _DeadLine;
             DateTime _CompleteDate;
+            DateTime _estimatedTimeStart;
+            TimeSpan _requiredTime;
+
             int _EngineerId;
             bool _Milestone;
             TaskLevel _ComplexityLevel;
@@ -240,6 +243,10 @@ namespace DalTest
             bool.TryParse(Console.ReadLine(), out _Milestone);
             Console.WriteLine("Enter the task's createdAdt\n");
             DateTime.TryParse(Console.ReadLine(), out _CreatedDateTask);
+            Console.WriteLine("\"Enter the task's estimated start\n");
+            DateTime.TryParse(Console.ReadLine(), out _estimatedTimeStart);
+            Console.WriteLine("Enter the task's requires time\n");
+            TimeSpan.TryParse(Console.ReadLine(), out _requiredTime);
             Console.WriteLine("Enter the StartTime time\n");
             DateTime.TryParse(Console.ReadLine(), out _StartTime);
             Console.WriteLine("Enter the scheduled date\n");
@@ -254,7 +261,7 @@ namespace DalTest
             int.TryParse(Console.ReadLine(), out _EngineerId);
             Console.WriteLine("Enter the task's level");
             TaskLevel.TryParse(Console.ReadLine(), out _ComplexityLevel);
-            return (new DO.Task(_Description!, _Milestone, _CreatedDateTask, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription!, _EngineerId, _ComplexityLevel, null, null, id));
+            return (new DO.Task(_Description!, _Milestone,_requiredTime, _CreatedDateTask,_estimatedTimeStart, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription!, _EngineerId, _ComplexityLevel, null, null, id));
         }
 
 
@@ -272,6 +279,8 @@ namespace DalTest
                 DO.Task tempTask = createNewTask(_id);
                 string _Description = tempTask.Description;
                 bool? _Milestone = tempTask.Milestone;
+                TimeSpan _requiredTime=tempTask.requiredTime;
+                DateTime _estimatedTimeStart=tempTask.estimatedTimeStart;
                 DateTime _CreatedDateTask = tempTask.CreatedDateTask;
                 DateTime _StartTime = tempTask.StartTime;
                 DateTime _TimeEstimatedLeft = tempTask.TimeEstimatedLeft;
@@ -284,6 +293,10 @@ namespace DalTest
                     _Description = _task!.Description;
                 if (tempTask.Milestone == false)
                     _Milestone = _task!.Milestone;
+                if(tempTask.requiredTime ==TimeSpan.MinValue)
+                    _requiredTime = _task!.requiredTime;
+                if(_estimatedTimeStart==DateTime.MinValue)
+                    _estimatedTimeStart = _task!.estimatedTimeStart;
                 if (_CreatedDateTask == DateTime.MinValue)
                     _CreatedDateTask = _task!.CreatedDateTask;
                 if (_StartTime == DateTime.MinValue)
@@ -300,7 +313,7 @@ namespace DalTest
                     _EngineerId = _task!.EngineerId;
                 if (_ComplexityLevel.ToString() == "easy")
                     _ComplexityLevel = tempTask.ComplexityLevel;
-                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _CreatedDateTask, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription, _EngineerId, _ComplexityLevel, null, null, _id));
+                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _requiredTime, _CreatedDateTask, _estimatedTimeStart, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription, _EngineerId, _ComplexityLevel, null, null, _id));
             }
             catch (DalDoesNotExistException newException)
             {

@@ -23,7 +23,9 @@ public record Task
     (
     string Description,
     bool? Milestone,
+    TimeSpan requiredTime,
     DateTime CreatedDateTask,
+    DateTime estimatedTimeStart,
     DateTime StartTime,
     DateTime TimeEstimatedLeft,
     DateTime DeadLine,
@@ -35,8 +37,8 @@ public record Task
     string? Comments = null,
     int ID = 0
     )
-    
+
 {
-    public Task() : this("", false,DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.Now, DateTime.MinValue,"", 0,null,"") { }
+    public Task() : this("", false, TimeSpan.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.MinValue, DateTime.Now, DateTime.MinValue, "", 0, null, "") { }
 
 }

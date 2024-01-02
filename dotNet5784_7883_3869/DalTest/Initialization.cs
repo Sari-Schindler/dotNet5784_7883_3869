@@ -134,15 +134,16 @@ public static class Initialization
             string _deliverable = _deliverableArray[s_rand.Next(0, 3)];
             string _nickName = nickNames[i % 3];
             bool _mileStone = false;
-            DateTime _CreatedAdt= DateTime.Now; 
+            TimeSpan _requiredTime=TimeSpan.FromDays(i%50);
+            DateTime _CreatedAdt= DateTime.Now;
+            DateTime _estimatedTimeStart = _CreatedAdt.Add(TimeSpan.FromDays(i % 30));
             DateTime _Start = _CreatedAdt.Add(TimeSpan.FromHours(i));
             DateTime _ScheduledDate = _CreatedAdt.Add(TimeSpan.FromDays(i % 20));
             DateTime _DeadLine = _ScheduledDate.Add(TimeSpan.FromDays(7)); ;
             DateTime _Complete = _ScheduledDate.Add(TimeSpan.FromHours(-i % 24));
             int _level = i % 4;
             TaskLevel _ComplexityLevel = (TaskLevel)_level;
-            Task _newTask = new DO.Task(_description, _mileStone, _CreatedAdt, _Start, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel,_nickName);
-
+            Task _newTask = new DO.Task(_description, _mileStone,_requiredTime, _CreatedAdt, _Start,_estimatedTimeStart, _ScheduledDate, _DeadLine, _Complete,_deliverable, AllEngineer[i % (AllEngineer.Count())]!.ID, _ComplexityLevel,_nickName);
             s_dal!.Task.Create(_newTask);
         }
     }
