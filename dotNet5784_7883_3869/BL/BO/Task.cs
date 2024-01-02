@@ -25,6 +25,6 @@ public class Task
     public string? Comments { get; set; }
     public int ID { get; init; }
     public EngineerInTask? CurrentEngineer{ get; set; }
-    public override string ToString() => this.ToStringProperty();
+   // public override string ToString() => this.ToStringProperty();
 
 }

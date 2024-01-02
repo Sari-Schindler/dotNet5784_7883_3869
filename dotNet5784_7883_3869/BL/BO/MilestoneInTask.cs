@@ -14,6 +14,6 @@ public class MilestoneInTask
     public required DateTime CreatedDate {  get; set; } 
     public Status MilestoneInTaskStatus { get; set; }
     public double? ProgressPercentage { get; set; }
-    public override string ToString() => this.ToStringProperty();
+   // public override string ToString() => this.ToStringProperty();
 
 }

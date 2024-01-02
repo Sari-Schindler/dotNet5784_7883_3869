@@ -35,9 +35,10 @@ internal class TaskImplementation : ITask
     {
         try
         {
-            //לראות למה במהנדס למה עשינו IF ופה לא והאם צריך
             IEnumerable<BO.Task> allTasks = from task in _dal.Task.ReadAll()
                                             select convertToBo(task);
+            if (!allTasks.Any())
+                throw new NotImplementedException();
             return filter == null ? allTasks : allTasks.Where(filter);
         }
         catch (NotImplementedException ex)
@@ -55,7 +56,7 @@ internal class TaskImplementation : ITask
             Description= task.Description,
             Milestone= (bool)task.Milestone,
             CreatedDateTask= task.CreatedDateTask,
-            EstimatedStartTime = task.EstimatedStartTime,
+            EstimatedStartTime = task.,
             StartTime = task.StartTime,
             TaskStatus= (BO.Status)(task!.CreatedDateTask == DateTime.MinValue ? 0
                             : task!.StartTime == DateTime.MinValue ? 1

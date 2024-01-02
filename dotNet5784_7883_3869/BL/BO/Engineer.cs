@@ -15,7 +15,7 @@ public class Engineer
     public required double Cost {  get; set; }      
     public string? Email { get; set; }
     public TaskInEngineer? CurrentTask {  get; set; }
-    public override string ToString() => this.ToStringProperty();
+   // public override string ToString() => this.ToStringProperty();
 
 
 }
