@@ -19,3 +19,19 @@ public class BlNullPropertyException : Exception
 }
 
 
+[Serializable]
+public class BlAlreadyExistsException: Exception
+{
+    public BlAlreadyExistsException(string? message) : base(message) { }
+    public BlAlreadyExistsException(string message, Exception innerException)
+                : base(message, innerException) { }
+}
+
+[Serializable]
+public class DalDeletionImpossible: Exception
+{
+    public DalDeletionImpossible(string? message) : base(message) { }
+    public DalDeletionImpossible(string message, Exception innerException)
+                : base(message, innerException) { }
+}
+

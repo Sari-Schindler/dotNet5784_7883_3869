@@ -25,9 +25,9 @@ internal class TaskImplementation : ITask
                 newTask.productDescription, newTask.CurrentEngineer?.ID, (DO.TaskLevel?)newTask?.ComplexityLevel,newTask!.nickName,newTask?.Comments, newTask!.ID));
             //הוספת משימות קודמות מתוך רשימת המשימות הקיימת
         }
-        catch
+        catch (DO.DalAlreadyExistsException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlAlreadyExistsException($"Task with ID {newTask.ID} already exists", exception);
         }
     }
 
@@ -43,9 +43,9 @@ internal class TaskImplementation : ITask
                 throw new NotImplementedException();
             return filter == null ? allTasks : allTasks.Where(filter);
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"no task found", exception);
         }
     }
 
@@ -57,6 +57,7 @@ internal class TaskImplementation : ITask
         {
             Description = task.Description,
             Milestone = FindMilestoneForTask(task.ID),
+            requierdTime = task.requiredTime,
             CreatedDateTask = task.CreatedDateTask,
             EstimatedStartTime = task.estimatedTimeStart,
             StartTime = task.StartTime,
@@ -117,9 +118,9 @@ internal class TaskImplementation : ITask
                 throw new NotImplementedException();
             _dal.Engineer!.Delete(taskId);
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {taskId} already not exists", exception);
         }
     }
 
@@ -132,9 +133,9 @@ internal class TaskImplementation : ITask
             BO.Task boTask = convertToBo(doTask!);
             return boTask;          
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {ID} already not exists", exception);
         }
     }
   
@@ -148,9 +149,9 @@ internal class TaskImplementation : ITask
                 task.StartTime, task.TimeEstimatedLeft, task.DeadLine, task.CompleteDate,
                 task.productDescription, task.CurrentEngineer?.ID, (DO.TaskLevel?)task?.ComplexityLevel, task!.nickName, task?.Comments, task!.ID));
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {ID} already not exists", exception);
         }
     }
 }

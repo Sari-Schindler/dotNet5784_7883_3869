@@ -1,6 +1,10 @@
-﻿using System.Reflection.Emit;
+﻿using System;
+using System.Reflection.Emit;
 using System.Text.RegularExpressions;
 using BlApi;
+using BO;
+using DO;
+
 namespace BlImplementation;
 
 
@@ -14,7 +18,7 @@ internal class EngineerImplementation : IEngineer
         var regex = new Regex(pattern, RegexOptions.IgnoreCase);
         if(!regex.IsMatch(engineer.Email!))
         {
-            throw new NotImplementedException();
+            throw new Exception("Email is not valid");
         }
         if (engineer.ID<=0)
             throw new Exception("ID is incorrect here");
@@ -31,9 +35,9 @@ internal class EngineerImplementation : IEngineer
             var engineerID = _dal.Engineer.Create(new DO.Engineer(newEngineer.ID, newEngineer.Name, (DO.EngineerExperience)newEngineer.Level, newEngineer.Cost, newEngineer.Email));
             return engineerID;
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalAlreadyExistsException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlAlreadyExistsException($"engineer with ID {newEngineer.ID} already exists", exception);
         }
     }
 
@@ -57,11 +61,16 @@ internal class EngineerImplementation : IEngineer
                                                    };
             return filter==null ? newEngineers : newEngineers.Where(filter);
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"no engineers found", exception);
         }
-        
+    }
+    private BO.TaskInEngineer? getCurrentTask(int engineer_id)
+    {
+        DO.Task? currentTask = (from task in _dal.Task.ReadAll((DO.Task tempTask) => engineer_id == tempTask.EngineerId) select task)
+            .FirstOrDefault(task => task!.StartTime != DateTime.MinValue && task.CompleteDate == DateTime.MinValue, null);
+        return currentTask == null ? null : new BO.TaskInEngineer { ID = currentTask.ID, NickName = currentTask.nickName };
     }
 
     public void Delete(int engineerID)
@@ -74,12 +83,13 @@ internal class EngineerImplementation : IEngineer
                                              where task.EngineerId == engineerID
                                              select task.ID;
             if (isExistInTask.Any())
-                throw new NotImplementedException();
+                //check validation of exception!!
+                throw new BO.BlDoesNotExistException($"engineer with ID {engineerID} already not exists");
             _dal.Engineer!.Delete(engineerID);
         }
-        catch (NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {engineerID} already not exists", exception);
         }
     }
 
@@ -87,7 +97,7 @@ internal class EngineerImplementation : IEngineer
     {
         var engineer=_dal.Engineer.Read(ID);
         if(engineer is null)
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {ID} already not exists");
         return new BO.Engineer {
             ID = engineer.ID,
             Name = engineer.Name,
@@ -106,16 +116,9 @@ internal class EngineerImplementation : IEngineer
             CheckValidation(engineer);
             _dal.Engineer!.Update(new DO.Engineer(engineer.ID, engineer.Name,(DO.EngineerExperience)engineer.Level, engineer.Cost, engineer.Email));
         }
-        catch(NotImplementedException ex)
+        catch (DO.DalDoesNotExistException exception)
         {
-            throw new NotImplementedException();
+            throw new BO.BlDoesNotExistException($"engineer with ID {engineer.ID} already not exists", exception);
         }
-    }
-
-    private BO.TaskInEngineer? getCurrentTask(int engineer_id)
-    {
-        DO.Task? currentTask = (from task in _dal.Task.ReadAll((DO.Task tempTask) => engineer_id == tempTask.EngineerId) select task)
-            .FirstOrDefault(task => task!.StartTime!= DateTime.MinValue && task.CompleteDate == DateTime.MinValue, null);
-        return currentTask == null ? null : new BO.TaskInEngineer { ID = currentTask.ID, NickName = currentTask.nickName };
     }
 }
