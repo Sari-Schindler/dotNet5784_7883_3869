@@ -11,9 +11,9 @@ internal class TaskImplementation : ITask
     private void CheckValidation(BO.Task task)
     {
         if (task.ID <= 0)
-            throw new Exception("ID is incorrect here"); 
+            throw new BlInvalidValueException("ID is incorrect here"); 
         if (task.nickName == "")
-            throw new Exception("Name can't be null");
+            throw new BlInvalidValueException("Name can't be null");
     }
     private void createTaskDependnce(List<TaskInList> tasks, int id)
     {
@@ -138,7 +138,7 @@ internal class TaskImplementation : ITask
                                                    where dependency.DependentTask == taskId
                                                    select isExistTask!.ID;
             if (isExistInDependency.Any())
-                throw new DalDeletionImpossible($"can't delete task with Id {taskId}");
+                throw new BlCannotBeDeletedException($"can't delete task with Id {taskId}");
             _dal.Engineer!.Delete(taskId);
         }
         catch (DO.DalDoesNotExistException exception)

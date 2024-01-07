@@ -18,14 +18,14 @@ internal class EngineerImplementation : IEngineer
         var regex = new Regex(pattern, RegexOptions.IgnoreCase);
         if(!regex.IsMatch(engineer.Email!))
         {
-            throw new Exception("Email is not valid");
+            throw new BlInvalidValueException("Email is not valid");
         }
         if (engineer.ID<=0)
-            throw new Exception("ID is incorrect here");
+            throw new BlInvalidValueException("ID is incorrect here");
         if (engineer.Name == "")
-            throw new Exception("Name can't be null");
+            throw new BlInvalidValueException("Name can't be null");
         if (engineer.Cost <= 0)
-            throw new Exception("Cost must be larger than 0");
+            throw new BlInvalidValueException("Cost must be larger than 0");
     }
     public int Create(BO.Engineer newEngineer)
     {
@@ -84,7 +84,7 @@ internal class EngineerImplementation : IEngineer
                                              select task.ID;
             if (isExistInTask.Any())
                 //check validation of exception!!
-                throw new BO.DalDeletionImpossible($"can't delete engineer with ID {engineerID}");
+                throw new BO.BlCannotBeDeletedException($"can't delete engineer with ID {engineerID}");
             _dal.Engineer!.Delete(engineerID);
         }
         catch (DO.DalDoesNotExistException exception)

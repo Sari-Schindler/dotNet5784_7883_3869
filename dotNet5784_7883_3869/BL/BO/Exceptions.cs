@@ -3,7 +3,9 @@
 using BlImplementation;
 
 namespace BO;
-
+/// <summary>
+/// exception for an entity that is wanted but does't exist
+/// </summary>
 [Serializable]
 public class BlDoesNotExistException : Exception
 {
@@ -12,12 +14,20 @@ public class BlDoesNotExistException : Exception
                 : base(message, innerException) { }
 }
 
+
+/// <summary>
+/// exception for an invalid value 
+/// </summary>
 [Serializable]
-public class BlNullPropertyException : Exception
+public class BlInvalidValueException : Exception
 {
-    public BlNullPropertyException(string? message) : base(message) { }
+    public BlInvalidValueException(string? message) : base(message) { }
 }
 
+
+/// <summary>
+/// exception for an entity that already exist
+/// </summary>
 
 [Serializable]
 public class BlAlreadyExistsException: Exception
@@ -27,11 +37,19 @@ public class BlAlreadyExistsException: Exception
                 : base(message, innerException) { }
 }
 
+/// <summary>
+/// exception for an entity that can't be deleted
+/// </summary>
 [Serializable]
-public class DalDeletionImpossible: Exception
+public class BlCannotBeDeletedException : Exception
 {
-    public DalDeletionImpossible(string? message) : base(message) { }
-    public DalDeletionImpossible(string message, Exception innerException)
-                : base(message, innerException) { }
+    public BlCannotBeDeletedException(string? message) : base(message) { }
 }
+
+
+
+
+
+
+
 
