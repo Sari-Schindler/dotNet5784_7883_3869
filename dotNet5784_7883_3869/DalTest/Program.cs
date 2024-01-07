@@ -287,6 +287,8 @@ namespace DalTest
                 DateTime _DeadLine = tempTask.DeadLine;
                 DateTime _CompleteDate = tempTask.CompleteDate;
                 string _productDescription = tempTask.productDescription;
+                string _nickName = tempTask.nickName;
+                string _comments = tempTask.Comments;
                 int ?_EngineerId = tempTask.EngineerId;
                 TaskLevel? _ComplexityLevel = tempTask.ComplexityLevel;
                 if (tempTask.Description is null)
@@ -312,8 +314,13 @@ namespace DalTest
                 if (_EngineerId == 0)
                     _EngineerId = _task!.EngineerId;
                 if (_ComplexityLevel.ToString() == "easy")
-                    _ComplexityLevel = tempTask.ComplexityLevel;
-                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _requiredTime, _CreatedDateTask, _estimatedTimeStart, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription, _EngineerId, _ComplexityLevel, null, null, _id));
+                    _ComplexityLevel = _task.ComplexityLevel;
+                if(_nickName == null)
+                    _nickName = _task!.nickName;
+                if (_comments == null)
+                    _comments = _task.Comments;
+
+                s_dal.Task.Update(new DO.Task(_Description, _Milestone, _requiredTime, _CreatedDateTask, _estimatedTimeStart, _StartTime, _TimeEstimatedLeft, _DeadLine, _CompleteDate, _productDescription, _EngineerId, _ComplexityLevel, _nickName, _comments, _id));
             }
             catch (DalDoesNotExistException newException)
             {
