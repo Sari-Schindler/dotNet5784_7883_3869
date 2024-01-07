@@ -56,9 +56,9 @@ internal class TaskImplementation : ITask
         return new BO.Task
         {
             Description = task.Description,
-            Milestone = (bool)task.Milestone,
+            Milestone = FindMilestoneForTask(task.ID),
             CreatedDateTask = task.CreatedDateTask,
-            EstimatedStartTime = task.,
+            EstimatedStartTime = task.estimatedTimeStart,
             StartTime = task.StartTime,
             TaskStatus = (BO.Status)(task!.CreatedDateTask == DateTime.MinValue ? 0
                             : task!.StartTime == DateTime.MinValue ? 1
@@ -73,14 +73,36 @@ internal class TaskImplementation : ITask
             nickName = task.nickName,
             Comments = task.Comments,
             ID = task.ID,
-            CurrentEngineer /*convertToEngineerInTask(task!.EngineerId);*/
+            CurrentEngineer = FindCurrentEngineer(task.ID)
         };
     }
 
-    //private BO.EngineerInTask convertToEngineerInTask(int engineerId)
-    //{
-    //    return new BO.EngineerInTask {engineerId,"KCFV" };
-    //}
+    private MilestoneInTask FindMilestoneForTask(int id)
+    {
+        DO.Dependency? milstone_dep = _dal.Dependency.ReadAll(dep => dep.DependentTask == id).First(dep => _dal.Task?.Read(task => task.ID == dep!.previousIDTask)!.Milestone == true);
+        DO.Task? milestone = _dal.Task.Read(task => task.ID == milstone_dep!.previousIDTask);
+        return new MilestoneInTask
+        {
+            ID = milestone!.ID,
+            NickName = milestone.nickName
+        };
+
+    }
+    private EngineerInTask FindCurrentEngineer(int Id)
+    {
+        try
+        {
+            if(_dal.Engineer.Read(Id) == null)
+            { return null!; }
+            return new BO.EngineerInTask
+            {
+                ID = Id!,
+                Name = _dal.Engineer?.Read(Id)!.Name
+            };
+        }
+        catch { return null!; }
+    }
+
 
     public void Delete(int taskId)
     {
