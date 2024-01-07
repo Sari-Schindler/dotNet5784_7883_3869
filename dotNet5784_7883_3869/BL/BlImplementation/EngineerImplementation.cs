@@ -84,7 +84,7 @@ internal class EngineerImplementation : IEngineer
                                              select task.ID;
             if (isExistInTask.Any())
                 //check validation of exception!!
-                throw new BO.BlDoesNotExistException($"engineer with ID {engineerID} already not exists");
+                throw new BO.DalDeletionImpossible($"can't delete engineer with ID {engineerID}");
             _dal.Engineer!.Delete(engineerID);
         }
         catch (DO.DalDoesNotExistException exception)

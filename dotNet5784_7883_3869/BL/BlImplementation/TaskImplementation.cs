@@ -115,7 +115,7 @@ internal class TaskImplementation : ITask
                                                    where dependency.DependentTask == taskId
                                                    select isExistTask!.ID;
             if (isExistInDependency.Any())
-                throw new NotImplementedException();
+                throw new DalDeletionImpossible($"can't delete task with Id {taskId}");
             _dal.Engineer!.Delete(taskId);
         }
         catch (DO.DalDoesNotExistException exception)
