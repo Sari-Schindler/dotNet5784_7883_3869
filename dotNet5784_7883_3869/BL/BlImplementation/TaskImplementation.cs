@@ -15,6 +15,15 @@ internal class TaskImplementation : ITask
         if (task.nickName == "")
             throw new Exception("Name can't be null");
     }
+    private void createTaskDependnce(List<TaskInList> tasks, int id)
+    {
+        if (tasks.Count == 0)
+            return ;
+        _dal.Dependency.Create(new DO.Dependency( tasks.First()!.ID,0,id));
+        tasks.RemoveAt(0);
+         createTaskDependnce(tasks, id);
+     
+    }
     public void Create(BO.Task newTask)
     {
         try
@@ -23,7 +32,7 @@ internal class TaskImplementation : ITask
             _dal.Task.Create(new DO.Task(newTask.Description,false,newTask.requierdTime, newTask.CreatedDateTask,newTask.EstimatedStartTime,
                 newTask.StartTime, newTask.TimeEstimatedLeft, newTask.DeadLine, newTask.CompleteDate,
                 newTask.productDescription, newTask.CurrentEngineer?.ID, (DO.TaskLevel?)newTask?.ComplexityLevel,newTask!.nickName,newTask?.Comments, newTask!.ID));
-            //הוספת משימות קודמות מתוך רשימת המשימות הקיימת
+                createTaskDependnce(newTask.DependencysList!, newTask.ID);
         }
         catch (DO.DalAlreadyExistsException exception)
         {
@@ -49,8 +58,9 @@ internal class TaskImplementation : ITask
         }
     }
 
-            
-      
+
+
+
     private BO.Task convertToBo(DO.Task task)
     {
         return new BO.Task
@@ -65,7 +75,20 @@ internal class TaskImplementation : ITask
                             : task!.StartTime == DateTime.MinValue ? 1
                             : task.CompleteDate == DateTime.MinValue ? 2
                             : 3),
-            DependencysList = task.DependencysList,
+            DependencysList = (List<TaskInList>)(from dependency in _dal!.Dependency!.ReadAll()!
+                                           where dependency.previousIDTask == task.ID
+                                           let tempTask = _dal.Task.Read(dependency.previousIDTask)
+                                           select new TaskInList
+                                           {
+                                               ID = task.ID,
+                                               NickName = task.nickName,
+                                               Description = task.Description,
+                                               TaskInListStatus = (BO.Status)(task!.CreatedDateTask == DateTime.MinValue ? 0
+                                                                              : task!.StartTime == DateTime.MinValue ? 1
+                                                                              : task.CompleteDate == DateTime.MinValue ? 2
+                                                                                                                       : 3),
+                                           }), 
+
             TimeEstimatedLeft = task.TimeEstimatedLeft,
             DeadLine = task.DeadLine,
             CompleteDate = task.CompleteDate,
@@ -151,7 +174,7 @@ internal class TaskImplementation : ITask
         }
         catch (DO.DalDoesNotExistException exception)
         {
-            throw new BO.BlDoesNotExistException($"engineer with ID {ID} already not exists", exception);
+            throw new BO.BlDoesNotExistException($"engineer with ID {task.ID} already not exists", exception);
         }
     }
 }
