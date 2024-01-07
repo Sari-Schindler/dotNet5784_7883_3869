@@ -11,6 +11,7 @@ public class Task
 {
     public required string Description { get; set; }
     public required MilestoneInTask Milestone { get; set; }
+    public required TimeSpan requierdTime {  get; set; }
     public required DateTime CreatedDateTask { get; set; }
     public required DateTime EstimatedStartTime { get; set; }
     public required DateTime StartTime { get; set; }

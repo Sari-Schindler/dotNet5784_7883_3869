@@ -1,7 +1,9 @@
 ﻿
 using BlApi;
+using BO;
 using System.Runtime.Intrinsics.Arm;
 namespace BlImplementation;
+
 
 internal class TaskImplementation : ITask
 {
@@ -9,7 +11,7 @@ internal class TaskImplementation : ITask
     private void CheckValidation(BO.Task task)
     {
         if (task.ID <= 0)
-            throw new Exception("ID is incorrect here");
+            throw new Exception("ID is incorrect here"); 
         if (task.nickName == "")
             throw new Exception("Name can't be null");
     }
@@ -18,7 +20,7 @@ internal class TaskImplementation : ITask
         try
         {
             CheckValidation(newTask);
-            _dal.Task.Create(new DO.Task(newTask.Description,false, newTask.CreatedDateTask,
+            _dal.Task.Create(new DO.Task(newTask.Description,false,newTask.requierdTime, newTask.CreatedDateTask,newTask.EstimatedStartTime,
                 newTask.StartTime, newTask.TimeEstimatedLeft, newTask.DeadLine, newTask.CompleteDate,
                 newTask.productDescription, newTask.CurrentEngineer?.ID, (DO.TaskLevel?)newTask?.ComplexityLevel,newTask!.nickName,newTask?.Comments, newTask!.ID));
             //הוספת משימות קודמות מתוך רשימת המשימות הקיימת
@@ -53,27 +55,32 @@ internal class TaskImplementation : ITask
     {
         return new BO.Task
         {
-            Description= task.Description,
-            Milestone= (bool)task.Milestone,
-            CreatedDateTask= task.CreatedDateTask,
+            Description = task.Description,
+            Milestone = (bool)task.Milestone,
+            CreatedDateTask = task.CreatedDateTask,
             EstimatedStartTime = task.,
             StartTime = task.StartTime,
-            TaskStatus= (BO.Status)(task!.CreatedDateTask == DateTime.MinValue ? 0
+            TaskStatus = (BO.Status)(task!.CreatedDateTask == DateTime.MinValue ? 0
                             : task!.StartTime == DateTime.MinValue ? 1
                             : task.CompleteDate == DateTime.MinValue ? 2
                             : 3),
-            DependencysList =task.DependencysList,
-            TimeEstimatedLeft=task.TimeEstimatedLeft,
-            DeadLine=task.DeadLine,
-            CompleteDate =task.CompleteDate,
-            productDescription=task.productDescription,
-            ComplexityLevel= (BO.TaskLevel?)task.ComplexityLevel,
-            nickName=task.nickName,
-            Comments=task.Comments,
-            ID=task.ID,
-            CurrentEngineer=task.CurrentEngineer
+            DependencysList = task.DependencysList,
+            TimeEstimatedLeft = task.TimeEstimatedLeft,
+            DeadLine = task.DeadLine,
+            CompleteDate = task.CompleteDate,
+            productDescription = task.productDescription,
+            ComplexityLevel = (BO.TaskLevel?)task.ComplexityLevel,
+            nickName = task.nickName,
+            Comments = task.Comments,
+            ID = task.ID,
+            CurrentEngineer /*convertToEngineerInTask(task!.EngineerId);*/
         };
     }
+
+    //private BO.EngineerInTask convertToEngineerInTask(int engineerId)
+    //{
+    //    return new BO.EngineerInTask {engineerId,"KCFV" };
+    //}
 
     public void Delete(int taskId)
     {
@@ -115,9 +122,9 @@ internal class TaskImplementation : ITask
         {
             var isExistTask = _dal.Task?.Read(task.ID);
             CheckValidation(task);
-            _dal.Task!.Update(new DO.Task(task.Description, false, task.CreatedDateTask,
+            _dal.Task!.Update(new DO.Task(task.Description, false, task.requierdTime, task.CreatedDateTask, task.EstimatedStartTime,
                 task.StartTime, task.TimeEstimatedLeft, task.DeadLine, task.CompleteDate,
-                task.productDescription, task.CurrentEngineer?.ID, (DO.TaskLevel?)task?.ComplexityLevel, task!.nickName, task.Comments, task.ID));
+                task.productDescription, task.CurrentEngineer?.ID, (DO.TaskLevel?)task?.ComplexityLevel, task!.nickName, task?.Comments, task!.ID));
         }
         catch (NotImplementedException ex)
         {

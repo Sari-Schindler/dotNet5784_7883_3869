@@ -287,8 +287,8 @@ namespace DalTest
                 DateTime _DeadLine = tempTask.DeadLine;
                 DateTime _CompleteDate = tempTask.CompleteDate;
                 string _productDescription = tempTask.productDescription;
-                string _nickName = tempTask.nickName;
-                string _comments = tempTask.Comments;
+                string? _nickName = tempTask.nickName;
+                string? _comments = tempTask.Comments;
                 int ?_EngineerId = tempTask.EngineerId;
                 TaskLevel? _ComplexityLevel = tempTask.ComplexityLevel;
                 if (tempTask.Description is null)
