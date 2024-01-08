@@ -48,7 +48,7 @@ internal class EngineerImplementation : IEngineer
         {
             var allEngineers = _dal.Engineer.ReadAll();
             if (!allEngineers.Any())
-                throw new NotImplementedException();
+                throw new BlDoesNotExistException("no engineer exist");
             IEnumerable<BO.Engineer> newEngineers = from allEngineer in allEngineers
                                                    select new BO.Engineer
                                                    {
@@ -83,7 +83,6 @@ internal class EngineerImplementation : IEngineer
                                              where task.EngineerId == engineerID
                                              select task.ID;
             if (isExistInTask.Any())
-                //check validation of exception!!
                 throw new BO.BlCannotBeDeletedException($"can't delete engineer with ID {engineerID}");
             _dal.Engineer!.Delete(engineerID);
         }

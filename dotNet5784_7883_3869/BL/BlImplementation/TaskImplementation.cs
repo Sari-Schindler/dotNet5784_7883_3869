@@ -49,7 +49,7 @@ internal class TaskImplementation : ITask
             IEnumerable<BO.Task> allTasks = from task in _dal.Task.ReadAll()
                                             select convertToBo(task);
             if (!allTasks.Any())
-                throw new NotImplementedException();
+                throw new BlDoesNotExistException("no task exist");
             return filter == null ? allTasks : allTasks.Where(filter);
         }
         catch (DO.DalDoesNotExistException exception)
