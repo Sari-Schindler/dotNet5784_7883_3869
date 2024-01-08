@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PL.Engineer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,15 @@ namespace PL
         public MainWindow()
         {
             InitializeComponent();
+        }
+        private void btnEngineer_Click(object sender, RoutedEventArgs e)
+        {
+            new EngineerListWindow().Show();
+        }
+        private void btnToInitializeDatabase_Click(object sender, RoutedEventArgs e)
+        {
+
+            DalTest.Initialization.Do();
         }
     }
 }

@@ -15,8 +15,8 @@ namespace DalTest
         //private static ITask? s_dalTask = new TaskImplementation(); //stage 1
         //private static IEngineer? s_dalEngineer = new EngineerImplementation(); //stage 1
         //private static IDependency? s_dalDependency = new DependencyImplementation(); //stage 1
-        //static readonly IDal s_dal = new DalList(); //stage 2
-       // static readonly IDal s_dal = new Dal.DalXml(); //stage 3
+        //private static readonly IDal s_dal = new DalList(); //stage 2
+        //private static readonly IDal s_dal = new Dal.DalXml(); //stage 3
         static readonly IDal s_dal = Factory.Get; //stage 4
 
         /// <summary>

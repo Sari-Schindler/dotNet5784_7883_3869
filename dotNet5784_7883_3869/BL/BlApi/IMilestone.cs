@@ -10,7 +10,7 @@ namespace BlApi;
 public interface IMilestone
 {
     //יצירת לו"ז
-    public BO.Milestone Read(int ID);
+    //public BO.Milestone Read(int ID);
     public BO.Milestone Update(int ID);
 
 }
