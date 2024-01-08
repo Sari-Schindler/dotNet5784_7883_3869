@@ -1,4 +1,5 @@
-﻿using PL.Engineer;
+﻿using DalApi;
+using PL.Engineer;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,8 +32,9 @@ namespace PL
         }
         private void btnToInitializeDatabase_Click(object sender, RoutedEventArgs e)
         {
-
-            DalTest.Initialization.Do();
+            if (MessageBox.Show("Do you want to initialize Database?", "Initialize Database", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
+                DalTest.Initialization.Do(Factory.Get);
+            
         }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,12 +20,24 @@ namespace PL.Engineer
     /// </summary>
     public partial class EngineerListWindow : Window
     {
+        private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
         public EngineerListWindow()
         {
             InitializeComponent();
+            var temp = s_bl?.Engineer.ReadAll();
+            EngineerList = temp == null ? new() : new(temp);
+
+        }
+        public ObservableCollection<BO.Engineer> EngineerList
+        {
+            get { return (ObservableCollection<BO.Engineer>)GetValue(EnginnerListProperty); }
+            set { SetValue(EnginnerListProperty, value); }
         }
 
-       
-       
+        public static readonly DependencyProperty EnginnerListProperty =
+            DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.Engineer>), typeof(EngineerListWindow), new PropertyMetadata(null));
+
+
+
     }
 }
