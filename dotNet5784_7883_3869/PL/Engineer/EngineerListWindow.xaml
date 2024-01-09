@@ -21,14 +21,14 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Label Content="Label"  Grid.Column="0" HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Top"/>
-            <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceCollection}}"
+            <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceCollectionKey}}"
                  Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Grid>
         <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding EngineerList}">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding ID} "/>
-                    <GridViewColumn Header="name" DisplayMemberBinding="{Binding Name} "/>
+                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding ID}"/>
+                    <GridViewColumn Header="name" DisplayMemberBinding="{Binding Name}"/>
                 </GridView>
             </ListView.View>
         </ListView>
