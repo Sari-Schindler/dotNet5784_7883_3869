@@ -5,14 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PL.Engineer"
         mc:Ignorable="d"
-        Title="EngineerWindow" Height="640" Width="800">
+        Title="EngineerWindow" Height="640" Width="800"
+        DataContext="{Binding CurrentEngineer, RelativeSource={RelativeSource Self}, Mode=TwoWay}">
     <!--Extrnal Grid-->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="40*"/>
-            <RowDefinition Height="500*"/>
-            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid Grid.Row="1"/>
+        <Label Grid.Column="0" Grid.Row="0" Content="ID" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center"/>
+        <TextBox Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+
+        <Label Content="Name" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <TextBox Grid.Row="1" Grid.Column="1"  HorizontalAlignment="Left" Margin="37,49,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+
+        <Label Content="Engineer Experience" Grid.Row="2" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceCollectionKey}}"
+      Grid.Column="1" Grid.Row="2" SelectedValue="{Binding Experience}" Margin="37,49,243,37" SelectionChanged="cbExperienceSelector_SelectionChanged" Width="120"/>
+
+        <Label Content="Cost" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <TextBox Grid.Column="1" Grid.Row="3" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+
+        <Label Content="Email" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <TextBox Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="120"/>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left" Margin="37,11,0,0" Grid.Row="5" VerticalAlignment="Center" Width="120" Height="22" Click="Button_Click"/>
     </Grid>
 </Window>

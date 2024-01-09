@@ -20,9 +20,9 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Label"  Grid.Column="0" HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Top"/>
+            <Label Content="Engineer Experience"  Grid.Column="0" HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Top"/>
             <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceCollectionKey}}"
-                 Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+                 Grid.Column="1" SelectedValue="{Binding Experience, Mode=TwoWay}" VerticalAlignment="Bottom" SelectionChanged="cbExperienceSelector_SelectionChanged" Height="43"/>
         </Grid>
         <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding EngineerList}">
             <ListView.View>
