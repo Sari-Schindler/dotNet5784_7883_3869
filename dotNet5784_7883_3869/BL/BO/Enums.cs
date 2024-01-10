@@ -8,7 +8,7 @@ public enum EngineerExperience
     EIT,
     Junior,
     Senior,
-    All // initial value for PL
+    None // initial value for PL
 }
 
 public enum TaskLevel

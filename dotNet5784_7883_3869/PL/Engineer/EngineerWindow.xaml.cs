@@ -12,6 +12,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using PL.Engineer;
 
 namespace PL.Engineer
 {
@@ -20,27 +21,30 @@ namespace PL.Engineer
     /// </summary>
     public partial class EngineerWindow : Window
     {
-        public EngineerWindow(int Id=0)
-        {
-            InitializeComponent();
-            (Id == 0) ? CurrentEngineer = new ObservableCollection<BO.Engineer>( 0, "", "", 0) :
-                s_bl.Engineer.Read(Id);
-            ;
-        }
-
-
-        public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.All;
-
         private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
-        public ObservableCollection<BO.Engineer> CurrentEngineer
+        public EngineerWindow(int Id = 0)
         {
-            get { return (ObservableCollection<BO.Engineer>)GetValue(EnginnerProperty); }
-            set { SetValue(EnginnerProperty, value); }
+            InitializeComponent();
+            CurrentEngineer = (Id == 0) ? new BO.Engineer { ID = 0, Name = "",Level = BO.EngineerExperience.None, Cost = 0, Email = "", CurrentTask=null } :
+                s_bl.Engineer.Read(Id);
         }
 
-        public static readonly DependencyProperty EnginnerProperty =
-            DependencyProperty.Register("CurrentEngineer", typeof(ObservableCollection<BO.Engineer>), typeof(EngineerWindow), new PropertyMetadata(null));
 
+        public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
+
+        public BO.Engineer CurrentEngineer
+        {
+            get { return (BO.Engineer)GetValue(CurrentEngineerProperty); }
+            set { SetValue(CurrentEngineerProperty, value); }
+        }
+
+        public static readonly DependencyProperty CurrentEngineerProperty =
+            DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
+
+        private void BtnAddOrUpdate_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

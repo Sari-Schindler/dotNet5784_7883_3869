@@ -24,7 +24,7 @@
             <ComboBox ItemsSource="{Binding Source={StaticResource EngineerExperienceCollectionKey}}"
                  Grid.Column="1" SelectedValue="{Binding Experience, Mode=TwoWay}" VerticalAlignment="Bottom" SelectionChanged="cbExperienceSelector_SelectionChanged" Height="43"/>
         </Grid>
-        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding EngineerList}">
+        <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding EngineerList}" SelectionChanged="UpdateThisEngineer_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="id" DisplayMemberBinding="{Binding ID}"/>
@@ -32,7 +32,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100"/>
+        <Button Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="BtnOpenAddOrUpdateWindow_Click"/>
 
 
     </Grid>
