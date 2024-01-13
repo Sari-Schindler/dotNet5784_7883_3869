@@ -19,7 +19,7 @@ internal class TaskImplementation : ITask
     {
         if (tasks.Count == 0)
             return ;
-        _dal.Dependency.Create(new DO.Dependency( tasks.First()!.ID,0,id));
+        _dal.Dependency.Create(new DO.Dependency(id, tasks.First()!.ID, 0));
         tasks.RemoveAt(0);
          createTaskDependnce(tasks, id);
      
