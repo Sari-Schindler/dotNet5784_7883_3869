@@ -50,12 +50,21 @@ namespace PL.Engineer
         private void BtnOpenAddOrUpdateWindow_Click(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
+            InitializeComponent();
+            var temp = s_bl?.Engineer.ReadAll();
+            EngineerList = temp == null ? new() : new(temp);
         }
 
         private void UpdateThisEngineer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BO.Engineer? enginnerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
-            new EngineerWindow(enginnerInList!.ID).ShowDialog();
+            if (enginnerInList != null)
+                new EngineerWindow(enginnerInList!.ID).ShowDialog(); ;
+            InitializeComponent();
+            var temp = s_bl?.Engineer.ReadAll();
+            EngineerList = temp == null ? new() : new(temp);
+          
         }
+    
     }
 }

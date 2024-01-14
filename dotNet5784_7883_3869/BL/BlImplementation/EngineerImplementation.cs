@@ -14,12 +14,11 @@ internal class EngineerImplementation : IEngineer
 
     private void CheckValidation(BO.Engineer engineer)
     {
-        string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])""|" + @"([-a-z0-9!#$%&'+/=?^_`{|}~]|(?<!\.)\.))(?<!\.)" + @"@[a-z0-9][\w\.-][a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+        // string pattern = @"^(?!\.)(""([^""\r\\]|\\[""\r\\])""|" + @"([-a-z0-9!#$%&'+/=?^_`{|}~]|(?<!\.)\.))(?<!\.)" + @"@[a-z0-9][\w\.-][a-z0-9]\.[a-z][a-z\.]*[a-z]$";
+        string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
         var regex = new Regex(pattern, RegexOptions.IgnoreCase);
         if(!regex.IsMatch(engineer.Email!))
-        {
             throw new BlInvalidValueException("Email is not valid");
-        }
         if (engineer.ID<=0)
             throw new BlInvalidValueException("ID is incorrect here");
         if (engineer.Name == "")

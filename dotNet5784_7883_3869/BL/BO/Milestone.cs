@@ -20,6 +20,6 @@ public class Milestone
     public double? ProgressPercentage { get; set; }    
     public string? Comments {  get; set; }
     public List<TaskInList>? DependencysList { get; set; }
-  //  public override string ToString() => this.ToStringProperty();
+   public override string ToString() => this.ToStringProperty();
 
 }

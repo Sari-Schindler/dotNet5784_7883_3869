@@ -50,4 +50,54 @@
     <previousIDTask>4</previousIDTask>
     <ID>10</ID>
   </Dependency>
+  <Dependency>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>11</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>12</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>3</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>13</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>4</DependentTask>
+    <previousIDTask>4</previousIDTask>
+    <ID>14</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>5</DependentTask>
+    <previousIDTask>5</previousIDTask>
+    <ID>15</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>6</DependentTask>
+    <previousIDTask>6</previousIDTask>
+    <ID>16</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>7</DependentTask>
+    <previousIDTask>1</previousIDTask>
+    <ID>17</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>8</DependentTask>
+    <previousIDTask>2</previousIDTask>
+    <ID>18</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>1</DependentTask>
+    <previousIDTask>3</previousIDTask>
+    <ID>19</ID>
+  </Dependency>
+  <Dependency>
+    <DependentTask>2</DependentTask>
+    <previousIDTask>4</previousIDTask>
+    <ID>20</ID>
+  </Dependency>
 </ArrayOfDependency>

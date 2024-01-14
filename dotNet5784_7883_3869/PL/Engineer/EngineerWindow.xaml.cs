@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using BO;
+using DO;
 using PL.Engineer;
 
 namespace PL.Engineer
@@ -21,12 +23,15 @@ namespace PL.Engineer
     /// </summary>
     public partial class EngineerWindow : Window
     {
+        private int id = 0;
+
         private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
         public EngineerWindow(int Id = 0)
         {
+            id = Id;
             InitializeComponent();
-            CurrentEngineer = (Id == 0) ? new BO.Engineer { ID = 0, Name = "",Level = BO.EngineerExperience.None, Cost = 0, Email = "", CurrentTask=null } :
+            CurrentEngineer = (Id == 0) ? new BO.Engineer { ID = 0, Name = "", Level = BO.EngineerExperience.None, Cost = 0, Email = "", CurrentTask = null } :
                 s_bl.Engineer.Read(Id);
         }
 
@@ -41,9 +46,33 @@ namespace PL.Engineer
 
         public static readonly DependencyProperty CurrentEngineerProperty =
             DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
-
         private void BtnAddOrUpdate_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                if (id == 0) 
+                { 
+                    s_bl.Engineer.Create(CurrentEngineer);
+                    MessageBox.Show("The engineer was added successfully", "added successfully", MessageBoxButton.OK, MessageBoxImage.Information); }
+                else
+                {
+                    s_bl.Engineer.Update(CurrentEngineer);
+                    MessageBox.Show("The engineer updated successfully","updates successfully",MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                this.Close();
+            }
+            catch (BlDoesNotExistException ex)
+            {
+                MessageBox.Show(ex.Message, "an error exception",MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (DalAlreadyExistsException ex)
+            {
+                MessageBox.Show(ex.Message, "an error exception", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
+            catch (BlInvalidValueException ex)
+            {
+                MessageBox.Show(ex.Message, "an error exception", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
     }

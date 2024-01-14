@@ -6,6 +6,7 @@
     <Application.Resources>
         <local:EngineerExperienceCollection x:Key="EngineerExperienceCollectionKey"/>
         <local:ConvertIdToContent x:Key="ConverIdToContentKey"/>
+        <local:convertIdToBool x:Key="convertIdToBoolKey"/>
 
     </Application.Resources>
 </Application>

@@ -27,8 +27,7 @@
         <ListView Margin="5" Grid.Row="1" ItemsSource="{Binding EngineerList}" SelectionChanged="UpdateThisEngineer_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="id" DisplayMemberBinding="{Binding ID}"/>
-                    <GridViewColumn Header="name" DisplayMemberBinding="{Binding Name}"/>
+                    <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>

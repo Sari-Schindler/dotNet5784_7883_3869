@@ -14,5 +14,5 @@ public class MilestoneInList
     public string? NickName { get; set; }
     public required Status MilestoneInListStatus {  get; set; } 
     public double? ProgressPercentage {  get; set; }
-   // public override string ToString() => this.ToStringProperty();
+   public override string ToString() => this.ToStringProperty();
 }

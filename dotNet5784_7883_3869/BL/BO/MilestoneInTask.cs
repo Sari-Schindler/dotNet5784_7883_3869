@@ -11,6 +11,6 @@ public class MilestoneInTask
 {
     public required int ID { get; set; }
     public string? NickName { get; set; }
-   // public override string ToString() => this.ToStringProperty();
+    public override string ToString() => this.ToStringProperty();
 
 }
