@@ -31,28 +31,28 @@ namespace PL.Task
             
         }
 
-        public ObservableCollection<BO.Task> TaskList
+        public ObservableCollection<BO.TaskInList> TaskList
         {
-            get { return (ObservableCollection<BO.Task>)GetValue(TaskListProperty); }
+            get { return (ObservableCollection<BO.TaskInList>)GetValue(TaskListProperty); }
             set { SetValue(TaskListProperty, value); }
         }
 
         public static readonly DependencyProperty TaskListProperty =
-            DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.Task>), typeof(TaskListWindow), new PropertyMetadata(null));
+            DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.TaskInList>), typeof(TaskListWindow), new PropertyMetadata(null));
 
         public BO.Status status { get; set; } = BO.Status.None;
 
         private void cbLevelSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var temp = status == BO.Status.None ?
-            s_bl?.Task.ReadAll()!:
-            s_bl?.Task.ReadAll(item => item.TaskStatus == status)!;
+            s_bl?.TaskInList.ReadAll()!:
+            s_bl?.TaskInList.ReadAll(item => item.TaskInListStatus == status)!;
             TaskList = temp == null ? new() : new(temp);
         }
 
         private void UpdateThisTask_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BO.Task? taskInList = (sender as ListView)?.SelectedItem as BO.Task;
+            BO.TaskInList? taskInList = (sender as ListView)?.SelectedItem as BO.TaskInList;
             if (taskInList != null)
                 new TaskWindow(taskInList!.ID).ShowDialog(); ;
         }
@@ -62,7 +62,7 @@ namespace PL.Task
         }
         private void updateTheListToDisplay(Object sender, EventArgs e)
         {
-            var temp = s_bl?.Task.ReadAll();
+            var temp = s_bl?.TaskInList.ReadAll();
             TaskList = temp == null ? new() : new(temp);
         }
 

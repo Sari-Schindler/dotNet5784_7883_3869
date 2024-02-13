@@ -12,6 +12,7 @@ namespace BlImplementation;
 internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
+
     private void CheckValidation(BO.Task task)
     {
         if (task.ID < 0)

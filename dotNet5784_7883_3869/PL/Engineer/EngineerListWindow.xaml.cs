@@ -30,14 +30,14 @@ namespace PL.Engineer
             //EngineerList = temp == null ? new() : new(temp);
             Activated += updateTheListToDisplay!;
         }
-        public ObservableCollection<BO.Engineer> EngineerList
+        public ObservableCollection<BO.EngineerInList> EngineerList
         {
-            get { return (ObservableCollection<BO.Engineer>)GetValue(EnginnerListProperty); }
+            get { return (ObservableCollection<BO.EngineerInList>)GetValue(EnginnerListProperty); }
             set { SetValue(EnginnerListProperty, value); }
         }
 
         public static readonly DependencyProperty EnginnerListProperty =
-            DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.Engineer>), typeof(EngineerListWindow), new PropertyMetadata(null));
+            DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.EngineerInList>), typeof(EngineerListWindow), new PropertyMetadata(null));
 
         public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
@@ -49,8 +49,8 @@ namespace PL.Engineer
         private void cbExperienceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var temp = Experience == BO.EngineerExperience.None ?
-            s_bl?.Engineer.ReadAll() :
-            s_bl?.Engineer.ReadAll(item => item.Level == Experience);
+            s_bl?.EngineerInList.ReadAll() :
+            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience);
             EngineerList = temp == null ? new() : new(temp);
         }
 
@@ -61,14 +61,14 @@ namespace PL.Engineer
 
         private void UpdateThisEngineer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            BO.Engineer? enginnerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
+            BO.EngineerInList? enginnerInList = (sender as ListView)?.SelectedItem as BO.EngineerInList;
             if (enginnerInList != null)
                 new EngineerWindow(enginnerInList!.ID).ShowDialog(); ;
         }
 
         private void updateTheListToDisplay(Object sender, EventArgs e)
         {
-            var temp = s_bl?.Engineer.ReadAll();
+            var temp = s_bl?.EngineerInList.ReadAll();
             EngineerList = temp == null ? new() : new(temp);
         }
     }
