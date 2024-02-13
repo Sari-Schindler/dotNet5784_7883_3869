@@ -38,7 +38,7 @@ namespace PL.Task
                 CreatedDateTask = DateTime.MinValue,
                 EstimatedStartTime = DateTime.MinValue,
                 StartTime = DateTime.MinValue,
-                TaskStatus = BO.Status.Scheduled,
+                TaskStatus = BO.Status.Unscheduled,
                 DependencysList = null,
                 TimeEstimatedLeft = DateTime.MinValue,
                 DeadLine = DateTime.MinValue,
