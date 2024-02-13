@@ -22,13 +22,6 @@
     <Email>Dina@gmail.com</Email>
   </Engineer>
   <Engineer>
-    <ID>306466581</ID>
-    <Name>Shira</Name>
-    <Level>Senior</Level>
-    <Cost>302</Cost>
-    <Email>Shira@gmail.com</Email>
-  </Engineer>
-  <Engineer>
     <ID>334425568</ID>
     <Name>Lea</Name>
     <Level>EIT</Level>
@@ -160,5 +153,12 @@
     <Level>Junior</Level>
     <Cost>200</Cost>
     <Email>guldi@gmail.com</Email>
+  </Engineer>
+  <Engineer>
+    <ID>306466581</ID>
+    <Name>Shira</Name>
+    <Level>Senior</Level>
+    <Cost>302</Cost>
+    <Email>Shira@gmail.com</Email>
   </Engineer>
 </ArrayOfEngineer>

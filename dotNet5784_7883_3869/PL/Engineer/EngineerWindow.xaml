@@ -49,6 +49,6 @@
         <TextBox Text="{Binding CurrentTask.NickName, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="91,52,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"
         IsEnabled="False"/>
 
-        <Button HorizontalAlignment="Left" Content="{Binding ID, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Margin="340,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="120" Height="22" Click="BtnAddOrUpdate_Click" Grid.ColumnSpan="2"/>
+        <Button FontWeight="ExtraBold" HorizontalAlignment="Left" Content="{Binding ID, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Margin="340,0,0,0" Grid.Row="6" VerticalAlignment="Center" Width="120" Height="22" Click="BtnAddOrUpdate_Click" Grid.ColumnSpan="2"/>
     </Grid>
 </Window>
