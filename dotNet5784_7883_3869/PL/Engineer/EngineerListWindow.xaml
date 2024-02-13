@@ -31,7 +31,7 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button Style="{Binding}" Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="BtnOpenAddOrUpdateWindow_Click"/>
+        <Button Background="AliceBlue" FontFamily="Cursive" Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="BtnOpenAddOrUpdateWindow_Click"/>
 
 
     </Grid>
