@@ -24,7 +24,7 @@
             <ComboBox ItemsSource="{Binding Source={StaticResource TaskLevelCollectionKey}}"
                  Grid.Column="1" SelectedValue="{Binding Level, Mode=TwoWay}" VerticalAlignment="Bottom" SelectionChanged="cbLevelSelector_SelectionChanged" Height="43"/>
         </Grid>
-        <ListView Margin="" Grid.Row="1" ItemsSource="{Binding TaskList}" SelectionChanged="UpdateThisTask_SelectionChanged">
+        <ListView Grid.Row="1" ItemsSource="{Binding TaskList}" SelectionChanged="UpdateThisTask_SelectionChanged">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
