@@ -15,14 +15,32 @@ internal class TaskImplementation : ITask
 
     private void CheckValidation(BO.Task task)
     {
-        if (task.ID < 0)
-            throw new BlInvalidValueException("ID is incorrect here"); 
+        if(task.Description=="")
+            throw new BlInvalidValueException("Description can't be null");
+        if (task.Milestone is null)
+            throw new BlInvalidValueException("Milestone can't be null");
+        if (task.requierdTime == TimeSpan.MinValue)
+            throw new BlInvalidValueException("requierdTime can't be null");
+        if (task.CreatedDateTask == DateTime.MinValue)
+            throw new BlInvalidValueException("CreatedDateTask can't be null");
+        if (task.EstimatedStartTime == DateTime.MinValue)
+            throw new BlInvalidValueException("EstimatedStartTime can't be null");
+        if (task.StartTime == DateTime.MinValue)
+            throw new BlInvalidValueException("StartTime can't be null");
+        if (task.TaskStatus == 0)
+            throw new BlInvalidValueException("Status can't be null");
+        if (task.TimeEstimatedLeft == DateTime.MinValue)
+            throw new BlInvalidValueException("TimeEstimatedLeft can't be null");
+        if (task.DeadLine == DateTime.MinValue)
+            throw new BlInvalidValueException("DeadLine can't be null");
+        if (task.CompleteDate == DateTime.MinValue)
+            throw new BlInvalidValueException("CompleteDate can't be null");
+        if (task.productDescription =="")
+            throw new BlInvalidValueException("productDescription can't be null");
         if (task.nickName == "")
             throw new BlInvalidValueException("Name can't be null");
-        if (task.ComplexityLevel == BO.TaskLevel.None)
-            throw new BlInvalidValueException("Level can't be none");
-        if(task.DeadLine==DateTime.MinValue)
-            throw new BlInvalidValueException("DeadLine can't be null");
+        if (task.ID < 0)
+            throw new BlInvalidValueException("ID is incorrect here"); 
     }
     private void createTaskDependnce(List<TaskInList> tasks, int id)
     {
