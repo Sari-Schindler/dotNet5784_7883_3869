@@ -46,32 +46,18 @@ internal class TaskImplementation : ITask
         }
     }
 
-           
-    
+
+
     public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null)
     {
-        //try
-        //{
-
-        //    IEnumerable<BO.Task> allTasks = from task in _dal.Task.ReadAll()
-        //                                    select convertToBo(task);
-        //    if (!allTasks.Any())
-        //        throw new BlDoesNotExistException("no task exist");
-        //    return filter == null ? allTasks : allTasks.Where(filter);
-        //}
-
-        //catch (DO.DalDoesNotExistException exception)
-        //{
-        //    throw new BO.BlDoesNotExistException($"no task found", exception);
-        //}\
         try
         {
 
-        var allTasks = _dal.Task.ReadAll();
+            var allTasks = _dal.Task.ReadAll();
             if (!allTasks.Any())
                 throw new BlDoesNotExistException("no task exist");
             IEnumerable<BO.Task> newTask = from allTask in allTasks
-                                                select convertToBo(allTask);
+                                           select convertToBo(allTask);
             return filter == null ? newTask : newTask.Where(filter);
         }
         catch (DO.DalDoesNotExistException exception)

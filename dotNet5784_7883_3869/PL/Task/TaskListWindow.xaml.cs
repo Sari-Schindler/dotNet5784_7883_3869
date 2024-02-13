@@ -40,13 +40,13 @@ namespace PL.Task
         public static readonly DependencyProperty TaskListProperty =
             DependencyProperty.Register("TaskList", typeof(ObservableCollection<BO.Task>), typeof(TaskListWindow), new PropertyMetadata(null));
 
-        public BO.TaskLevel Level { get; set; } = BO.TaskLevel.None;
+        public BO.Status status { get; set; } = BO.Status.None;
 
         private void cbLevelSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var temp = Level == BO.TaskLevel.None ?
+            var temp = status == BO.Status.None ?
             s_bl?.Task.ReadAll()!:
-            s_bl?.Task.ReadAll(item => item.ComplexityLevel == Level)!;
+            s_bl?.Task.ReadAll(item => item.TaskStatus == status)!;
             TaskList = temp == null ? new() : new(temp);
         }
 

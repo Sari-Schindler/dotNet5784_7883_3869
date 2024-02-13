@@ -23,7 +23,9 @@ public enum TaskLevel
 public enum Status
 {
     Unscheduled,
-    Scheduled, 
-    OnTrack, 
-    InJeopardy
+    Scheduled,
+    OnTrack,
+    InJeopardy,
+    None // initial value for PL
+
 }
