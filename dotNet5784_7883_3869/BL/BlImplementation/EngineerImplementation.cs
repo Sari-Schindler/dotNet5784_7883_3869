@@ -72,7 +72,7 @@ internal class EngineerImplementation : IEngineer
         List<DO.Task?> tasks = _dal.Task.ReadAll().ToList();
         TaskInEngineer? currentTask = (from task in tasks
                                        let engineerId = task.EngineerId
-                                          where engineerId == engineer_id
+                                          where engineerId == engineer_id 
                                           select new TaskInEngineer { ID = task.ID, NickName = task.nickName }).FirstOrDefault();
         return currentTask;
     }

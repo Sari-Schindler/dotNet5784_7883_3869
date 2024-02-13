@@ -21,6 +21,8 @@ internal class TaskImplementation : ITask
             throw new BlInvalidValueException("Name can't be null");
         if (task.ComplexityLevel == BO.TaskLevel.None)
             throw new BlInvalidValueException("Level can't be none");
+        if(task.DeadLine==DateTime.MinValue)
+            throw new BlInvalidValueException("DeadLine can't be null");
     }
     private void createTaskDependnce(List<TaskInList> tasks, int id)
     {
@@ -105,21 +107,13 @@ internal class TaskImplementation : ITask
             nickName = task.nickName,
             Comments = task.Comments,
             ID = task.ID,
-            CurrentEngineer = FindCurrentEngineer(task.ID)
+            CurrentEngineer = FindCurrentEngineer((int)task.EngineerId!)
         };
 }
 
     private MilestoneInTask FindMilestoneForTask(int id)
     {
-        //DO.Dependency? milstone_dep = _dal.Dependency.ReadAll(dep => dep.DependentTask == id).First(dep => _dal.Task?.Read(task => task.ID == dep!.previousIDTask)!.Milestone == true);
-        //DO.Task? milestone = _dal.Task.Read(task => task.ID == milstone_dep!.previousIDTask);
-        //return new MilestoneInTask
-        //{
-        //    ID = milestone!.ID,
-        //    NickName = milestone.nickName
-        //};
-
-        MilestoneInTask milestoneInTask = (from d in _dal.Dependency.ReadAll()
+          MilestoneInTask milestoneInTask = (from d in _dal.Dependency.ReadAll()
                                            let IdPreviousTask = d.previousIDTask
                                            where IdPreviousTask == id && (_dal.Task.Read(d.DependentTask)!.Milestone == true)
                                            select new MilestoneInTask { ID = d.DependentTask, NickName = _dal.Task.Read(d.DependentTask)!.nickName }).FirstOrDefault()!;
@@ -129,16 +123,17 @@ internal class TaskImplementation : ITask
 
 
 
-    private EngineerInTask FindCurrentEngineer(int Id)
+    private EngineerInTask FindCurrentEngineer(int EngineerId)
     {
         try
         {
-            if(_dal.Engineer.Read(Id) == null)
+            var engineer = _dal.Engineer.Read(EngineerId);
+            if(engineer == null)
             { return null!; }
             return new BO.EngineerInTask
             {
-                ID = Id!,
-                Name = _dal.Engineer?.Read(Id)!.Name
+                ID = engineer.ID,
+                Name = engineer.Name
             };
         }
         catch { return null!; }

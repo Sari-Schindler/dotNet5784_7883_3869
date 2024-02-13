@@ -33,7 +33,7 @@ namespace PL.Task
             CurrentTask = (Id == 0) ? new BO.Task
             {
                 Description = "",
-                Milestone = null,
+                Milestone = null!,
                 requierdTime = TimeSpan.MinValue,
                 CreatedDateTask = DateTime.MinValue,
                 EstimatedStartTime = DateTime.MinValue,
