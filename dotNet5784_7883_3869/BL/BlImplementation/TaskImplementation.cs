@@ -69,14 +69,14 @@ internal class TaskImplementation : ITask
 
         var allTasks = _dal.Task.ReadAll();
             if (!allTasks.Any())
-                throw new BlDoesNotExistException("no engineer exist");
+                throw new BlDoesNotExistException("no task exist");
             IEnumerable<BO.Task> newTask = from allTask in allTasks
                                                 select convertToBo(allTask);
             return filter == null ? newTask : newTask.Where(filter);
         }
         catch (DO.DalDoesNotExistException exception)
         {
-            throw new BO.BlDoesNotExistException($"no engineers found", exception);
+            throw new BO.BlDoesNotExistException($"no tasks found", exception);
         }
     }
 

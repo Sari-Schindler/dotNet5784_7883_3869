@@ -41,6 +41,11 @@ namespace PL.Engineer
 
         public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
+        /// <summary>
+        /// Show wanted engineer by specific experience level
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbExperienceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var temp = Experience == BO.EngineerExperience.None ?

@@ -12,7 +12,7 @@
         <!--view list of tasks-->
         <Button Content="Handle Tasks" Height="90" Click="btnTask_Click" Margin="318,147,318,0" VerticalAlignment="Top"/>
         <!--to initialize the database-->
-        <Button Content="initialize database" Height="90" Click="btnToInitializeDatabase_Click" Margin="552,147,83,0" VerticalAlignment="Top"/>
+        <Button  Content="initialize database" Height="90" Click="btnToInitializeDatabase_Click" Margin="552,147,83,0" VerticalAlignment="Top"/>
         
 
     </Grid>

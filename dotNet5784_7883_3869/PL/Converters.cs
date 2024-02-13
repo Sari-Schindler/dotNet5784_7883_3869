@@ -8,6 +8,9 @@ using System.Windows.Data;
 
 namespace PL;
 
+/// <summary>
+/// change Id number to string
+/// </summary>
 class ConvertIdToContent : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
@@ -21,6 +24,10 @@ class ConvertIdToContent : IValueConverter
     }
 
 }
+
+/// <summary>
+/// change Id number to a bolean value
+/// </summary>
 class convertIdToBool : IValueConverter
 {
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
