@@ -17,8 +17,6 @@ internal class TaskImplementation : ITask
     {
         if(task.Description=="")
             throw new BlInvalidValueException("Description can't be null");
-        if (task.Milestone is null)
-            throw new BlInvalidValueException("Milestone can't be null");
         if (task.requierdTime == TimeSpan.MinValue)
             throw new BlInvalidValueException("requierdTime can't be null");
         if (task.CreatedDateTask == DateTime.MinValue)
