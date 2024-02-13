@@ -27,9 +27,8 @@ namespace PL.Task
         public TaskListWindow()
         {
             InitializeComponent();
-            //Activated += updateTheListToDisplay!;
-            var temp = s_bl?.Task.ReadAll();
-            TaskList = temp == null ? new() : new(temp);
+            Activated += updateTheListToDisplay!;
+            
         }
 
         public ObservableCollection<BO.Task> TaskList
@@ -54,18 +53,18 @@ namespace PL.Task
         private void UpdateThisTask_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BO.Task? taskInList = (sender as ListView)?.SelectedItem as BO.Task;
-            //if (taskInList != null)
+            if (taskInList != null)
                 new TaskWindow(taskInList!.ID).ShowDialog(); ;
         }
         private void BtnOpenAddOrUpdateWindow_Click(object sender, RoutedEventArgs e)
         {
             new TaskWindow().ShowDialog();
         }
-        //private void updateTheListToDisplay(Object sender, EventArgs e)
-        //{
-        //    var temp = s_bl?.Task.ReadAll();
-        //    TaskList = temp == null ? new() : new(temp);
-        //}
+        private void updateTheListToDisplay(Object sender, EventArgs e)
+        {
+            var temp = s_bl?.Task.ReadAll();
+            TaskList = temp == null ? new() : new(temp);
+        }
 
     }
 }
