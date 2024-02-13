@@ -20,7 +20,7 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Content="Task Status"  Grid.Column="0" HorizontalAlignment="Left" Margin="69,10,0,0" VerticalAlignment="Top"/>
+            <Label Content="Task Status"  Grid.Column="0" HorizontalAlignment="Left" Margin="69,10,0,0" Height="18" VerticalAlignment="Top"/>
             <ComboBox ItemsSource="{Binding Source={StaticResource StatusCollectionKey}}"
                  Grid.Column="1" SelectedValue="{Binding status, Mode=TwoWay}" VerticalAlignment="Bottom" SelectionChanged="cbLevelSelector_SelectionChanged" Height="43"/>
         </Grid>

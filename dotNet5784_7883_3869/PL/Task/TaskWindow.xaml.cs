@@ -97,5 +97,10 @@ namespace PL.Task
                 MessageBox.Show(ex.Message, "an error exception", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
