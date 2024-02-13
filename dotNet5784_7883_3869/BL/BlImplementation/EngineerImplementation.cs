@@ -24,6 +24,8 @@ internal class EngineerImplementation : IEngineer
             throw new BlInvalidValueException("Name can't be null");
         if (engineer.Cost <= 0)
             throw new BlInvalidValueException("Cost must be larger than 0");
+        if (engineer.Level == BO.EngineerExperience.None)
+            throw new BlInvalidValueException("Level can't be none");
     }
     public int Create(BO.Engineer newEngineer)
     {
@@ -64,11 +66,15 @@ internal class EngineerImplementation : IEngineer
             throw new BO.BlDoesNotExistException($"no engineers found", exception);
         }
     }
+
     private BO.TaskInEngineer? getCurrentTask(int engineer_id)
     {
-        DO.Task? currentTask = (from task in _dal.Task.ReadAll((DO.Task tempTask) => engineer_id == tempTask.EngineerId) select task)
-            .FirstOrDefault(task => task!.StartTime != DateTime.MinValue && task.CompleteDate == DateTime.MinValue, null);
-        return currentTask == null ? null : new BO.TaskInEngineer { ID = currentTask.ID, NickName = currentTask.nickName };
+        List<DO.Task?> tasks = _dal.Task.ReadAll().ToList();
+        TaskInEngineer? currentTask = (from task in tasks
+                                       let engineerId = task.EngineerId
+                                          where engineerId == engineer_id
+                                          select new TaskInEngineer { ID = task.ID, NickName = task.nickName }).FirstOrDefault();
+        return currentTask;
     }
 
     public void Delete(int engineerID)

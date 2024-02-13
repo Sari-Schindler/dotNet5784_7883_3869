@@ -73,7 +73,10 @@ namespace PL.Engineer
             {
                 MessageBox.Show(ex.Message, "an error exception", MessageBoxButton.OK, MessageBoxImage.Error);
             }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "an error exception", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

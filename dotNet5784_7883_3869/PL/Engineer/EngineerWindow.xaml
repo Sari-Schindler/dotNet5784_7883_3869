@@ -20,6 +20,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Label Grid.Column="0" Grid.Row="0" Content="ID" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center"/>
         <TextBox Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap" VerticalAlignment="Center" Width="120"
@@ -40,6 +41,14 @@
         <Label Content="Email" Grid.Row="4" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
         <TextBox Text="{Binding Email, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="4" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"/>
 
-        <Button Grid.Column="1" HorizontalAlignment="Left" Content="{Binding ID, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Margin="37,11,0,0" Grid.Row="5" VerticalAlignment="Center" Width="120" Height="22" Click="BtnAddOrUpdate_Click"/>
+        <Label Content="CurrentTask" Grid.Row="5" Grid.Column="0" HorizontalAlignment="Right" Margin="10,10,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <Label Content="id:" Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="20,11,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <TextBox Text="{Binding CurrentTask.ID, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="37,11,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"
+        IsEnabled="False"/>
+        <Label Content="nick name:" Grid.Row="5" Grid.Column="1" HorizontalAlignment="left" Margin="160,11,0,0" VerticalAlignment="Center" RenderTransformOrigin="-1.79,-0.453"/>
+        <TextBox Text="{Binding CurrentTask.NickName, Mode=TwoWay, NotifyOnValidationError=true,  ValidatesOnExceptions=true}" Grid.Column="1" Grid.Row="5" HorizontalAlignment="Left" Margin="225,11,0,0" TextWrapping="Wrap"  VerticalAlignment="Center" Width="120"
+        IsEnabled="False"/>
+
+        <Button Grid.Column="1" HorizontalAlignment="Left" Content="{Binding ID, Mode=OneTime, Converter={StaticResource ConverIdToContentKey}}" Margin="37,11,0,0" Grid.Row="6" VerticalAlignment="Center" Width="120" Height="22" Click="BtnAddOrUpdate_Click"/>
     </Grid>
 </Window>

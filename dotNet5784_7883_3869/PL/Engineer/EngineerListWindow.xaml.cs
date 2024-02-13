@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BO;
+using PL.Engineer;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -24,9 +26,9 @@ namespace PL.Engineer
         public EngineerListWindow()
         {
             InitializeComponent();
-            var temp = s_bl?.Engineer.ReadAll();
-            EngineerList = temp == null ? new() : new(temp);
-
+            //var temp = s_bl?.Engineer.ReadAll();
+            //EngineerList = temp == null ? new() : new(temp);
+            Activated += updateTheListToDisplay!;
         }
         public ObservableCollection<BO.Engineer> EngineerList
         {
@@ -50,9 +52,6 @@ namespace PL.Engineer
         private void BtnOpenAddOrUpdateWindow_Click(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
-            InitializeComponent();
-            var temp = s_bl?.Engineer.ReadAll();
-            EngineerList = temp == null ? new() : new(temp);
         }
 
         private void UpdateThisEngineer_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -60,11 +59,15 @@ namespace PL.Engineer
             BO.Engineer? enginnerInList = (sender as ListView)?.SelectedItem as BO.Engineer;
             if (enginnerInList != null)
                 new EngineerWindow(enginnerInList!.ID).ShowDialog(); ;
-            InitializeComponent();
+        }
+
+        private void updateTheListToDisplay(Object sender, EventArgs e)
+        {
             var temp = s_bl?.Engineer.ReadAll();
             EngineerList = temp == null ? new() : new(temp);
-          
         }
-    
     }
 }
+
+
+

@@ -16,10 +16,14 @@ public enum TaskLevel
     easy,
     medium,
     hard,
-    export
+    export,
+    None // initial value for PL
 }
 
 public enum Status
 {
-    Unscheduled, Scheduled, OnTrack, InJeopardy
+    Unscheduled,
+    Scheduled, 
+    OnTrack, 
+    InJeopardy
 }

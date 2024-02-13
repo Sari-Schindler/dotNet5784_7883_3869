@@ -14,3 +14,19 @@ internal class EngineerExperienceCollection : IEnumerable
 
     public IEnumerator GetEnumerator() => e_enums.GetEnumerator();
 }
+
+internal class TaskLevelCollection : IEnumerable
+{
+    public static readonly IEnumerable<BO.TaskLevel> e_enums =
+        (Enum.GetValues(typeof(BO.TaskLevel)) as IEnumerable<BO.TaskLevel>)!;
+
+    public IEnumerator GetEnumerator() => e_enums.GetEnumerator();
+}
+
+internal class StatusCollection : IEnumerable
+{
+    public static readonly IEnumerable<BO.Status> e_enums =
+        (Enum.GetValues(typeof(BO.Status)) as IEnumerable<BO.Status>)!;
+
+    public IEnumerator GetEnumerator() => e_enums.GetEnumerator();
+}
