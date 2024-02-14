@@ -20,23 +20,29 @@ internal class TaskImplementation : ITask
     /// <exception cref="BlInvalidValueException"></exception>
     private void CheckValidation(BO.Task task)
     {
-        if(task.Description=="")
+        if (task.Description == "")
             throw new BlInvalidValueException("Description can't be null");
-        if (task.requierdTime == TimeSpan.Zero)
+        if (task.requierdTime == TimeSpan.Zero)// להוסיף
             throw new BlInvalidValueException("requierdTime can't be null");
         if (task.EstimatedStartTime == DateTime.MinValue)
+            throw new BlInvalidValueException("EstimatedStartTime can't be null");
         if (task.TimeEstimatedLeft == DateTime.MinValue)
             throw new BlInvalidValueException("TimeEstimatedLeft can't be null");
         if (task.DeadLine == DateTime.MinValue)
             throw new BlInvalidValueException("DeadLine can't be null");
         if (task.ComplexityLevel == BO.TaskLevel.None)
             throw new BlInvalidValueException("ComplexityLevel can't be none");
-        if (task.productDescription =="")
+        if (task.productDescription == "")
             throw new BlInvalidValueException("productDescription can't be null");
         if (task.nickName == "")
             throw new BlInvalidValueException("NickName can't be null");
         if (task.ID < 0)
-            throw new BlInvalidValueException("ID is incorrect here"); 
+            throw new BlInvalidValueException("ID is incorrect here");
+        if(task.CreatedDateTask>task.StartTime)
+            throw new BlInvalidValueException("statrt time has to be after creat date");
+        if (task.CreatedDateTask > task.EstimatedStartTime)
+            throw new BlInvalidValueException("Estimated Start time has to be after creat date");
+
     }
 
     /// <summary>
