@@ -69,8 +69,8 @@ namespace PL.Engineer
         private void UpdateTheListToDisplay(Object sender, EventArgs e)
         {
             var temp = Experience == BO.EngineerExperience.None ?
-            s_bl?.EngineerInList.ReadAll().OrderBy(engineer => engineer.ID) :
-            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience).OrderBy(engineer => engineer.ID);
+            s_bl?.EngineerInList.ReadAll().OrderBy(engineer => engineer.Name) :
+            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience).OrderBy(engineer => engineer.Name);
             EngineerList = temp == null ? new() : new(temp);
         }
     }
