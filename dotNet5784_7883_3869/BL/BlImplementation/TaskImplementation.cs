@@ -33,6 +33,8 @@ internal class TaskImplementation : ITask
             throw new BlInvalidValueException("DeadLine can't be null");
         //if (task.CompleteDate == DateTime.MinValue)
         //    throw new BlInvalidValueException("CompleteDate can't be null");
+        if (task.ComplexityLevel == BO.TaskLevel.None)
+            throw new BlInvalidValueException("ComplexityLevel can't be none");
         if (task.productDescription =="")
             throw new BlInvalidValueException("productDescription can't be null");
         if (task.nickName == "")
@@ -123,16 +125,16 @@ internal class TaskImplementation : ITask
             nickName = task.nickName,
             Comments = task.Comments,
             ID = task.ID,
-            CurrentEngineer = FindCurrentEngineer((int)task.EngineerId!)
+            CurrentEngineer = FindCurrentEngineer(task.EngineerId ?? 0)
         };
 }
 
     private MilestoneInTask FindMilestoneForTask(int id)
     {
-          MilestoneInTask milestoneInTask = (from d in _dal.Dependency.ReadAll()
-                                           let IdPreviousTask = d.previousIDTask
-                                           where IdPreviousTask == id && (_dal.Task.Read(d.DependentTask)!.Milestone == true)
-                                           select new MilestoneInTask { ID = d.DependentTask, NickName = _dal.Task.Read(d.DependentTask)!.nickName }).FirstOrDefault()!;
+          MilestoneInTask milestoneInTask = (from dependency in _dal.Dependency.ReadAll()
+                                           let IdPreviousTask = dependency.previousIDTask
+                                           where IdPreviousTask == id && (_dal.Task.Read(dependency.DependentTask)!.Milestone == true)
+                                           select new MilestoneInTask { ID = dependency.DependentTask, NickName = _dal.Task.Read(dependency.DependentTask)!.nickName }).FirstOrDefault()!;
         return milestoneInTask;
 
     }
