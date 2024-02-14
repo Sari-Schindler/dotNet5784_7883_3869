@@ -28,7 +28,7 @@ namespace PL.Engineer
             InitializeComponent();
             //var temp = s_bl?.Engineer.ReadAll();
             //EngineerList = temp == null ? new() : new(temp);
-            Activated += updateTheListToDisplay!;
+            Activated += UpdateTheListToDisplay!;
         }
         public ObservableCollection<BO.EngineerInList> EngineerList
         {
@@ -66,9 +66,11 @@ namespace PL.Engineer
                 new EngineerWindow(enginnerInList!.ID).ShowDialog(); ;
         }
 
-        private void updateTheListToDisplay(Object sender, EventArgs e)
+        private void UpdateTheListToDisplay(Object sender, EventArgs e)
         {
-            var temp = s_bl?.EngineerInList.ReadAll();
+            var temp = Experience == BO.EngineerExperience.None ?
+            s_bl?.EngineerInList.ReadAll().OrderBy(engineer => engineer.ID) :
+            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience).OrderBy(engineer => engineer.ID);
             EngineerList = temp == null ? new() : new(temp);
         }
     }

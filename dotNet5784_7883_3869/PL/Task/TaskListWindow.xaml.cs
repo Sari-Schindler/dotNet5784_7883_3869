@@ -27,8 +27,8 @@ namespace PL.Task
         public TaskListWindow()
         {
             InitializeComponent();
-            Activated += updateTheListToDisplay!;
-            
+            Activated += UpdateTheListToDisplay!;
+
         }
 
         public ObservableCollection<BO.TaskInList> TaskList
@@ -45,8 +45,8 @@ namespace PL.Task
         private void cbLevelSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var temp = status == BO.Status.None ?
-            s_bl?.TaskInList.ReadAll()!:
-            s_bl?.TaskInList.ReadAll(item => item.TaskInListStatus == status)!;
+            s_bl?.TaskInList.ReadAll()!.OrderBy(task => task.ID) :
+            s_bl?.TaskInList.ReadAll(item => item.TaskInListStatus == status)!.OrderBy(task => task.ID);
             TaskList = temp == null ? new() : new(temp);
         }
 
@@ -60,9 +60,11 @@ namespace PL.Task
         {
             new TaskWindow().ShowDialog();
         }
-        private void updateTheListToDisplay(Object sender, EventArgs e)
+        private void UpdateTheListToDisplay(Object sender, EventArgs e)
         {
-            var temp = s_bl?.TaskInList.ReadAll();
+            var temp = status == BO.Status.None ?
+            s_bl?.TaskInList.ReadAll()!.OrderBy(task => task.ID) :
+            s_bl?.TaskInList.ReadAll(item => item.TaskInListStatus == status)!.OrderBy(task => task.ID);
             TaskList = temp == null ? new() : new(temp);
         }
 

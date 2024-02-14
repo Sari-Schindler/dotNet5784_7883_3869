@@ -34,7 +34,7 @@ namespace PL.Task
             {
                 Description = "",
                 Milestone = null!,
-                requierdTime = TimeSpan.MinValue,
+                requierdTime = TimeSpan.Zero,
                 CreatedDateTask = DateTime.MinValue,
                 EstimatedStartTime = DateTime.MinValue,
                 StartTime = DateTime.MinValue,
