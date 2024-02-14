@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace BO;
 
+/// <summary>
+/// class for engineer in task
+/// </summary>
+
 public class EngineerInTask
 {
     public required int ID {  get; set; }

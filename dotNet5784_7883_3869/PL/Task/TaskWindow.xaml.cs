@@ -26,6 +26,10 @@ namespace PL.Task
 
         private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
+        /// <summary>
+        /// Function to display single task for update or create
+        /// </summary>
+        /// <param name="Id"></param>
         public TaskWindow(int Id = 0)
         {
             id = Id;
@@ -53,9 +57,12 @@ namespace PL.Task
                 s_bl.Task.Read(Id);
         }
 
-
+        /// <summary>
+        /// For the level's enum
+        /// </summary>
         public BO.TaskLevel Experience { get; set; } = BO.TaskLevel.None;
 
+     
         public BO.Task CurrentTask
         {
             get { return (BO.Task)GetValue(CurrentTaskProperty); }
@@ -64,6 +71,12 @@ namespace PL.Task
 
         public static readonly DependencyProperty CurrentTaskProperty =
             DependencyProperty.Register("CurrentTask", typeof(BO.Task), typeof(TaskWindow), new PropertyMetadata(null));
+
+        /// <summary>
+        /// Function to show the validation's for create or update and show the fit content ob the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddOrUpdate_Click(object sender, RoutedEventArgs e)
         {
             try
@@ -98,9 +111,5 @@ namespace PL.Task
             }
         }
 
-        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

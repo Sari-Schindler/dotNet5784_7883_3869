@@ -27,6 +27,10 @@ namespace PL.Engineer
 
         private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
 
+        /// <summary>
+        /// Function to display single engineer for update or create
+        /// </summary>
+        /// <param name="Id"></param>
         public EngineerWindow(int Id = 0)
         {
             id = Id;
@@ -35,7 +39,9 @@ namespace PL.Engineer
                 s_bl.Engineer.Read(Id);
         }
 
-
+        /// <summary>
+        /// For the experience's enum
+        /// </summary>
         public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
         public BO.Engineer CurrentEngineer
@@ -46,6 +52,12 @@ namespace PL.Engineer
 
         public static readonly DependencyProperty CurrentEngineerProperty =
             DependencyProperty.Register("CurrentEngineer", typeof(BO.Engineer), typeof(EngineerWindow), new PropertyMetadata(null));
+
+        /// <summary>
+        /// Function to show the validation's for create or update and show the fit content on the button
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnAddOrUpdate_Click(object sender, RoutedEventArgs e)
         {
             try

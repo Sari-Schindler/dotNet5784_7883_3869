@@ -1,7 +1,7 @@
 ﻿namespace BO;
 
 /// <summary>
-/// 2 enums that the one describes the engineer's experience and the other describes the task level
+/// 3 enums that the one describes the engineer's experience and the other describes the task level and status
 /// </summary>
 public enum EngineerExperience
 {

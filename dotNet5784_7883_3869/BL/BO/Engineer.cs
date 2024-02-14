@@ -7,6 +7,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
+
+/// <summary>
+/// Class for engineer
+/// </summary>
 public class Engineer
 {
     public required int ID { get; set; }

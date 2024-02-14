@@ -13,6 +13,13 @@ internal class TaskInListImplementation: ITaskInList
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+    /// <summary>
+    /// Return all tasks in list
+    /// </summary>
+    /// <param name="filter">If there's filter return just the items that fit the standards</param>
+    /// <returns></returns>
+    /// <exception cref="BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public IEnumerable<BO.TaskInList> ReadAll(Func<BO.TaskInList, bool>? filter = null)
     {
         try

@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
+/// <summary>
+/// Include all methods of the engineer
+/// </summary>
 public interface IEngineer
 {
     public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool>? filter = null);

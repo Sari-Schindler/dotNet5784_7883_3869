@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
-
+/// <summary>
+/// class for engineer in list
+/// </summary>
 public class EngineerInList
 {
     public required int ID { get; set; }

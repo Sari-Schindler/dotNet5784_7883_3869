@@ -22,7 +22,7 @@
             </Grid.ColumnDefinitions>
             <Label Content="Task Status"  Grid.Column="0" HorizontalAlignment="Left" Margin="71,2,0,0" Height="33" VerticalAlignment="Top"/>
             <ComboBox ItemsSource="{Binding Source={StaticResource StatusCollectionKey}}"
-                 Grid.Column="1" SelectedValue="{Binding status, Mode=TwoWay}" VerticalAlignment="Top" SelectionChanged="cbLevelSelector_SelectionChanged" Height="43" Margin="0,1,0,0"/>
+                 Grid.Column="1" SelectedValue="{Binding status, Mode=TwoWay}" VerticalAlignment="Top" SelectionChanged="StatusSelector_SelectionChanged" Height="43" Margin="0,1,0,0"/>
         </Grid>
         <ListView Grid.Row="1" ItemsSource="{Binding TaskList}" SelectionChanged="UpdateThisTask_SelectionChanged">
             <ListView.View>

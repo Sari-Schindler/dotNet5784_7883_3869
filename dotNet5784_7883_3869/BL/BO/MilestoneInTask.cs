@@ -7,6 +7,10 @@ using System.Threading.Tasks;
 
 namespace BO;
 
+/// <summary>
+/// class for milestone in task
+/// </summary>
+
 public class MilestoneInTask
 {
     public required int ID { get; set; }

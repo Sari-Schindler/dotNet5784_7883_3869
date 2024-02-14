@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
-
+/// <summary>
+/// class for milestone in list
+/// </summary>
 public class MilestoneInList
 {
     public required int ID {  get; set; }   

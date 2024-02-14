@@ -1,11 +1,11 @@
-﻿
-
-using BlImplementation;
+﻿using BlImplementation;
 
 namespace BO;
+
 /// <summary>
 /// exception for an entity that is wanted but does't exist
 /// </summary>
+/// 
 [Serializable]
 public class BlDoesNotExistException : Exception
 {

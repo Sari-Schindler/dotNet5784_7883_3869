@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
+/// <summary>
+/// class for task in list
+/// </summary>
 
 public class TaskInList
 {

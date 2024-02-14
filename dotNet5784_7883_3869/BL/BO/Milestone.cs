@@ -6,6 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
+
+/// <summary>
+/// class for milestone
+/// </summary>
 public class Milestone
 {
     public required int ID { get; set; }

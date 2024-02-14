@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BlImplementation;
 
+/// <summary>
+/// Create observe collection for each entity
+/// </summary>
 internal class Bl : IBl
 {
     public ITask Task =>  new TaskImplementation();

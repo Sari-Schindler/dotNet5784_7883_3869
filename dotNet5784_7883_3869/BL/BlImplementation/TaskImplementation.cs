@@ -13,26 +13,22 @@ internal class TaskImplementation : ITask
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+    /// <summary>
+    /// Function for check validation of task
+    /// </summary>
+    /// <param name="task"></param>
+    /// <exception cref="BlInvalidValueException"></exception>
     private void CheckValidation(BO.Task task)
     {
         if(task.Description=="")
             throw new BlInvalidValueException("Description can't be null");
         if (task.requierdTime == TimeSpan.Zero)
             throw new BlInvalidValueException("requierdTime can't be null");
-        //if (task.CreatedDateTask == DateTime.MinValue)
-        //    throw new BlInvalidValueException("CreatedDateTask can't be null");
         if (task.EstimatedStartTime == DateTime.MinValue)
-            throw new BlInvalidValueException("EstimatedStartTime can't be null");
-        //if (task.StartTime == DateTime.MinValue)
-        //    throw new BlInvalidValueException("StartTime can't be null");
-        //if (task.TaskStatus == 0)
-        //    throw new BlInvalidValueException("Status can't be null");
         if (task.TimeEstimatedLeft == DateTime.MinValue)
             throw new BlInvalidValueException("TimeEstimatedLeft can't be null");
         if (task.DeadLine == DateTime.MinValue)
             throw new BlInvalidValueException("DeadLine can't be null");
-        //if (task.CompleteDate == DateTime.MinValue)
-        //    throw new BlInvalidValueException("CompleteDate can't be null");
         if (task.ComplexityLevel == BO.TaskLevel.None)
             throw new BlInvalidValueException("ComplexityLevel can't be none");
         if (task.productDescription =="")
@@ -42,6 +38,12 @@ internal class TaskImplementation : ITask
         if (task.ID < 0)
             throw new BlInvalidValueException("ID is incorrect here"); 
     }
+
+    /// <summary>
+    /// Function that return the dependences tasks
+    /// </summary>
+    /// <param name="tasks"></param>
+    /// <param name="id"></param>
     private void createTaskDependnce(List<TaskInList> tasks, int id)
     {
         if (tasks == null || tasks.Count == 0)
@@ -51,6 +53,12 @@ internal class TaskImplementation : ITask
          createTaskDependnce(tasks, id);
      
     }
+
+    /// <summary>
+    /// Function to create new task
+    /// </summary>
+    /// <param name="newTask"></param>
+    /// <exception cref="BO.BlAlreadyExistsException"></exception>
     public void Create(BO.Task newTask)
     {
         try
@@ -67,8 +75,13 @@ internal class TaskImplementation : ITask
         }
     }
 
-
-
+    /// <summary>
+    /// Return all tasks
+    /// </summary>
+    /// <param name="filter">if theres filter return just the tasks that fit the standards</param>
+    /// <returns></returns>
+    /// <exception cref="BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null)
     {
         try
@@ -87,9 +100,11 @@ internal class TaskImplementation : ITask
         }
     }
 
-
-
-
+    /// <summary>
+    /// Convert Do-task to BO-task
+    /// </summary>
+    /// <param name="task"></param>
+    /// <returns></returns>
     private BO.Task convertToBo(DO.Task task)
     {
         return new BO.Task
@@ -127,8 +142,13 @@ internal class TaskImplementation : ITask
             ID = task.ID,
             CurrentEngineer = FindCurrentEngineer(task.EngineerId ?? 0)
         };
-}
+    }
 
+    /// <summary>
+    /// Function that find milestone for each task
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
     private MilestoneInTask FindMilestoneForTask(int id)
     {
           MilestoneInTask milestoneInTask = (from dependency in _dal.Dependency.ReadAll()
@@ -139,8 +159,11 @@ internal class TaskImplementation : ITask
 
     }
 
-
-
+    /// <summary>
+    /// Find current engineer for the task
+    /// </summary>
+    /// <param name="EngineerId"></param>
+    /// <returns></returns>
     private EngineerInTask FindCurrentEngineer(int EngineerId)
     {
         try
@@ -157,7 +180,12 @@ internal class TaskImplementation : ITask
         catch { return null!; }
     }
 
-
+    /// <summary>
+    /// Delete a task by wanted ID
+    /// </summary>
+    /// <param name="taskId">wanted ID to delete</param>
+    /// <exception cref="BlCannotBeDeletedException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public void Delete(int taskId)
     {
         try
@@ -177,7 +205,12 @@ internal class TaskImplementation : ITask
         }
     }
 
-
+    /// <summary>
+    /// Return specific task
+    /// </summary>
+    /// <param name="ID">wanted ID's task</param>
+    /// <returns></returns>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public BO.Task Read(int ID)
     {
         try
@@ -192,6 +225,11 @@ internal class TaskImplementation : ITask
         }
     }
   
+    /// <summary>
+    /// Update wanted task
+    /// </summary>
+    /// <param name="task"></param>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public void Update(BO.Task task)
     {
         try

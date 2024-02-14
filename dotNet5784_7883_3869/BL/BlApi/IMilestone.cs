@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
+/// <summary>
+/// Include all methods of the milestone
+/// </summary>
 public interface IMilestone
 {
     //יצירת לו"ז

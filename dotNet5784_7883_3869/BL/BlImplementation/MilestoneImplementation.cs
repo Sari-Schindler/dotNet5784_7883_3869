@@ -22,14 +22,13 @@ internal class MilestoneImplementation : IMilestone
     //        finishTimeEstimated = task.,
     //        DeadLine = task.DeadLine,
     //        EndedDate = task.E,
-    //        ProgressPercentage == 
-    //        Comments=task.Comments,
-    //        DependencysList= 
-             
-
+    //        ProgressPercentage ==
+    //        Comments = task.Comments,
+    //        DependencysList =
     //    };
     //}
-   
+
+
     //public BO.Milestone Read(int ID)
     //{
     //    try

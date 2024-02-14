@@ -23,6 +23,10 @@ namespace PL.Engineer
     public partial class EngineerListWindow : Window
     {
         private static readonly BlApi.IBl s_bl = BlApi.Factory.Get();
+
+        /// <summary>
+        /// Display the engineer's list
+        /// </summary>
         public EngineerListWindow()
         {
             InitializeComponent();
@@ -30,6 +34,7 @@ namespace PL.Engineer
             //EngineerList = temp == null ? new() : new(temp);
             Activated += UpdateTheListToDisplay!;
         }
+
         public ObservableCollection<BO.EngineerInList> EngineerList
         {
             get { return (ObservableCollection<BO.EngineerInList>)GetValue(EnginnerListProperty); }
@@ -39,6 +44,9 @@ namespace PL.Engineer
         public static readonly DependencyProperty EnginnerListProperty =
             DependencyProperty.Register("EngineerList", typeof(ObservableCollection<BO.EngineerInList>), typeof(EngineerListWindow), new PropertyMetadata(null));
 
+        /// <summary>
+        /// Enum's experience
+        /// </summary>
         public BO.EngineerExperience Experience { get; set; } = BO.EngineerExperience.None;
 
         /// <summary>
@@ -49,16 +57,26 @@ namespace PL.Engineer
         private void cbExperienceSelector_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var temp = Experience == BO.EngineerExperience.None ?
-            s_bl?.EngineerInList.ReadAll() :
-            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience);
+            s_bl?.EngineerInList.ReadAll().OrderBy(engineer => engineer.Name) :
+            s_bl?.EngineerInList.ReadAll(item => item.Level == Experience).OrderBy(engineer => engineer.Name); ;
             EngineerList = temp == null ? new() : new(temp);
         }
 
+        /// <summary>
+        /// display update screen
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void BtnOpenAddOrUpdateWindow_Click(object sender, RoutedEventArgs e)
         {
             new EngineerWindow().ShowDialog();
         }
 
+        /// <summary>
+        /// Select add or update enginner
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateThisEngineer_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             BO.EngineerInList? enginnerInList = (sender as ListView)?.SelectedItem as BO.EngineerInList;
@@ -66,6 +84,11 @@ namespace PL.Engineer
                 new EngineerWindow(enginnerInList!.ID).ShowDialog(); ;
         }
 
+        /// <summary>
+        /// Show updated engineer list
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void UpdateTheListToDisplay(Object sender, EventArgs e)
         {
             var temp = Experience == BO.EngineerExperience.None ?

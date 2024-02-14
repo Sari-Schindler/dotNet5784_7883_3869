@@ -12,6 +12,14 @@ internal class EngineerInListImplementation : IEngineerInList
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+
+    /// <summary>
+    /// Return all enginners in list
+    /// </summary>
+    /// <param name="filter">return just the engineers that fit the standarts</param>
+    /// <returns></returns>
+    /// <exception cref="BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public IEnumerable<BO.EngineerInList> ReadAll(Func<BO.EngineerInList, bool>? filter = null)
     {
         try

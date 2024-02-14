@@ -6,7 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace BO;
-
+/// <summary>
+/// class fir task
+/// </summary>
 public class Task
 {
     public required string Description { get; set; }

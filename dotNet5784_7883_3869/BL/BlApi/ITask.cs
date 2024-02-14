@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace BlApi;
 
+/// <summary>
+/// Include all methods of the task
+/// </summary>
 public interface ITask
 {
     public IEnumerable<BO.Task> ReadAll(Func<BO.Task, bool>? filter = null);

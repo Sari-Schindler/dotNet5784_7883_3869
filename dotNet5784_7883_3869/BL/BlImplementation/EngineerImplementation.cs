@@ -12,13 +12,19 @@ internal class EngineerImplementation : IEngineer
 {
     private DalApi.IDal _dal = DalApi.Factory.Get;
 
+    /// <summary>
+    /// Check validation of enginner's details
+    /// </summary>
+    /// <param name="engineer"></param>
+    /// <exception cref="BlInvalidValueException"></exception>
+    /// 
     private void CheckValidation(BO.Engineer engineer)
     {
         string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
         var regex = new Regex(pattern, RegexOptions.IgnoreCase);
         if(!regex.IsMatch(engineer.Email!))
             throw new BlInvalidValueException("Email is not valid");
-        if (engineer.ID<=0)
+        if (engineer.ID<=0 || engineer.ID>1000000000)
             throw new BlInvalidValueException("ID is incorrect here");
         if (engineer.Name == "")
             throw new BlInvalidValueException("Name can't be null");
@@ -27,6 +33,13 @@ internal class EngineerImplementation : IEngineer
         if (engineer.Level == BO.EngineerExperience.None)
             throw new BlInvalidValueException("Level can't be none");
     }
+
+    /// <summary>
+    /// Crearte new engineer
+    /// </summary>
+    /// <param name="newEngineer"></param>
+    /// <returns></returns>
+    /// <exception cref="BO.BlAlreadyExistsException"></exception>
     public int Create(BO.Engineer newEngineer)
     {
         try
@@ -41,7 +54,13 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
-
+    /// <summary>
+    /// Return list of all engineers
+    /// </summary>
+    /// <param name="filter">if there's a filter return just the fited engineers</param>
+    /// <returns></returns>
+    /// <exception cref="BlDoesNotExistException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public IEnumerable<BO.Engineer> ReadAll(Func<BO.Engineer, bool>? filter = null)
     {
         try
@@ -67,6 +86,11 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
+    /// <summary>
+    /// return the current task for specific engineer
+    /// </summary>
+    /// <param name="engineer_id"></param>
+    /// <returns></returns>
     private BO.TaskInEngineer? getCurrentTask(int engineer_id)
     {
         List<DO.Task?> tasks = _dal.Task.ReadAll().ToList();
@@ -77,6 +101,12 @@ internal class EngineerImplementation : IEngineer
         return currentTask;
     }
 
+    /// <summary>
+    /// Delete an enginner by wanted ID
+    /// </summary>
+    /// <param name="engineerID">Enginner wanted ID fir deltet</param>
+    /// <exception cref="BO.BlCannotBeDeletedException"></exception>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public void Delete(int engineerID)
     {
         try
@@ -96,6 +126,12 @@ internal class EngineerImplementation : IEngineer
         }
     }
 
+    /// <summary>
+    /// Return one engineer by wanted Id
+    /// </summary>
+    /// <param name="ID">engineer's Id wanted</param>
+    /// <returns></returns>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public BO.Engineer Read(int ID)
     {
         var engineer=_dal.Engineer.Read(ID);
@@ -111,6 +147,11 @@ internal class EngineerImplementation : IEngineer
         };
     }
 
+    /// <summary>
+    /// update an enginner
+    /// </summary>
+    /// <param name="engineer">speific engineer for upate</param>
+    /// <exception cref="BO.BlDoesNotExistException"></exception>
     public void Update(BO.Engineer engineer)
     {
         try
