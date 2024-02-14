@@ -9,6 +9,10 @@
             	 DataContext="{Binding RelativeSource={RelativeSource Mode=Self}}">
     <!--Extrnal Grid-->
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="0*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50*"/>
             <RowDefinition Height="500*"/>
@@ -24,14 +28,14 @@
             <ComboBox ItemsSource="{Binding Source={StaticResource StatusCollectionKey}}"
                  Grid.Column="1" SelectedValue="{Binding status, Mode=TwoWay}" VerticalAlignment="Top" SelectionChanged="StatusSelector_SelectionChanged" Height="43" Margin="0,1,0,0"/>
         </Grid>
-        <ListView Grid.Row="1" ItemsSource="{Binding TaskList}" SelectionChanged="UpdateThisTask_SelectionChanged">
+        <ListView ItemsSource="{Binding TaskList}" SelectionChanged="UpdateThisTask_SelectionChanged" Margin="0,39,0,0" Grid.RowSpan="2">
             <ListView.View>
                 <GridView>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button FontWeight="ExtraBlack" Content="Add" Grid.Row="2" HorizontalAlignment="Center" Height="50" Width="100" Click="BtnOpenAddOrUpdateWindow_Click"/>
+        <Button FontWeight="ExtraBlack" Content="Add" Grid.Row="1" HorizontalAlignment="Center" Width="100" Click="BtnOpenAddOrUpdateWindow_Click" Margin="0,339,0,6"/>
 
 
     </Grid>
