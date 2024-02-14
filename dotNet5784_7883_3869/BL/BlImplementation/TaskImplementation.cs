@@ -22,12 +22,12 @@ internal class TaskImplementation : ITask
     {
         if (task.Description == "")
             throw new BlInvalidValueException("Description can't be null");
-        if (task.requierdTime == TimeSpan.Zero)// להוסיף
+        if (task.requierdTime == TimeSpan.Zero)
             throw new BlInvalidValueException("requierdTime can't be null");
         if (task.EstimatedStartTime == DateTime.MinValue)
-            throw new BlInvalidValueException("EstimatedStartTime can't be null");
+            throw new BlInvalidValueException("EstimatedStartDate can't be null");
         if (task.TimeEstimatedLeft == DateTime.MinValue)
-            throw new BlInvalidValueException("TimeEstimatedLeft can't be null");
+            throw new BlInvalidValueException("DateEstimatedLeft can't be null");
         if (task.DeadLine == DateTime.MinValue)
             throw new BlInvalidValueException("DeadLine can't be null");
         if (task.ComplexityLevel == BO.TaskLevel.None)
